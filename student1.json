@@ -1,0 +1,42 @@
+{
+  "first name":"Peter",
+  "last name":"Petrenko",
+  "age":22,
+  "gender":"M",
+  "phone number":"(067)572 22 55",
+  "ID number":123456789000,
+  "email":"petrenko85@gmail.com",
+  "faculty":"IT technology",
+  "speciality":"Java developer",
+  "course":2,
+  "rating":"A",
+  "academic performance":10.8,
+  "awards":null,
+  "teammates":[
+    "Mary",
+    "Tom",
+    "Sara",
+    "Bigboy"
+  ],
+  "address":{
+    "country":"Ukraine",
+    "city":"Kharkov",
+    "street":"Marianenko",
+    "house":56,
+    "apartment":74,
+    "postal":true
+  },
+  "married":false,
+  "discipline":{
+    "basics":[
+      "math",
+      "web technology",
+      "OOP theory",
+      "java programming"
+    ],
+    "facultative":[
+      "philosophy",
+      "history"
+    ]
+  }
+}

@@ -1,0 +1,39 @@
+<student1>
+    <identity id="5" name="Peter" lastname="Petrenko" age="22" gender="M"/>
+    <details>
+        <internal property="true">
+            <contacts phone_number="(067)572 22 55"/>
+            <contacts IDnumber='123456789000'/>
+            <contacts email="petrenko85@gmail.com"/>
+        </internal>
+        <public actulised="01.05.2020">
+            <data faculty="IT technology"/>
+            <data speciality="Java developer"/>
+            <data course="2"/>
+            <data rating="A"/>
+            <data academic_performance="10.8"/>
+            <teammates>
+                <mate> Mary </mate>
+                <mate> Tom </mate>
+                <mate> Sara </mate>
+                <mate> Bigboy </mate>
+            </teammates>
+        </public>
+        <private>
+            <address city="Kharkov" street="Marianenko" building="56" apartment="74" postal="true"/>
+            <maried value="false"/>
+        </private>
+    </details>
+    <discipline>
+        <basics>
+            <theory discipline="math" semester="first"/>
+            <theory discipline="physics" semester="first"/>
+            <theory discipline="OOP theory" semester="second"/>
+            <practical_session discipline="java programming" semester="second"/>
+        </basics>
+        <facultative>
+            <theory discipline="philosophy"/>
+            <theory discipline="history"/>
+        </facultative>
+    </discipline>
+</student1>
