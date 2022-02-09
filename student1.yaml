@@ -25,9 +25,14 @@ student1:
   discipline:
     basics:
       theory:
-        first_semestr: math, physics
-        second_semestr: OOP_thery
+        first_semestr:
+          - math,
+          - physics
+        second_semestr:
+          - OOP_thery
       practical_session discipline:
-        second_semestr: java programming
+        second_semestr:
+          - java programming
     facultative:
-      philosophy, history
+      - philosophy,
+      - history
