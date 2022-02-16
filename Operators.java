@@ -14,6 +14,10 @@ public class Operators {
         int g = b + c;
         //Displaying the result of comparing sums (true if the first sum is greater)
         System.out.println("The first sum is greater is " + (e > g));
+        //Increasing the first amount by 1
+        e += 1;
+        //Decreasing the second sum by 2
+        g -= 2;
     }
 
 }
