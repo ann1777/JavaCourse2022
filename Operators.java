@@ -18,6 +18,8 @@ public class Operators {
         e += 1;
         //Decreasing the second sum by 2
         g -= 2;
+        //Printing the result of the comparison (true if the first sum is greater)
+        System.out.println("The first sum is greater is " + (e > g));
     }
 
 }
