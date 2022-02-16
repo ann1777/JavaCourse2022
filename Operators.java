@@ -20,6 +20,10 @@ public class Operators {
         g -= 2;
         //Printing the result of the comparison (true if the first sum is greater)
         System.out.println("The first sum is greater is " + (e > g));
+        //Returning true if at least one sum is a multiple of 2, false otherwise
+        int i = e % 2;
+        int k = g % 2;
+        System.out.println("At least one sum is a multiple of 2 is " +( i == 0 || k == 0));
     }
 
 }
