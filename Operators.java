@@ -12,6 +12,8 @@ public class Operators {
         //Summing values in pairs
         int e = a + d;
         int g = b + c;
+        //Displaying the result of comparing sums (true if the first sum is greater)
+        System.out.println("The first sum is greater is " + (e > g));
     }
 
 }
