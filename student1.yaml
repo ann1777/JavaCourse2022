@@ -1,0 +1,38 @@
+student1:
+  id: 5
+  name: Peter
+  lastname: Petrenko
+  age: 22
+  gender: M
+  details:
+    phone_number: (067)572 22 55
+    IDnumber: 123456789000
+    email: petrenko85@gmail.com
+  public:
+    faculty: "IT technology"
+    speciality: "Java developer"
+    course: 2
+    rating: 'A'
+    academic_performance: 10.8
+    teammates: [Mary, Tom, Sara, Bigboy]
+  private:
+    address_city: Kharkov
+    street: Marianenko
+    building: 56
+    apartment: 74
+    postal: true
+    maried: false
+  discipline:
+    basics:
+      theory:
+        first_semestr:
+          - math,
+          - physics
+        second_semestr:
+          - OOP_thery
+      practical_session discipline:
+        second_semestr:
+          - java programming
+    facultative:
+      - philosophy,
+      - history
