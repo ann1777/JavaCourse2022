@@ -28,9 +28,21 @@ public class StringArray {
             String str1 = new String(s);
             str1 = str1.replace(" ", ""); // removed str1 extra spaces
 
-            ArrayList<Character> ch = new ArrayList<Character>(str1.length());
+            ArrayList<Character> ch = new ArrayList<>(str1.length());
             for (char char1 : str1.toCharArray()) ch.add(char1); // getting list of str1 Characters
 
+            Map<Character, Integer> map1 = new HashMap<>();
+            for (Character c : ch) map1.put(c, 0); // finding the unique characters of the str1
+
+            for (Character a : map1.keySet()) { // created loop for searching duplicates of Characters
+                Integer k = 0; // initializing the counter of the unique Character of the string
+                for (Character i : ch) { // matching the i character of the StringArray to the
+                    if (a.equals(i)) { // if we found the same Character in the StringArray ch:
+                        k++;           // incrementing the Character counter by 1
+                        map1.put(a, k); // rewriting the number of the Character in the map1.keySet
+                    }
+                }
+            }
         }
     return sett;
     }
