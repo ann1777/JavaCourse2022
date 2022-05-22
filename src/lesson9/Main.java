@@ -5,5 +5,7 @@ public class Main {
         StringArray array1 = new StringArray();
 
         array1.input1();
+
+        System.out.println(array1.process());
     }
 }

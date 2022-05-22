@@ -20,7 +20,7 @@ public class StringArray {
         }
     }
 
-    public Set<Character> process() {
+    protected Set<Character> process() {
         Set<Character> sett = new HashSet<>(); // initializing a set of unique characters
         int count = 0; // initializing a counter of String containing all even characters
 
@@ -42,6 +42,14 @@ public class StringArray {
                         map1.put(a, k); // rewriting the number of the Character in the map1.keySet
                     }
                 }
+            }
+            int counter = 0; // initializing the counter of the String even Characters
+            for (Integer i : map1.values()) {
+                if (i % 2 == 0) counter++; // incrementing the counter if the Character is even
+            }
+            if (counter == map1.size() && count < 2) {
+                sett.addAll(map1.keySet()); // putting the String containing all even characters to the sett
+                count++; // incrementing the counter of String containing all even characters
             }
         }
     return sett;
