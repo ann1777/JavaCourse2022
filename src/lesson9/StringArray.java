@@ -32,6 +32,19 @@ public class StringArray {
             for (char char1 : str1.toCharArray())
                 ch.add(char1);//getting list of str1 Characters
 
+            Map<Character, Integer> map1 = new HashMap<>();
+            for (Character c : ch) map1.put(c, 0);// Adding the unique characters of the str1 to the map1
+
+            for (Character a : map1.keySet()) {// Searching duplicates of Characters in the map1
+                Integer k = 0;// Initializing the counter of the unique Characters of the String
+
+                for (Character i : ch) {// Matching the i-th character of the ch to each character in the ch
+                    if (a.equals(i)) {// If they are matched
+                        k++;// Incremening the Characters counter by 1
+                        map1.put(a, k);// Rewriting the number of the Characters in the map.keySet
+                    }
+                }
+            }
         }
         return sett;
     }
