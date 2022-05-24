@@ -16,7 +16,23 @@ public class StringArray {
         for (int i=0; i<n; i++) {
             System.out.println("Input the " + (i + 1) + " element of StringArray: ");
 
-            StringArray1[i] = scanner.nextLine();//inputting n StrtingArray from the 4keyboard
+            StringArray1[i] = scanner.nextLine();//Inputting n StringArray from the keyboard
         }
+    }
+
+    public Set<Character> process() {
+        Set<Character> sett = new HashSet<>();// Initializing a set of unique characters
+        int count = 0;// Initializing the counter of Strings containing all even characters
+
+        for (String s : StringArray1) {
+            String str1 = new String(s);
+            str1 = str1.replace(" ", "");// Removing str1 extra spaces
+
+            ArrayList<Character> ch = new ArrayList<>(str1.length());
+            for (char char1 : str1.toCharArray())
+                ch.add(char1);//getting list of str1 Characters
+
+        }
+        return sett;
     }
 }
