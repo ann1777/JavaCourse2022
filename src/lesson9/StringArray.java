@@ -40,10 +40,19 @@ public class StringArray {
 
                 for (Character i : ch) {// Matching the i-th character of the ch to each character in the ch
                     if (a.equals(i)) {// If they are matched
-                        k++;// Incremening the Characters counter by 1
+                        k++;// Incrementing the Characters counter by 1
                         map1.put(a, k);// Rewriting the number of the Characters in the map.keySet
                     }
                 }
+            }
+            int counter = 0;// Initializing the counter of the String even Characters
+            for (Integer i : map1.values()) {
+                if (i % 2 == 0) counter++;// Checking if the number of Characters is even and incrementing the
+                //counter if it is true
+            }
+            if ((counter == map1.size()) && (count < 2)) {
+                sett.addAll(map1.keySet());// Putting all the even characters of the String to the sett
+                count++;// Incrementing the counter of Strings containing all even characters
             }
         }
         return sett;
