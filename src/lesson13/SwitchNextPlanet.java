@@ -1,32 +1,28 @@
 package lesson13;
 
-import lesson13.Planet
+import static lesson13.Planet.*;
 
-import static lesson13.Planet.*;*;
+public class SwitchNextPlanet {
+    protected static enum Planet {
+        switch(this)
 
-public class SwitchPlanets {
-    protected static Planet switchNext {
-        switch (next) {
+        {
             case MERCURY:
-                return (next = VENUS);
+                return next = VENUS;
             case VENUS:
-                return (next = EARTH);
+                return next = EARTH;
             case EARTH:
-                return (next = MARS);
+                return next = MARS;
             case MARS:
-                return (next = JUPITER);
+                return next = JUPITER;
             case JUPITER:
-                return (next = SATURN);
+                return next = SATURN;
             case SATURN:
-                return (next = URANUS);
+                return next = URANUS;
             case URANUS:
-                return (next = NEPTUN);
+                return next = NEPTUN;
             case NEPTUN:
-                return (next = PLUTO);
-            default:
-                throw new IllegalStateException("Unexpected value: " + next);
+                return next = PLUTO;
         }
-        return Planet.next;
     }
 }
-
