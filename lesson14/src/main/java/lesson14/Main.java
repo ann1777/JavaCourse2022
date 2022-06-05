@@ -59,5 +59,17 @@ public class Main {
         group1.printTasksOfTheStudent(123);
         System.out.println("-------------");
         group1.printTasksOfTheStudent(2);
+        group1.markDone(123, 2);
+        group1.markDone(123, 3);
+        group1.printTasksOfTheStudent(123);
+        System.out.println("-------------");
+        group1.printStudentsTasks();
+        group1.markDone(234, 1);
+        group1.markDone(234, 2);
+        group1.markDone(345, 3);
+        group1.markDone(345, 4);
+        group1.markDone(456, 2);
+        System.out.println("-------------");
+        group1.printStudentsTasks();
     }
 }
