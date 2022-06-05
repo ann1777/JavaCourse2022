@@ -63,6 +63,21 @@ public class Group {
         printStudents();
     }
 
+    //add student to group method
+    public void addStudent(Student student) {
+        students.add(student);
+    }
+
+    //remove student
+    public void removeStudent(Student student) {
+        students.remove(student);
+    }
+
+    //rename student
+    public void renameStudent(Student student, String name) {
+        student.setName(name);
+    }
+
 
 
 
