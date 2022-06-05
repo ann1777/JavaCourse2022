@@ -1,6 +1,8 @@
 package incapsulation;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Main {
     public static void main(String[] args) {
@@ -45,7 +47,33 @@ public class Main {
         group1.printValue();
         System.out.println("-------------");
 
+        Map<Integer, String> group1Tasks = new HashMap<>();
+        group1Tasks.put(1, "Study ArrayList");
+        group1Tasks.put(2, "Study Massive");
+        group1Tasks.put(3, "Code Program1");
+        group1Tasks.put(4, "Debug Program1");
+        System.out.println(group1Tasks);
+        group1.setListOfTasks(group1Tasks);
+        group1.printListOfTasks();
+        group1.setTasksForGroup();
+        System.out.println("-------------");
 
-
+        group1.printStudentsTasks();
+        System.out.println("-------------");
+        group1.printTasksOfTheStudent(123);
+        System.out.println("-------------");
+        group1.printTasksOfTheStudent(2);
+        group1.markDone(123, 2);
+        group1.markDone(123, 3);
+        group1.printTasksOfTheStudent(111);
+        System.out.println("~~~~~~~~~~~~~");
+        group1.printStudentsTasks();
+        group1.markDone(234, 1);
+        group1.markDone(234, 2);
+        group1.markDone(345, 3);
+        group1.markDone(345, 4);
+        group1.markDone(456, 2);
+        System.out.println("-------------");
+        group1.printStudentsTasks();
     }
 }
