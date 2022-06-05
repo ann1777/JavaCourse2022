@@ -31,5 +31,21 @@ public class Main {
         System.out.println("-------------");
         group1.printValue();
 
+        group1.changeGroupLeader(student2);
+        System.out.println("-------------");
+        group1.printValue();
+        Student student6 = new Student(678, "Stepan", "Bandera");
+        group1.addStudent(student6);
+        System.out.println("-------------");
+        group1.printValue();
+        group1.removeStudent(student4);
+        System.out.println("-------------");
+        group1.printValue();
+        group1.renameStudent(student1, "Tatiana");
+        group1.printValue();
+        System.out.println("-------------");
+
+
+
     }
 }
