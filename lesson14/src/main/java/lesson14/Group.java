@@ -1,6 +1,7 @@
 package lesson14;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
@@ -78,7 +79,58 @@ public class Group {
         student.setName(name);
     }
 
+    //add task for whole group
+    public void setTasksForGroup(){
+        LinkedHashMap<Integer, Map<Integer, Boolean>> studentTasks = new LinkedHashMap<>();
+        for (Student s : students) {
+            Map<Integer, Boolean> tasks = new HashMap<>();
+            for (Integer t : listOfTasks.keySet()) {
+                tasks.put(t, false);
+            }
+            studentTasks.put(s.getID(),tasks);
+        }
+        this.studentTasks = studentTasks;
+    }
 
+    public void printStudentsTasks(){
+        for(Student s : students){
+            System.out.println("Tasks of the student ID"+s.getID()+ " "+s.getName()+" "+s.getLastname());
+            System.out.println(studentTasks.get(s.getID()));
+        }
+    }
 
+    public void printTasksOfTheStudent(int ID){
+        int k=0;
+        for(Student s : students){
+            if(s.getID() == ID) {
+                System.out.println("Tasks of student ID" + s.getID() + " " + s.getName() + " " + s.getLastname());
+                System.out.println(studentTasks.get(ID));
+                k++;
+            }
+        }
+        if (k==0) {
+            System.out.println("There are no students with this ID!");
+        }
+    }
 
+    public void setListOfTasks(Map<Integer, String> listOfTasks) {
+        this.listOfTasks = listOfTasks;
+    }
+
+    public ArrayList<Student> getStudents() {
+        return students;
+    }
+
+    public Map<Integer, String> getListOfTasks() {
+        return listOfTasks;
+    }
+
+    public void printListOfTasks() {
+        System.out.println("Group tasks:");
+        int i = 1;
+        for (String s : listOfTasks.values()) {
+            System.out.println("Task "+i+": "+s);
+            i++;
+        }
+    }
 }
