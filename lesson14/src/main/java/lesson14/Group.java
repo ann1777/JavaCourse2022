@@ -36,4 +36,34 @@ public class Group {
         this.groupID = groupID;
     }
 
+    //change group leader method
+    public void changeGroupLeader(Student student) {
+        this.groupLeader = student;
+    }
+
+    public void printGroupID() {
+        System.out.println("Group ID: "+ groupID);
+    }
+
+    public void printGroupLeader() {
+        System.out.println("Group Leader: " + groupLeader.getID() + " " +groupLeader.getName() + " " + groupLeader.getLastname());
+    }
+
+    public void printStudents() {
+        int i=1;
+        for (Student s : students) {
+            System.out.println("Student "+i+": "+s.getID()+" "+s.getName()+" "+s.getLastname());
+            i++;
+        }
+    }
+
+    public void printValue(){
+        printGroupID();
+        printGroupLeader();
+        printStudents();
+    }
+
+
+
+
 }

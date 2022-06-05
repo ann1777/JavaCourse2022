@@ -21,5 +21,13 @@ public class Main {
         students.add(student3);
         students.add(student4);
         students.add(student5);
+
+        Group group1 = new Group();
+        group1.setGroupID(2);
+        group1.printGroupID();
+        group1.setGroupLeader(student1);
+        group1.setStudents(students);
+        System.out.println("-------------");
+        group1.printValue();
     }
 }
