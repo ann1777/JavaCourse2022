@@ -29,14 +29,14 @@ public class Main {
         group1.setGroupID(2);
         group1.printGroupID();
         group1.printValue();
-        group1.setGroupLeader(student1);
+        System.out.println("__/___/___/___/___");
+        group1.setGroupLeader(student3);
         group1.setStudents(students);
-        System.out.println("-------------");
         group1.printValue();
-
-        group1.changeGroupLeader(student2);
         System.out.println("-------------");
+        group1.changeGroupLeader(123);
         group1.printValue();
+        System.out.println("--|----|----|---");
         Student student6 = new Student(678, "Stepan", "Bandera");
         group1.addStudent(student6);
         System.out.println("-------------");
@@ -44,9 +44,9 @@ public class Main {
         group1.removeStudent(student4);
         System.out.println("-------------");
         group1.printValue();
-        group1.renameStudent(student1, "Tatiana");
+        group1.renameStudent(student1, 123,"Tatiana");
         group1.printValue();
-        System.out.println("-------------");
+        System.out.println("~~~~~~~~~~~~~~");
 
         Map<Integer, String> group1Tasks = new HashMap<>();
         group1Tasks.put(1, "Study ArrayList");
