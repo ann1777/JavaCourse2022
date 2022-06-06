@@ -75,5 +75,12 @@ public class Main {
         group1.markDone(456, 2);
         System.out.println("-------------");
         group1.printStudentsTasks();
+        Student student7 = new Student(1111);
+        System.out.println(student7.getID());
+        student7.setName("Tom");
+        System.out.println(student7.getName());
+        students.add(student7);
+        group1.printStudentsTasks();
+
     }
 }

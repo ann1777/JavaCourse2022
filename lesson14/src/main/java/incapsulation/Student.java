@@ -14,7 +14,8 @@ public class Student {
     }
 
     //empty constructor for class Student
-    public Student() {
+    public Student(int ID) {
+        this.ID = ID;
     }
 
     //setters
