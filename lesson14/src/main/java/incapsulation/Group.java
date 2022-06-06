@@ -61,7 +61,15 @@ public class Group {
 
     //add student to group method
     public void addStudent(Student student) {
-        students.add(student);
+        int k = 0;
+        for (Student s : students) {
+            if ((s).equals(student)) {
+                System.out.println("Student with ID№"+student.getID() + " is already present in this group.");
+                k++;
+            }
+        }
+        if (k == 0) students.add(student);
+        System.out.println("Student with ID№"+student.getID() + " has been added to the group.");
     }
 
     //remove student
@@ -79,6 +87,20 @@ public class Group {
         this.groupLeader = student;
     }
 
+    //checking if student already present in the Group
+    public void equals(Student student) {
+        int k = 0;
+        for (Student s : students) {
+            if ((s).equals(student)) {
+                System.out.println("Student with ID№"+student.getID() + " is present in this group.");
+                k++;
+            }
+        }
+        if (k == 0) {
+            System.out.println("Student with ID№"+student.getID() + " is absent in this group.");
+        }
+    }
+
     //add task for whole group
     public void setTasksForGroup() {
         LinkedHashMap<Integer, Map<Integer, Boolean>> studentTasks = new LinkedHashMap<>();
@@ -93,7 +115,7 @@ public class Group {
     }
 
     public void printStudentsTasks() {
-        System.out.println("The results of Group №" +groupID+" students tasks are:");
+        System.out.println("The results of Group №" + groupID + " students tasks are:");
         for (Student s : students) {
             System.out.println("Tasks of the student ID" + s.getID() + " " + s.getName() + " " + s.getLastname());
             System.out.println(studentTasks.get(s.getID()));
@@ -109,7 +131,7 @@ public class Group {
                 System.out.println(studentTasks.get(ID));
                 k++;
             } else if (k == 0) {
-                System.out.println("There are no students with ID" + ID +"!");
+                System.out.println("There are no students with ID" + ID + "!");
                 break;
             }
         }
@@ -153,6 +175,8 @@ public class Group {
         if (k == 0) {
             System.out.println("There are no students with this ID or tasks with this TaskID!");
         }
+
+
     }
 
 

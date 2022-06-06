@@ -79,8 +79,16 @@ public class Main {
         System.out.println(student7.getID());
         student7.setName("Tom");
         System.out.println(student7.getName());
-        students.add(student7);
-        group1.printStudentsTasks();
+//        students.add(student7);
+//        group1.printStudentsTasks();
+//        group1.studentIsPresent(student7);
+        Student student8 = new Student(9663);
+        group1.equals(student1);
+        group1.equals(student7);
+        group1.addStudent(student7);
+        group1.addStudent(student1);
+        group1.equals(student8);
+        group1.addStudent(student2);
 
     }
 }
