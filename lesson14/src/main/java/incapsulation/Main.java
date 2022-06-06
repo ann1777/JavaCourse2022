@@ -25,9 +25,10 @@ public class Main {
         students.add(student4);
         students.add(student5);
 
-        Group group1 = new Group();
+        Group group1 = new Group(student2, new ArrayList<>());
         group1.setGroupID(2);
         group1.printGroupID();
+        group1.printValue();
         group1.setGroupLeader(student1);
         group1.setStudents(students);
         System.out.println("-------------");

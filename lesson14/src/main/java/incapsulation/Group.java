@@ -13,12 +13,16 @@ public class Group {
     private Map<Integer, String> listOfTasks;
     private LinkedHashMap<Integer, Map<Integer, Boolean>> studentTasks;
 
-    public Group(Student groupLeader, ArrayList<Student> students) {
-        this.students = students;
+    public Group(Student groupLeader, ArrayList<Student> students, Map<Integer, String> listOfTasks, LinkedHashMap<Integer, Map<Integer, Boolean>> studentTasks) {
+        this.students = new ArrayList<>(students);
         this.groupLeader = groupLeader;
+        this.listOfTasks = new HashMap<>();
+        this.studentTasks = new LinkedHashMap<>();
     }
 
-    public Group() {
+    public Group(Student groupLeader, ArrayList<Student> students) {
+        this.students = new ArrayList<>(students);
+        this.groupLeader = groupLeader;
     }
 
     public void setStudents(ArrayList<Student> students) {
