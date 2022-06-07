@@ -76,20 +76,22 @@ public class Main {
         group1.markDone(456, 2);
         System.out.println("-------------");
         group1.printStudentsTasks();
-        Student student7 = new Student(1111);
-        System.out.println(student7.getID());
-        student7.setName("Tom");
-        System.out.println(student7.getName());
+        Student student7 = new Student(789);
+        System.out.println(student6.getID());
+        student6.setName("Tom");
+        System.out.println(student6.getName());
 //        students.add(student7);
 //        group1.printStudentsTasks();
 //        group1.studentIsPresent(student7);
-        Student student8 = new Student(9663);
+        Student student8 = new Student(890);
         group1.equals(student1);
         group1.equals(student7);
         group1.addStudent(student7);
         group1.addStudent(student1);
-        group1.equals(student8);
+        group1.equals(student7);
         group1.addStudent(student2);
+        group1.printValue();
+        System.out.println("Students 6' ID is "+student7.getID());
 
     }
 }
