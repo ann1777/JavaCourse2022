@@ -23,6 +23,7 @@ public class Group {
         this.groupLeader = groupLeader;
     }
 
+
     public void setStudents(HashSet<Student> students) {
         this.students = students;
     }
@@ -65,8 +66,7 @@ public class Group {
                 System.out.println("Student with ID№" + student.getID() + " is already present in this group.");
                 k++;
             }
-        }
-        if (k == 0) {
+        } if (k == 0) {
             students.add(student);
             System.out.println("Student with ID№" + student.getID() + " has been added to the group.");
         }
@@ -84,7 +84,7 @@ public class Group {
             if (s.getID() == ID) {
                 s.setName(name);
                 a++;
-            } else if (a == 0) {
+            } else if (a == 0){
                 System.out.println("There are no students with this ID.");
             }
         }
