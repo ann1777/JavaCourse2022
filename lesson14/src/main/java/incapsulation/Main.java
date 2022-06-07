@@ -2,6 +2,7 @@ package incapsulation;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
 
 public class Main {
@@ -18,14 +19,14 @@ public class Main {
         System.out.println(student1.getName());
         System.out.println(student1.getLastname());
 
-        ArrayList<Student> students = new ArrayList<>();
+        HashSet<Student> students = new HashSet<>();
         students.add(student1);
         students.add(student2);
         students.add(student3);
         students.add(student4);
         students.add(student5);
 
-        Group group1 = new Group(student2, new ArrayList<>());
+        Group group1 = new Group(student2, new HashSet<>());
         group1.setGroupID(2);
         group1.printGroupID();
         group1.printValue();
@@ -91,7 +92,13 @@ public class Main {
         group1.equals(student7);
         group1.addStudent(student2);
         group1.printValue();
-        System.out.println("Students 6' ID is "+student7.getID());
-
+        group1.addStudent(student1);
+        group1.printValue();
+        group1.addStudent(student7);
+        group1.printValue();
+        System.out.println("-------------");
+        Student student10 = new Student(1022, "Hana", "Mana");
+        group1.addStudent(student10);
+        group1.printValue();
     }
 }
