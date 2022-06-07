@@ -70,9 +70,10 @@ public class Group {
                 System.out.println("Student with ID№" + student.getID() + " is already present in this group.");
                 k++;
             }
+        } if (k == 0) {
+            students.add(student);
+            System.out.println("Student with ID№" + student.getID() + " has been added to the group.");
         }
-        if (k == 0) students.add(student);
-        System.out.println("Student with ID№" + student.getID() + " has been added to the group.");
     }
 
     //remove student
