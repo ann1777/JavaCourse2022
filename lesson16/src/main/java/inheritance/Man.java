@@ -32,7 +32,7 @@ public class Man extends Person {
     }
 
     @Override
-    public void deregisterPartnership(boolean revertLastname, String maidenLastname) {
+    public void deregisterPartnership() {
     }
 }
 

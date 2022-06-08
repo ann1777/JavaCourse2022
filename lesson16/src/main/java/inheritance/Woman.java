@@ -53,4 +53,8 @@ public class Woman extends Person {
             this.setLastname(maidenLastname);
         }
     }
+
+    @Override
+    public void deregisterPartnership() {
+    }
 }

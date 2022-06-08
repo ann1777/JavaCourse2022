@@ -63,5 +63,6 @@ public abstract class Person {
     //create deregisterPartnership method
     public void deregisterPartnership(boolean revertLastname, String maidenLastname) {
     }
-}
 
+    public abstract void deregisterPartnership();
+}
