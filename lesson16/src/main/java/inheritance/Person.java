@@ -4,12 +4,11 @@ package inheritance;
 public abstract class Person {
     protected String name;
     protected String lastname;
-    protected String birthLastname;
+    protected String maidenLastname;
     protected int age;
     private boolean isPartnerMale;
     protected boolean isRetired;
-    protected Person partner;
-//    protected boolean revertLastname;
+    protected boolean revertLastname;
 
     //constructor for class Person
     public Person(String name, String lastname, int age, boolean isPartnerMale) {
@@ -54,23 +53,15 @@ public abstract class Person {
     }
 
     //create isRetired method
-    public boolean isRetired() {
-        return isRetired;
+    public void isRetired() {
     }
-
-    public abstract Person setPartner(Person partner);
 
     //create registerPartnership method
     public void registerPartnership(String lastname) {
     }
 
     //create deregisterPartnership method
-    public void deregisterPartnership(boolean revertLastname, String birthLastname) {
-    }
-
-    public void registerPartnership2(Person partner) {
-        if(this.isPartnerMale != partner.isPartnerMale) {
-            this.setPartner(partner);
-        }
+    public void deregisterPartnership(boolean revertLastname, String maidenLastname) {
     }
 }
+
