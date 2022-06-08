@@ -17,4 +17,13 @@ public class Man extends Person {
     public void setGrosSalary(double grosSalary) {
         this.grosSalary = grosSalary;
     }
+
+    @Override
+    public void isRetired() {
+        if (this.age >= 65) {
+            System.out.println("Retired: " + Boolean.TRUE);
+        } else {
+            System.out.println("Retired: " + Boolean.FALSE);
+        }
+    }
 }
