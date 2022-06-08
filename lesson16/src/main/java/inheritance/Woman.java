@@ -21,10 +21,6 @@ public class Woman extends Person {
         return lostWeight;
     }
 
-    public boolean isBlond() {
-        return isBlond;
-    }
-
     public void setNumberOfChildren(int numberOfChildren) {
         this.numberOfChildren = numberOfChildren;
     }
@@ -45,5 +41,21 @@ public class Woman extends Person {
             System.out.println("This woman retired is "+Boolean.FALSE);
         }
         return false;
+    }
+
+    @Override
+    public void registerPartnership (String lastname){
+        this.setLastname(lastname);
+    }
+
+    @Override
+    public void deregisterPartnership ( boolean revertLastName, String maidenLastname){
+        if (revertLastName == Boolean.TRUE) {
+            this.setLastname(maidenLastname);
+        }
+    }
+
+    @Override
+    public void deregisterPartnership() {
     }
 }

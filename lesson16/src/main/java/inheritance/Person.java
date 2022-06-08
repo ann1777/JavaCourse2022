@@ -8,7 +8,7 @@ public abstract class Person {
     protected int age;
     private boolean isPartnerMale;
     protected boolean isRetired;
-    protected boolean revertLastname;
+//    protected boolean revertLastname;
 
     //constructor for class Person
     public Person(String name, String lastname, int age, boolean isPartnerMale) {
@@ -64,5 +64,6 @@ public abstract class Person {
     //create deregisterPartnership method
     public void deregisterPartnership(boolean revertLastname, String maidenLastname) {
     }
-}
 
+    public abstract void deregisterPartnership();
+}

@@ -27,4 +27,13 @@ public class Man extends Person {
         }
         return false;
     }
+
+    @Override
+    public void registerPartnership(String lastname) {
+    }
+
+    @Override
+    public void deregisterPartnership() {
+    }
 }
+
