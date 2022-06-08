@@ -36,4 +36,14 @@ public class Woman extends Person {
     public void setLostWeight(double lostWeight) {
         this.lostWeight = lostWeight;
     }
+
+    @Override
+    public boolean isRetired() {
+        if(this.age >= 60) {
+            System.out.println("This woman retired is "+Boolean.TRUE);
+        } else {
+            System.out.println("This woman retired is "+Boolean.FALSE);
+        }
+        return true;
+    }
 }
