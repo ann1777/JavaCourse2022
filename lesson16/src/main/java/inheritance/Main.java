@@ -29,9 +29,5 @@ public class Main {
         woman1.isRetired();
         System.out.println("\n"+woman2.name +" "+ woman2.lastname +" is "+ woman2.getAge()+" years old.");
         woman2.isRetired();
-
-
-
-
     }
 }

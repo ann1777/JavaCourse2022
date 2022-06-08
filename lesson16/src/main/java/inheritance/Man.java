@@ -19,11 +19,12 @@ public class Man extends Person {
     }
 
     @Override
-    public void isRetired() {
+    public boolean isRetired() {
         if (this.age >= 65) {
             System.out.println("Retired: " + Boolean.TRUE);
         } else {
             System.out.println("Retired: " + Boolean.FALSE);
         }
+        return false;
     }
 }

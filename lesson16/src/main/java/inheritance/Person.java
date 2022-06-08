@@ -53,7 +53,8 @@ public abstract class Person {
     }
 
     //create isRetired method
-    public void isRetired() {
+    public boolean isRetired() {
+        return isRetired;
     }
 
     //create registerPartnership method
