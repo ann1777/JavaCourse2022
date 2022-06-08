@@ -46,7 +46,7 @@ public class Woman extends Person {
 
     @Override
     public void deregisterPartnership ( boolean revertLastName, String maidenLastname){
-        if (revertLastName == Boolean.TRUE) {
+        if (revertLastName) {
             this.setLastname(maidenLastname);
         }
     }

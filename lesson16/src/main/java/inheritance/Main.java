@@ -29,5 +29,8 @@ public class Main {
         woman1.isRetired();
         System.out.println("\n"+woman2.name +" "+ woman2.lastname +" is "+ woman2.getAge()+" years old.");
         woman2.isRetired();
+
+        woman1.registerPartnership(man1.lastname);
+        System.out.println("\nAfter wedding "+woman1.name +" "+"changed her lastname for "+ woman1.lastname);
     }
 }
