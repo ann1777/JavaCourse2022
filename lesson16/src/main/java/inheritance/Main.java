@@ -30,8 +30,17 @@ public class Main {
         System.out.println("\n"+woman2.name +" "+ woman2.lastname +" is "+ woman2.getAge()+" years old.");
         woman2.isRetired();
 
+        System.out.println("\nBefore marriage the girl name was "+ woman1.name +" "+woman1.lastname);
+        woman1.registerPartnership(man2.lastname);
+        System.out.println("After marriage the girl name become "+ woman1.name +" "+woman1.lastname);
+        woman1.deregisterPartnership ( true, "Loboda");
+        System.out.println("After divorce her name again become "+woman1.name +" "+woman1.lastname);
 
-
+        System.out.println("\nBefore relationship he has name "+ man1.name +" "+man1.lastname);
+        man1.registerPartnership(man2.lastname);
+        System.out.println(man1.name+" "+man1.lastname+" now in relationship with "+man2.name+" "+man2.lastname);
+        man1.deregisterPartnership(false, "");
+        System.out.println("After the breaking up his name again become "+man1.name +" "+man1.lastname);
 
     }
 }

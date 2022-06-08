@@ -26,4 +26,13 @@ public class Man extends Person {
             System.out.println("Retired: " + Boolean.FALSE);
         }
     }
+
+    @Override
+    public void registerPartnership(String lastname) {
+    }
+
+    @Override
+    public void deregisterPartnership(boolean revertLastname, String maidenLastname) {
+    }
 }
+
