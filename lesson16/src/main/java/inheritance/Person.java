@@ -68,9 +68,9 @@ public abstract class Person {
 //    public Person getPartner() {
 //    }
 
-    public boolean isPartnerMale() {
-        return isPartnerMale;//return true
-    }
+//    public boolean isPartnerMale() {
+//        return isPartnerMale;//return true
+//    }
 
     //create isRetired method
     public void isRetired() {
@@ -93,9 +93,9 @@ public abstract class Person {
     }
 
     //create deregisterPartnership method
-    public void deregisterPartnership(boolean revertLastname, String maidenLastname) {
+    public void deregisterPartnership(boolean revertLastname, String birthLastname) {
         if(revertLastname) {
-            this.lastname = maidenLastname;
+            this.lastname = birthLastname;
         }
     }
 }
