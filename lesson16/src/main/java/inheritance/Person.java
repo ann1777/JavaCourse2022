@@ -4,7 +4,7 @@ package inheritance;
 public abstract class Person {
     protected String name;
     protected String lastname;
-    protected String maidenLastname;
+    protected String birthLastname;
     protected int age;
     private boolean isPartnerMale;
     protected boolean isRetired;
@@ -62,8 +62,8 @@ public abstract class Person {
     }
 
     //create deregisterPartnership method
-    public void deregisterPartnership(boolean revertLastname, String maidenLastname) {
+    public boolean deregisterPartnership(boolean revertLastname, String birthLastname) {
+        return true;
     }
 
-    public abstract void deregisterPartnership();
 }

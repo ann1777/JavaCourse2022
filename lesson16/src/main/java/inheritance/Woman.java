@@ -35,7 +35,7 @@ public class Woman extends Person {
 
     @Override
     public boolean isRetired() {
-        System.out.printf("This woman is %s retired", age >= 60 ? "" : "not");
+        System.out.printf("This woman is %s retired", (age >= 60)? "" : "not");
         return (age>=60);
     }
 
@@ -45,13 +45,10 @@ public class Woman extends Person {
     }
 
     @Override
-    public void deregisterPartnership ( boolean revertLastName, String maidenLastname){
+    public boolean deregisterPartnership ( boolean revertLastName, String birthLastname){
         if (revertLastName) {
-            this.setLastname(maidenLastname);
+            this.setLastname(birthLastname);
         }
-    }
-
-    @Override
-    public void deregisterPartnership() {
+        return true;
     }
 }

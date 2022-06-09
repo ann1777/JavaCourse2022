@@ -32,5 +32,19 @@ public class Main {
 
         woman1.registerPartnership(man1.lastname);
         System.out.println("\nAfter wedding "+woman1.name +" "+"changed her lastname for "+ woman1.lastname);
+
+        woman1.deregisterPartnership(true, "Loboda");
+        System.out.println("\nBut in case of the diworce with Ivan, "+ woman1.name+" will " +
+                        "again change her lastname to "+woman1.lastname);
+
+        man1.registerPartnership(man2.lastname);
+        System.out.println("\nAfter getting relationship "+man1.name +" "+"changed her lastname for "+ man2.lastname);
+        man2.deregisterPartnership(true, "Semenov");
+
+        man2.registerPartnership(man1.lastname);
+        System.out.println("\nAfter getting relationship "+man2.name +" "+"changed her lastname for "+ man1.lastname);
+        man2.deregisterPartnership(false, "Semenov");
+//
+//        maSystem.out.printf("This woman is %s retired", (age >= 60)? "" : "not");n2.deregisterPartnership(false, "Semenov");
     }
 }

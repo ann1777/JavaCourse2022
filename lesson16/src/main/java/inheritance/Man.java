@@ -20,8 +20,8 @@ public class Man extends Person {
 
     @Override
     public boolean isRetired() {
-        System.out.printf("This man is %s retired", (age >= 65)? "":"not");
-        return (age>=65);
+        System.out.printf("This man is %s retired", (age >= 65) ? "" : "not");
+        return (age >= 65);
     }
 
     @Override
@@ -29,7 +29,10 @@ public class Man extends Person {
     }
 
     @Override
-    public void deregisterPartnership() {
+    public boolean deregisterPartnership(boolean revertLastname, String birthLastname) {
+        System.out.printf("He %s revert his lastname in case he get lost his relationship. \n",
+                (revertLastname) ? "wants" : "doesn't want");
+        return true;
+        }
     }
-}
 
