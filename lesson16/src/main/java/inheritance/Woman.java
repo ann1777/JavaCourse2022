@@ -49,5 +49,8 @@ public class Woman extends Person {
     @Override
     public void registerPartnership2(Person partner) {
         super.registerPartnership2(partner);
+        this.partner = partner;
+        this.setPartner(partner);
+        this.setLastname(partner.lastname);
     }
 }
