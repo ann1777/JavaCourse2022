@@ -39,14 +39,14 @@ public class Woman extends Person {
 
     @Override
     public void isRetired() {
-        System.out.printf("This woman is %s retired ",age>=60 ?"already":"not");
+        System.out.printf("This woman is %s retired ", age >= 60 ? "already" : "not");
     }
 
     @Override
-    public void registerPartnership2(Person partner) {
-        super.registerPartnership2(partner);
-        this.partner = partner;
-        this.setPartner(partner);
-        this.setLastname(partner.lastname);
+    public void registerPartnership2(Person partner, boolean isPartnerMale) {
+        super.registerPartnership2(partner, isPartnerMale);
+        if (isPartnerMale) {
+            this.setLastname(partner.lastname);
+        }
     }
 }

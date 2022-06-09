@@ -32,7 +32,7 @@ public class Main {
 
         System.out.println("\nman1: "+man1.name+" "+man1.lastname);
         System.out.println("man2: "+man2.name+" "+man2.lastname);
-        man1.registerPartnership2(man2);
+        man1.registerPartnership2(man2, true);
         System.out.println("After getting relationship with man2, man1 stays: "+man1.name+" "+man1.lastname);
         man1.deregisterPartnership(false, "Pidubniy");
         System.out.println("After breaking off relationship with man2, man1 stays: "+man1.name+" "+man1.lastname);
@@ -41,11 +41,15 @@ public class Main {
 
         System.out.println("\nwoman1: "+woman1.name+" "+woman1.lastname);
         System.out.println("man1: "+man1.name+" "+man1.lastname);
-        woman1.registerPartnership2(man1);
+        woman1.registerPartnership2(man1, true);
         System.out.println("After wedding with man1, woman1 became: "+woman1.name+" "+woman1.lastname);
         woman1.deregisterPartnership(true, "Loboda");
         System.out.println("After divorce man1, woman1 became: "+woman1.name+" "+woman1.lastname);
         System.out.println("woman1 again: "+woman1.name+" "+woman1.lastname);
+        System.out.println("\nwoman2: "+woman2.name+" "+woman2.lastname);
+        woman1.registerPartnership2(woman2, false);
+        System.out.println("After getting relationship with woman2, woman1 stays: "+woman1.name+" "+woman1.lastname);
+        System.out.println("Woman1 partner lastname is "+woman1.partner.lastname);
 
 
     }

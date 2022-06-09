@@ -85,7 +85,7 @@ public abstract class Person {
 //    }
 
     //create registerPartnership method get Person as data
-    public void registerPartnership2(Person partner) {
+    public void registerPartnership2(Person partner, boolean isPartnerMale) {
         if(this.isPartnerMale != partner.isPartnerMale){
             this.partner = partner;
             this.setPartner(partner);
