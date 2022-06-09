@@ -20,10 +20,6 @@ public class Man extends Person {
 
     @Override
     public void isRetired() {
-        if (this.age >= 65) {
-            System.out.println("Retired: " + Boolean.TRUE);
-        } else {
-            System.out.println("Retired: " + Boolean.FALSE);
-        }
+        System.out.printf("This man is %s ", age < 65 ? "still works" : "not works yet");
     }
 }

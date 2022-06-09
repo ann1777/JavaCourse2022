@@ -39,11 +39,7 @@ public class Woman extends Person {
 
     @Override
     public void isRetired() {
-        if(this.age >= 60) {
-            System.out.println("This woman retired is "+Boolean.TRUE);
-        } else {
-            System.out.println("This woman retired is "+Boolean.FALSE);
-        }
+        System.out.printf("This woman is %s retired ",age>=60 ?"already":"not");
     }
 
     @Override
