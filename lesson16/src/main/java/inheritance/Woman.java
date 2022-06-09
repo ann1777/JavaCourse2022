@@ -4,6 +4,7 @@ public class Woman extends Person {
     private int numberOfChildren;
     protected boolean isBlond;
     private double lostWeight;
+    String birthLastname;
 
     public Woman(String name, String lastname, int age, boolean isPartnerMale, int numberOfChildren, boolean isBlond,
                  double lostWeight) {
@@ -40,15 +41,29 @@ public class Woman extends Person {
     }
 
     @Override
+    public Person setPartner(Person partner) {
+        this.partner = partner;
+        partner.setPartner(this);
+        return partner;
+    }
+
+    @Override
     public void registerPartnership (String lastname){
         this.setLastname(lastname);
     }
 
     @Override
-    public boolean deregisterPartnership ( boolean revertLastName, String birthLastname){
+    public void registerPartnership2(Person partner) {
+        if (this.isPartnerMale() != partner.isPartnerMale()) {
+            this.setPartner(partner);
+            this.setLastname(partner.lastname);
+        }
+    }
+
+    @Override
+    public void deregisterPartnership (boolean revertLastName, String birthLastname){
         if (revertLastName) {
             this.setLastname(birthLastname);
         }
-        return true;
     }
 }

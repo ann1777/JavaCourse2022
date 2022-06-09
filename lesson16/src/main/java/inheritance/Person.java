@@ -8,6 +8,7 @@ public abstract class Person {
     protected int age;
     private boolean isPartnerMale;
     protected boolean isRetired;
+    protected Person partner;
 //    protected boolean revertLastname;
 
     //constructor for class Person
@@ -57,13 +58,19 @@ public abstract class Person {
         return isRetired;
     }
 
+    public abstract Person setPartner(Person partner);
+
     //create registerPartnership method
     public void registerPartnership(String lastname) {
     }
 
     //create deregisterPartnership method
-    public boolean deregisterPartnership(boolean revertLastname, String birthLastname) {
-        return true;
+    public void deregisterPartnership(boolean revertLastname, String birthLastname) {
     }
 
+    public void registerPartnership2(Person partner) {
+        if(this.isPartnerMale != partner.isPartnerMale) {
+            this.setPartner(partner);
+        }
+    }
 }
