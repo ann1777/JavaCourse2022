@@ -45,4 +45,9 @@ public class Woman extends Person {
             System.out.println("This woman retired is "+Boolean.FALSE);
         }
     }
+
+    @Override
+    public void registerPartnership2(Person partner) {
+        super.registerPartnership2(partner);
+    }
 }

@@ -4,11 +4,12 @@ package inheritance;
 public abstract class Person {
     protected String name;
     protected String lastname;
-    protected String maidenLastname;
+    protected String birthLastname;
     protected int age;
     private boolean isPartnerMale;
     protected boolean isRetired;
     protected boolean revertLastname;
+    protected Person partner;
 
     //constructor for class Person
     public Person(String name, String lastname, int age, boolean isPartnerMale) {
@@ -34,6 +35,14 @@ public abstract class Person {
     public void setPartnerMale(boolean partnerMale) {
         isPartnerMale = partnerMale;
     }
+//
+//    public void setRetired(boolean retired) {
+//        isRetired = retired;
+//    }
+//
+//    public void setRevertLastname(boolean revertLastname) {
+//        this.revertLastname = revertLastname;
+//    }
 
     //add Getters
     public String getName() {
@@ -47,6 +56,17 @@ public abstract class Person {
     public int getAge() {
         return age;
     }
+//
+//    public String getBirthLastname() {
+//        return birthLastname;
+//    }
+//
+//    public boolean isRevertLastname() {
+//        return revertLastname;
+//    }
+
+//    public Person getPartner() {
+//    }
 
     public boolean isPartnerMale() {
         return isPartnerMale;//return true
@@ -56,12 +76,27 @@ public abstract class Person {
     public void isRetired() {
     }
 
+    public void setPartner(Person partner){
+        this.partner = partner;
+    }
+
     //create registerPartnership method
-    public void registerPartnership(String lastname) {
+//    public void registerPartnership(String lastname) {
+//    }
+
+    //create registerPartnership method get Person as data
+    public void registerPartnership2(Person partner) {
+        if(this.isPartnerMale != partner.isPartnerMale){
+            this.partner = partner;
+            this.setPartner(partner);
+        }
     }
 
     //create deregisterPartnership method
     public void deregisterPartnership(boolean revertLastname, String maidenLastname) {
+        if(revertLastname) {
+            this.lastname = maidenLastname;
+        }
     }
 }
 

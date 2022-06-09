@@ -30,7 +30,12 @@ public class Main {
         System.out.println("\n"+woman2.name +" "+ woman2.lastname +" is "+ woman2.getAge()+" years old.");
         woman2.isRetired();
 
+        System.out.println("\nman1: "+man1.name+" "+man1.lastname);
+        System.out.println("man2: "+man2.name+" "+man2.lastname);
 
+
+        System.out.println("\nwoman1: "+woman1.name+" "+woman1.lastname);
+        System.out.println("woman2: "+woman2.name+" "+woman2.lastname);
 
 
     }
