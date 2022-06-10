@@ -35,14 +35,18 @@ public abstract class Person {
     public void setPartnerMale(boolean partnerMale) {
         isPartnerMale = partnerMale;
     }
-//
-//    public void setRetired(boolean retired) {
-//        isRetired = retired;
-//    }
-//
-//    public void setRevertLastname(boolean revertLastname) {
-//        this.revertLastname = revertLastname;
-//    }
+
+    public void setBirthLastname(String birthLastname) {
+        this.birthLastname = birthLastname;
+    }
+
+    public void setRetired(boolean retired) {
+        isRetired = retired;
+    }
+
+    public void setRevertLastname(boolean revertLastname) {
+        this.revertLastname = revertLastname;
+    }
 
     //add Getters
     public String getName() {
