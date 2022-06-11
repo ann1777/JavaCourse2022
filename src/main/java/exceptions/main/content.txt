@@ -1,0 +1,2 @@
+In this file there's some content
+This is the second line of the file
