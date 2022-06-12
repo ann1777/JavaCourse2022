@@ -1,4 +1,5 @@
 package exceptions;
+
 import java.util.List;
 import java.util.Random;
 
@@ -42,9 +43,21 @@ public class Module {
         try {
             requestBankProcessing(-1);
             System.out.println("Process payment error.Wrong payment amount.");
+        } catch (BankProcessingFailedException e2) {
+            System.out.println("Exception2 requestBankProcessing failed: " + e2.getMessage());
         }
-        catch (BankProcessingFailedException e2) {
-            System.out.println("Exception2 requestBankProcessing failed: "+e2.getMessage());
+        System.out.println("Please input paymentAmount 300 USA, clientID:1");
+        try {
+            processPayment(300, "USA", "1");
+            System.out.println("Your processPayment1 was Successfull");
+        } catch (BankProcessingFailedException e3) {
+            System.out.println("Exception3 requestBankProcessing failed: " + e3.getMessage());
+        } catch (InvalidPaymentCurrencyException e4) {
+            System.out.println("Exception4 requestBankProcessing failed: " + e4.getMessage());
+        } catch (InvalidPaymentAmountException e5) {
+            System.out.println("Process payment error.Wrong payment amount.");
         }
+
+
     }
 }
