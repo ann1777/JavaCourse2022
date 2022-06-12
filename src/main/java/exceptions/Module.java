@@ -68,6 +68,19 @@ public class Module {
         } catch (InvalidPaymentCurrencyException e) {
             e.printStackTrace();
         }
+        System.out.println("Please input paymentAmount 0 EUR");
+        try {
+            processPayment(0, "EUR", "834");
+            System.out.println("Your processPayment2 was Successfull");
+        }
+        catch (InvalidPaymentAmountException e6) {
+            System.out.println("Exception6 Invalid PaymentAmount: "+e6.getMessage());
+        }
+        catch (BankProcessingFailedException e7) {
+            System.out.println("Exception7 requestBankProcessing failed: "+e7.getMessage());
+        } catch (InvalidPaymentCurrencyException e) {
+            e.printStackTrace();
+        }
 
 
     }
