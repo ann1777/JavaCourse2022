@@ -1,37 +1,41 @@
 package exceptions;
 import java.util.List;
 import java.util.Random;
-//import exceptions.BankProcessingFailedException;
-//import exceptions.InvalidPaymentAmountException;
-//import exceptions.InvalidPaymentCurrencyException;
 
 public class Module {
     public static List<String> SUPPORTED_CURRENCIES = List.of("USD", "EUR", "JPY", "CHF");
 
 
-    public String processPayment(int paymentAmount, String currency, String clientID)
-            throws exceptions.InvalidPaymentCurrencyException, exceptions.InvalidPaymentAmountException, exceptions.BankProcessingFailedException {
+    public static String processPayment(int paymentAmount, String currency, String clientID) throws exceptions.InvalidPaymentCurrencyException, exceptions.InvalidPaymentAmountException, exceptions.BankProcessingFailedException {
 
         if (!SUPPORTED_CURRENCIES.contains(currency)) {
-            throw new InvalidPaymentCurrencyException(String.format("Currency %s not supported", currency));
+            throw new InvalidPaymentCurrencyException(String.format("Currency %s is not supported", currency));
         }
 
         if (paymentAmount <= 0) {
-            throw new InvalidPaymentAmountException("Negative or zero payment amount");
+            throw new InvalidPaymentAmountException("Opps. Negative or zero payment amount");
         }
-
         return requestBankProcessing(paymentAmount);
 
     }
 
-    public String requestBankProcessing(int paymentAmount) throws BankProcessingFailedException {
+    public static String requestBankProcessing(int paymentAmount) throws BankProcessingFailedException {
         // Some bank communication magic here
         Random random = new Random();
         int statusCode = random.nextInt(10);
         if (statusCode > 5) {
-            throw new BankProcessingFailedException(String.format("Bank returned result code %s", statusCode));
+            throw new BankProcessingFailedException("Process payment error. Wrong clientID. Try another one.");
         }
         return "trx_4knfsf4gs412355";
     }
-}
 
+    public static void main(String[] args) throws BankProcessingFailedException {
+        System.out.println("Please input paymentAmount 20");
+        try {
+            requestBankProcessing(20);
+            System.out.println("BankProcessing already finished.");
+        } catch (BankProcessingFailedException e1) {
+            System.out.println("Exception1 RequestBankProcessing failed: " + e1.getMessage());
+        }
+    }
+}
