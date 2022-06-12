@@ -62,9 +62,9 @@ public class Module {
             processPayment(-20, "JPY", "834");
             System.out.println("Your processPayment2 was Successfull");
         } catch (InvalidPaymentAmountException e4) {
-            System.out.println("Exception5 Invalid PaymentAmount: "+e4.getMessage());
+            System.out.println("Exception5 Invalid PaymentAmount: " + e4.getMessage());
         } catch (BankProcessingFailedException e5) {
-            System.out.println("Exception6 requestBankProcessing failed: "+e5.getMessage());
+            System.out.println("Exception6 requestBankProcessing failed: " + e5.getMessage());
         } catch (InvalidPaymentCurrencyException e) {
             e.printStackTrace();
         }
@@ -72,16 +72,23 @@ public class Module {
         try {
             processPayment(0, "EUR", "834");
             System.out.println("Your processPayment2 was Successfull");
-        }
-        catch (InvalidPaymentAmountException e6) {
-            System.out.println("Exception6 Invalid PaymentAmount: "+e6.getMessage());
-        }
-        catch (BankProcessingFailedException e7) {
-            System.out.println("Exception7 requestBankProcessing failed: "+e7.getMessage());
+        } catch (InvalidPaymentAmountException e6) {
+            System.out.println("Exception6 Invalid PaymentAmount: " + e6.getMessage());
+        } catch (BankProcessingFailedException e7) {
+            System.out.println("Exception7 requestBankProcessing failed: " + e7.getMessage());
         } catch (InvalidPaymentCurrencyException e) {
             e.printStackTrace();
         }
-
-
+        System.out.println("Please input paymentAmount 300 INR");
+        try {
+            processPayment(300, "INR", "753");
+            System.out.println("Your processPayment3 was Successfull");
+        } catch (BankProcessingFailedException e8) {
+            System.out.println("Exception8 requestBankProcessing failed: " + e8.getMessage());
+        } catch (InvalidPaymentCurrencyException e9) {
+            System.out.println("Exception9 Invalid PaymentCurrency: " + e9.getMessage());
+        } catch (InvalidPaymentAmountException e) {
+            e.printStackTrace();
+        }
     }
 }
