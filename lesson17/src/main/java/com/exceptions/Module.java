@@ -21,7 +21,7 @@ public class Module {
 
     }
 
-    public String requestBankProcessing(int paymentAmount) throws BankProcessingFailedException {
+    public static String requestBankProcessing(int paymentAmount) throws BankProcessingFailedException {
         // Some bank communication magic here
         Random random = new Random();
         int statusCode = random.nextInt(10);
@@ -31,7 +31,16 @@ public class Module {
         return "trx_4knfsf4gs412355";
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws BankProcessingFailedException {
+        System.out.println("\nBankProcessing1: Please input paymentAmount 20");
+        System.out.println("BankProcessing1 is started.");
+        try {
+            requestBankProcessing(20);
+            System.out.println("BankProcessing1 already finished.");
+            System.out.println("ProcessPayment1 is absent.");
+        } catch (BankProcessingFailedException e1) {
+            System.out.println("RequestBankProcessing1 failed. Exception1: " + e1.getMessage());
+        }
 
     }
 }
