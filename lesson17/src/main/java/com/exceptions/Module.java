@@ -59,6 +59,17 @@ public class Module {
         } catch (InvalidPaymentCurrencyException e4) {
             System.out.println("ProcessPayment3 failed. Exception3: " + e4.getMessage());
         }
-
+        System.out.println("\nBankProcessing4: Please input paymentAmount -20 JPY");
+        System.out.println("BankProcessing4 is started.");
+        try {
+            requestBankProcessing(-20);
+            System.out.println("BankProcessing4 was successful. ProcessPayment3 is started.");
+            processPayment(-20, "JPY", "834");
+            System.out.println("ProcessPayment3 was Successfull");
+        } catch (BankProcessingFailedException e1) {
+            System.out.println("BankProcessing4 failed. Exception1: " + e1.getMessage());
+        } catch (InvalidPaymentAmountException e5) {
+            System.out.println("ProcessPayment3 failed. Exception5: " + e5.getMessage());
+        }
     }
 }
