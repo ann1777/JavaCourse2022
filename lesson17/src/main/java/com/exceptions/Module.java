@@ -6,7 +6,7 @@ public class Module {
     public static List<String> SUPPORTED_CURRENCIES = List.of("USD", "EUR", "JPY", "CHF");
 
 
-    public String processPayment(int paymentAmount, String currency, String clientID)
+    public static String processPayment(int paymentAmount, String currency, String clientID)
             throws InvalidPaymentCurrencyException, InvalidPaymentAmountException, BankProcessingFailedException {
 
         if (!SUPPORTED_CURRENCIES.contains(currency)) {
@@ -31,22 +31,34 @@ public class Module {
         return "trx_4knfsf4gs412355";
     }
 
-    public static void main(String[] args) throws BankProcessingFailedException {
+    public static void main(String[] args) throws BankProcessingFailedException, InvalidPaymentCurrencyException, InvalidPaymentAmountException {
         System.out.println("\nBankProcessing1: Please input paymentAmount 20");
         System.out.println("BankProcessing1 is started.");
         try {
             requestBankProcessing(20);
             System.out.println("BankProcessing1 already finished.");
-            System.out.println("ProcessPayment1 is absent.");
         } catch (BankProcessingFailedException e1) {
-            System.out.println("RequestBankProcessing1 failed. Exception1: " + e1.getMessage());
+            System.out.println("BankProcessing1 failed. Exception1: " + e1.getMessage());
         }
-        System.out.println("Your BankProcessing already finished.\n");
-        System.out.println("Please input paymentAmount -1");
+        System.out.println("\nBankProcessing2: Please input paymentAmount -1");
+        System.out.println("Ooops. Wrong amount.");
         try {
             requestBankProcessing(-1);
         } catch (BankProcessingFailedException e2) {
-            System.out.println("Exception2 BankProcessing failed: You inputed wrong amount. " + e2.getMessage());
+            System.out.println("BankProcessing2 failed. Exception2: Connection with bank is interrupted. " + e2.getMessage());
         }
+        System.out.println("\nBankProcessing3: Please input paymentAmount 300 USA, clientID:1");
+        System.out.println("BankProcessing3 is started.");
+        try {
+            requestBankProcessing(300);
+            System.out.println("BankProcessing3 was successful. ProcessPayment2 is started.");
+            processPayment(300, "USA", "1");
+            System.out.println("ProcessPayment3 was Successfull");
+        } catch (BankProcessingFailedException e3) {
+            System.out.println("BankProcessing3 failed. Exception2: Connection with bank has interrupted. " + e3.getMessage());
+        } catch (InvalidPaymentCurrencyException e4) {
+            System.out.println("ProcessPayment3 failed. Exception3: " + e4.getMessage());
+        }
+
     }
 }
