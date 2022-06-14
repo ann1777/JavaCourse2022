@@ -71,5 +71,17 @@ public class Module {
         } catch (InvalidPaymentAmountException e5) {
             System.out.println("ProcessPayment3 failed. Exception5: " + e5.getMessage());
         }
+        System.out.println("\nBankProcessing5: Please input paymentAmount 0 EUR");
+        System.out.println("BankProcessing5 is started.");
+        try {
+            requestBankProcessing(0);
+            System.out.println("BankProcessing5 was successful. ProcessPayment4 is started.");
+            processPayment(0, "EUR", "834");
+            System.out.println("ProcessPayment5 was Successfull");
+        } catch (InvalidPaymentAmountException e7) {
+            System.out.println("ProcessPayment4 failed. Exception7: " + e7.getMessage());
+        } catch (BankProcessingFailedException e8) {
+            System.out.println("ProcessPayment4 failed. Exception8: " + e8.getMessage());
+        }
     }
 }
