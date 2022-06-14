@@ -33,7 +33,7 @@ public class Module {
 
     public static void main(String[] args) throws BankProcessingFailedException, InvalidPaymentCurrencyException, InvalidPaymentAmountException {
         System.out.println("\nBankProcessing1: Please input paymentAmount 20");
-        System.out.println("BankProcessing1 is started.");
+        System.out.println("BankProcessing1 is started with correct paymentAmount, without currency walue.");
         try {
             requestBankProcessing(20);
             System.out.println("BankProcessing1 already finished.");
@@ -41,17 +41,19 @@ public class Module {
             System.out.println("BankProcessing1 failed. Exception1: " + e1.getMessage());
         }
         System.out.println("\nBankProcessing2: Please input paymentAmount -1");
-        System.out.println("Ooops. Wrong amount.");
+        System.out.println("BankProcessing1 is started with wrong paymentAmount, without currency walue.");
         try {
             requestBankProcessing(-1);
+            System.out.println("BankProcessing2 already finished.");
         } catch (BankProcessingFailedException e2) {
             System.out.println("BankProcessing2 failed. Exception2: Connection with bank is interrupted. " + e2.getMessage());
         }
         System.out.println("\nBankProcessing3: Please input paymentAmount 300 USA, clientID:1");
-        System.out.println("BankProcessing3 is started.");
+        System.out.println("BankProcessing3 is started with wrong currency value.");
         try {
             requestBankProcessing(300);
             System.out.println("BankProcessing3 was successful. ProcessPayment2 is started.");
+
             processPayment(300, "USA", "1");
             System.out.println("ProcessPayment3 was Successfull");
         } catch (BankProcessingFailedException e3) {
@@ -60,7 +62,7 @@ public class Module {
             System.out.println("ProcessPayment3 failed. Exception3: " + e4.getMessage());
         }
         System.out.println("\nBankProcessing4: Please input paymentAmount -20 JPY");
-        System.out.println("BankProcessing4 is started.");
+        System.out.println("BankProcessing4 is started with negative payment amount.");
         try {
             requestBankProcessing(-20);
             System.out.println("BankProcessing4 was successful. ProcessPayment3 is started.");
@@ -72,7 +74,7 @@ public class Module {
             System.out.println("ProcessPayment3 failed. Exception5: " + e5.getMessage());
         }
         System.out.println("\nBankProcessing5: Please input paymentAmount 0 EUR");
-        System.out.println("BankProcessing5 is started.");
+        System.out.println("BankProcessing5 is started with zero payment amount.");
         try {
             requestBankProcessing(0);
             System.out.println("BankProcessing5 was successful. ProcessPayment4 is started.");
