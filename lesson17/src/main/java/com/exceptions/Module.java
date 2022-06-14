@@ -83,5 +83,15 @@ public class Module {
         } catch (BankProcessingFailedException e8) {
             System.out.println("ProcessPayment4 failed. Exception8: " + e8.getMessage());
         }
+        System.out.println("\nBankProcessing6: Please input paymentAmount 100 CHF");
+        System.out.println("BankProcessing6 starts with correct parameter values.");
+        try {
+            requestBankProcessing(100);
+            System.out.println("BankProcessing6 was successful. ProcessPayment6 is started.");
+            processPayment(100, "CHF", "153");
+            System.out.println("Your processPayment6 was Successfull");
+        } catch (BankProcessingFailedException e1) {
+            System.out.println("ProcessPayment6 failed. Exception2: Connection with bank has interrupted. " + e1.getMessage());
+        }
     }
 }
