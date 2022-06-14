@@ -41,6 +41,12 @@ public class Module {
         } catch (BankProcessingFailedException e1) {
             System.out.println("RequestBankProcessing1 failed. Exception1: " + e1.getMessage());
         }
-
+        System.out.println("Your BankProcessing already finished.\n");
+        System.out.println("Please input paymentAmount -1");
+        try {
+            requestBankProcessing(-1);
+        } catch (BankProcessingFailedException e2) {
+            System.out.println("Exception2 BankProcessing failed: You inputed wrong amount. " + e2.getMessage());
+        }
     }
 }
