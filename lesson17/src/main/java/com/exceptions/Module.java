@@ -45,7 +45,7 @@ public class Module {
         try {
             requestBankProcessing(-1);
         } catch (BankProcessingFailedException e2) {
-            System.out.println("BankProcessing2 failed. Exception2: Connection with bank is interrupted. " + e2.getMessage());
+            System.out.println("BankProcessing2 failed. Exception2: Connection with bank has interrupted. " + e2.getMessage());
         }
         System.out.println("\nBankProcessing3: Please input paymentAmount 300 USA, clientID:1");
         System.out.println("BankProcessing3 is started.");
@@ -70,6 +70,28 @@ public class Module {
             System.out.println("BankProcessing4 failed. Exception1: " + e1.getMessage());
         } catch (InvalidPaymentAmountException e5) {
             System.out.println("ProcessPayment3 failed. Exception5: " + e5.getMessage());
+        }
+        System.out.println("\nBankProcessing5: Please input paymentAmount 0 EUR");
+        System.out.println("BankProcessing5 is started.");
+        try {
+            requestBankProcessing(0);
+            System.out.println("BankProcessing5 was successful. ProcessPayment4 is started.");
+            processPayment(0, "EUR", "834");
+            System.out.println("ProcessPayment5 was Successfull");
+        } catch (InvalidPaymentAmountException e6) {
+            System.out.println("ProcessPayment4 failed. Exception5: " + e6.getMessage());
+        } catch (BankProcessingFailedException e7) {
+            System.out.println("ProcessPayment4 failed. Exception6: " + e7.getMessage());
+        }
+        System.out.println("\nBankProcessing6: Please input paymentAmount 100 CHF");
+        System.out.println("BankProcessing6 starts with correct parameter values.");
+        try {
+            requestBankProcessing(100);
+            System.out.println("BankProcessing6 was successful. ProcessPayment6 is started.");
+            processPayment(100, "CHF", "153");
+            System.out.println("Your processPayment6 was Successfull");
+        } catch (BankProcessingFailedException e1) {
+            System.out.println("ProcessPayment6 failed. Exception2: Connection with bank has interrupted. " + e1.getMessage());
         }
     }
 }
