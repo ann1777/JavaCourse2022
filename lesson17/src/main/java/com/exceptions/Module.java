@@ -1,5 +1,4 @@
 package com.exceptions;
-
 import java.util.List;
 import java.util.Random;
 
@@ -30,5 +29,9 @@ public class Module {
             throw new BankProcessingFailedException(String.format("Bank returned result code %s", statusCode));
         }
         return "trx_4knfsf4gs412355";
+    }
+
+    public static void main(String[] args) {
+
     }
 }
