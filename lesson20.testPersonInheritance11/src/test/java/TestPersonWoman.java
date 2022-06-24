@@ -3,10 +3,23 @@ import org.testng.annotations.*;
 
 import java.util.HashMap;
 
-public class TestPersonWoman {
-    protected static TestPersonWoman woman1 = new TestPersonWoman();
-    protected static TestPersonWoman woman2 = new TestPersonWoman();
-    private final HashMap<TestPersonWoman, String> parseLocaleData = new HashMap<TestPersonWoman, String>();
+public class TestPersonWoman extends Woman {
+    private static final TestPersonWoman woman1 = new TestPersonWoman();
+    private static final TestPersonWoman woman2 = new TestPersonWoman();
+    private final HashMap<TestPersonWoman, String> parseLocaleData = new HashMap<>();
+
+    public TestPersonWoman(String name, String lastname, int age, boolean isPartnerMale, int numberOfChildren, boolean isBlond, double lostWeight) {
+        super(name, lastname, age, isPartnerMale, numberOfChildren, isBlond, lostWeight);
+        this.name = name;
+        this.lastname = birthLastname;
+        this.age = age;
+        this.isBlond = isBlond;
+    }
+
+    public TestPersonWoman() {
+
+    }
+
 
     @BeforeClass
     private void Setup(){
@@ -61,6 +74,26 @@ public class TestPersonWoman {
         return this.isBlond(true);
     }
 
+    public int setNumberOfChildren(int age, int numberOfChildren) {
+        System.out.println("----- START OF Verify function setNumberOfChildren in TestClassWoman class -------------");
+        if (this.age > 18) {
+            try {
+                this.setNumberOfChildren(numberOfChildren);
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
+        }
+        else{
+            System.out.println("She is too young woman to have children.");
+            }
+            System.out.println("----- END OF Verify function setNumberOfChildren in TestClassWoman class -------------");
+            return numberOfChildren;
+    }
+
+    public int getNumberOfChildren() {
+        return this.numberOfChildren;
+    }
+
     @Test(description = "this is check if setIsBlond return isBlond")
     public void testIsBlond() {
         System.out.println("----- START OF testing function isBlond in TestClassWoman class -------------");
@@ -71,4 +104,19 @@ public class TestPersonWoman {
         Assert.assertEquals(woman2.setIsBlond(), this.isBlond(true));
         System.out.println("----- END OF testing function isBlond in TestClassWoman class -------------");
     }
+
+    @Test(description = "this is check if setNumberOfChildren works")
+    public void setNumberOfChildren(){
+        System.out.println("----- START OF testing function setNumberOfChildren in TestClassWoman class -------------");
+        woman1.setAge(15);
+        System.out.println("Woman1 is "+woman1.getAge()+" age old");
+        woman1.setNumberOfChildren(16, 2);
+        System.out.println("She has "+woman1.getNumberOfChildren()+" children");
+        woman2.setAge(22);
+        System.out.println("Woman2 is "+woman2.getAge()+" age old");
+        woman2.setNumberOfChildren(22, 4);
+        System.out.println("She has already "+woman2.getNumberOfChildren()+" children");
+        System.out.println("----- END OF testing function setNumberOfChildren in TestClassWoman class -------------");
+    }
+
 }

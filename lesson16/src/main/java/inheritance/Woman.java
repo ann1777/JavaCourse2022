@@ -1,7 +1,12 @@
 package inheritance;
 
-public class Woman extends Person {
+public class Woman extends inheritance.Person {
     private int numberOfChildren;
+
+    public boolean isBlond() {
+        return isBlond;
+    }
+
     protected boolean isBlond;
     private double lostWeight;
 
@@ -21,16 +26,21 @@ public class Woman extends Person {
         return lostWeight;
     }
 
-    public boolean isBlond() {
-        return isBlond;
+    public boolean setIsBlond(boolean isBlond) {
+        if(setIsBlond(true))
+        {
+            System.out.println(true);
+            return true;
+        }
+        else
+        {
+            System.out.println(false);
+            return false;
+        }
     }
 
     public void setNumberOfChildren(int numberOfChildren) {
         this.numberOfChildren = numberOfChildren;
-    }
-
-    public void setBlond(boolean blond) {
-        isBlond = blond;
     }
 
     public void setLostWeight(double lostWeight) {
@@ -43,7 +53,7 @@ public class Woman extends Person {
     }
 
     @Override
-    public void registerPartnership2(Person partner, boolean isPartnerMale) {
+    public void registerPartnership2(inheritance.Person partner, boolean isPartnerMale) {
         super.registerPartnership2(partner, isPartnerMale);
         if (isPartnerMale) {
             this.setLastname(partner.lastname);
