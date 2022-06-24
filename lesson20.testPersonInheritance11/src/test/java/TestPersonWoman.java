@@ -7,6 +7,7 @@ public class TestPersonWoman extends Woman {
     private static final TestPersonWoman woman1 = new TestPersonWoman();
     private static final TestPersonWoman woman2 = new TestPersonWoman();
     private final HashMap<TestPersonWoman, String> parseLocaleData = new HashMap<>();
+    private double setWeight;
 
     public TestPersonWoman(String name, String lastname, int age, boolean isPartnerMale, int numberOfChildren, boolean isBlond, double lostWeight) {
         super(name, lastname, age, isPartnerMale, numberOfChildren, isBlond, lostWeight);
@@ -117,6 +118,42 @@ public class TestPersonWoman extends Woman {
         woman2.setNumberOfChildren(22, 4);
         System.out.println("She has already "+woman2.getNumberOfChildren()+" children");
         System.out.println("----- END OF testing function setNumberOfChildren in TestClassWoman class -------------");
+    }
+
+    @Test(description = "this is check if isRetired works for class Woman")
+    public void setIsRetired(){
+        System.out.println("----- START OF testing function isRetired in TestClassWoman class -------------");
+        woman1.setAge(18);
+        System.out.println("Woman1 is "+woman1.getAge()+" age old");
+        woman1.isRetired();
+        woman2.setAge(60);
+        System.out.println("Woman2 is "+woman2.getAge()+" age old");
+        woman2.isRetired();
+        woman2.setAge(59);
+        System.out.println("Woman2 is "+woman2.getAge()+" age old");
+        woman2.isRetired();
+        System.out.println("----- END OF testing function isRetired in TestClassWoman class -------------");
+
+    }
+
+    @Test(description = "this is check if setLostWeight works for class Woman")
+    public void setLostWeight() {
+        System.out.println("----- START OF testing function setLostWeight in TestClassWoman class -------------");
+        woman1.weight = (double) 55.00;
+        System.out.println("This woman had have " + woman1.weight + " kg of weight");
+        woman1.setLostWeight(12.4);
+        System.out.println("She had lost " + 12.4 + " kg of weight");
+        System.out.println("----- END OF testing function setLostWeight in TestClassWoman class -------------");
+    }
+
+    @Test(description = "this is check if getCurrentWeight works for class Woman")
+    public void getCurrentWeight() {
+        System.out.println("----- START OF testing function getCurrentWeight in TestClassWoman class -------------");
+        woman1.setWeight(55.00);
+        System.out.println("A few months ago she has "+woman1.getWeight()+" kg of weight");
+        woman1.getCurrentWeight(55.00, 12.40);
+        System.out.println("After she lost 12.4 kg she has "+ woman1.getCurrentWeight(55.00, 12.40) + " kg of weight now");
+        System.out.println("----- END OF testing function getCurrentWeight in TestClassWoman class -------------");
     }
 
 }

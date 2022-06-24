@@ -1,5 +1,7 @@
 public class Woman extends Person {
-    private int numberOfChildren;
+    protected int numberOfChildren;
+
+    protected double weight;
 
     public boolean isBlond() {
         return isBlond;
@@ -16,12 +18,25 @@ public class Woman extends Person {
         this.lostWeight = lostWeight;
     }
 
+    public Woman(){
+        super();
+    }
+
     public int getNumberOfChildren() {
         return numberOfChildren;
     }
 
-    public double getLostWeight() {
-        return lostWeight;
+    public double getWeight() {
+        return this.weight;
+    }
+
+    public void setLostWeight(double lostWeight) {
+        this.lostWeight = lostWeight;
+    }
+
+    public double getCurrentWeight(double weight, double lostWeight) {
+        weight -= lostWeight;
+        return weight;
     }
 
     public boolean setIsBlond(boolean isBlond) {
@@ -37,17 +52,17 @@ public class Woman extends Person {
         }
     }
 
+    public void setWeight(double weight) {
+        this.weight = weight;
+    }
+
     public void setNumberOfChildren(int numberOfChildren) {
         this.numberOfChildren = numberOfChildren;
     }
 
-    public void setLostWeight(double lostWeight) {
-        this.lostWeight = lostWeight;
-    }
-
     @Override
     public void isRetired() {
-        System.out.printf("This woman is %s retired ", age >= 60 ? "already" : "not");
+        System.out.printf("This woman is %s retired \n", age >= 60 ? "already" : "not");
     }
 
     @Override

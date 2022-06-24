@@ -16,6 +16,9 @@ public abstract class Person {
         this.isPartnerMale = isPartnerMale;
     }
 
+    public Person() {
+    }
+
     //add setters
     public void setName(String name) {
         this.name = name;
