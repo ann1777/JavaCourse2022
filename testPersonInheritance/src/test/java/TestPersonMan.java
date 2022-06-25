@@ -1,4 +1,5 @@
 import lesson16.src.main.java.inheritance.Man;
+import org.testng.Assert;
 import org.testng.annotations.*;
 
 import java.util.HashMap;
@@ -60,6 +61,7 @@ public class TestPersonMan extends Man {
         man2.setAge(65);
         System.out.println("\nMan2 is " + man2.getAge() + " age old");
         man2.isRetired();
+        Assert.assertEquals(man2.getAge(), 65);
         man2.setAge(64);
         System.out.println("\nMan2 is " + man2.getAge() + " age old");
         man2.isRetired();
@@ -70,8 +72,10 @@ public class TestPersonMan extends Man {
         System.out.println("----- START OF testing function setNumberOfChildren in TestClassWoman class -------------");
         man1.setGrossSalary(1200000.00);
         System.out.println("Man1 has " + man1.getGrossSalary() + " per month");
+        Assert.assertEquals(man1.getGrossSalary(), 1200000.00);
         man2.setGrossSalary(2000500.00);
         System.out.println("And Man2 has " + man2.getGrossSalary() + " per month");
+        Assert.assertEquals(man2.getGrossSalary(), 2000500.00);
         System.out.println("----- END OF testing function setNumberOfChildren in TestClassWoman class -------------");
     }
     @Test(description = "this is check if setPartnerMale works")
@@ -84,18 +88,22 @@ public class TestPersonMan extends Man {
         man2.setLastname("Davidenko");
         System.out.println("Man1's boyfriend name is "+ man2.getLastname());
         System.out.println("But man1 lastname is still "+man1.getLastname());
+        Assert.assertEquals(man1.lastname, "Krugovoy");
+        Assert.assertTrue(man2.lastname == "Davidenko");
         System.out.println("----- END OF testing function setNumberOfChildren in TestClassWoman class -------------");
     }
 
     @Test(description = "this is check if isSmoking works")
-    public void isSmoking(){
+    public void isThisSmoking(){
         System.out.println("----- START OF testing function setNumberOfChildren in TestClassWoman class -------------");
         man1.setSmoking(true);
         man1.setLastname("Krugovoy");
-        System.out.println(man1.getLastname()+" is smoking "+man1.isSmoking);
-        man2.setSmoking(false);;
-        man2.setLastname("Davidenko");
-        System.out.println(man2.getLastname()+" is smoking "+man2.isSmoking);
+        Assert.assertEquals(man1.isSmoking, true);
+        System.out.println(man1.getLastname()+ " is smoking " +man1.isSmoking());
+        man2.setSmoking(false);
+        man2.setLastname("Bureviy");
+        Assert.assertFalse(man2.isSmoking());
+        System.out.println(man2.getLastname()+ " is smoking " +man2.isSmoking());
         System.out.println("----- END OF testing function setNumberOfChildren in TestClassWoman class -------------");
     }
 
