@@ -1,11 +1,10 @@
-package lesson20.testPersonInheritance.src.test.java;
-
+import lesson16.src.main.java.inheritance.Woman;
 import org.testng.Assert;
 import org.testng.annotations.*;
 
 import java.util.HashMap;
 
-public class TestPersonWoman extends lesson16.src.main.java.inheritance.Woman {
+public class TestPersonWoman extends Woman {
     private static final TestPersonWoman woman1 = new TestPersonWoman();
     private static final TestPersonWoman woman2 = new TestPersonWoman();
     private final HashMap<TestPersonWoman, String> parseLocaleData = new HashMap<>();
@@ -76,10 +75,12 @@ public class TestPersonWoman extends lesson16.src.main.java.inheritance.Woman {
         System.out.println("Woman1 is " + woman1.getAge() + " age old");
         woman1.setNumberOfChildren(2);
         System.out.println("She has " + woman1.getNumberOfChildren() + " children");
+        Assert.assertEquals(this.getNumberOfChildren(), 0);
         woman2.setAge(22);
         System.out.println("Woman2 is " + woman2.getAge() + " age old");
         woman2.setNumberOfChildren(4);
         System.out.println("She has already " + woman2.getNumberOfChildren() + " children");
+        Assert.assertEquals(woman2.getNumberOfChildren(), 4);
         System.out.println("----- END OF testing function setNumberOfChildren in TestClassWoman class -------------");
     }
 
@@ -89,13 +90,14 @@ public class TestPersonWoman extends lesson16.src.main.java.inheritance.Woman {
         woman1.setAge(18);
         System.out.println("Woman1 is " + woman1.getAge() + " age old");
         woman1.isRetired();
-        woman2.setAge(60);
-        System.out.println("Woman2 is " + woman2.getAge() + " age old");
+        woman2.setAge(61);
+        System.out.println("\nWoman2 is " + woman2.getAge() + " age old");
         woman2.isRetired();
+        Assert.assertEquals(woman2.getAge(), 61);
         woman2.setAge(59);
-        System.out.println("Woman2 is " + woman2.getAge() + " age old");
+        System.out.println("\nWoman2 is " + woman2.getAge() + " age old");
         woman2.isRetired();
-        System.out.println("----- END OF testing function isRetired in TestClassWoman class -------------");
+        System.out.println("\n----- END OF testing function isRetired in TestClassWoman class -------------");
     }
 
     @Test(description = "this is check if getCurrentWeight works for class Woman")
