@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="TestPersonSuite">
+    <test name="Man1Test1">
+        <classes>
+            <class name="TestPersonMan">
+            </class>
+        </classes>
+    </test>
+    <test name="Man1Test2">
+        <groups>
+            <run>
+                <include name="Man1"/>
+                <exclude name="Man2"/>
+            </run>
+        </groups>
+        <classes>
+            <class name = "TestPersonMan">
+                <methods>
+                    <include name="setIsRetired"/>
+                    <include name="isThisSmoking"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Man2Test1">
+        <groups>
+            <run>
+                <include name="Man2"/>
+                <exclude name="Man1"/>
+            </run>
+        </groups>
+        <classes>
+            <class name = "TestPersonMan">
+                <methods>
+                    <include name="setPartnerMale"/>
+                    <include name="setGrossSalary"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="WomanTest1">
+        <groups>
+            <run>
+                <include name="Woman1"/>
+                <include name="Woman2"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="TestPersonWoman">
+                <methods>
+                    <include name="testIsBlond"/>
+                    <include name="getCurrentWeight"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="WomanTest2">
+        <groups>
+            <run>
+                <include name="Woman1"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="TestPersonWoman">
+                <methods>
+                   <include name="setIsRetired"/>
+                   <include name="setNumberOfChildren"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
+

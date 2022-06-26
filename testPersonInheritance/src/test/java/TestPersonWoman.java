@@ -59,34 +59,36 @@ public class TestPersonWoman extends Woman {
 
     @Test(description = "this is check if setIsBlond return isBlond")
     public void testIsBlond() {
-        System.out.println("----- START OF testing function isBlond in TestClassWoman class -------------");
+        System.out.println("\n----- START OF testing function testIsBlond in TestClassWoman class -------------");
         woman1.setIsBlond();
         Assert.assertEquals(woman1.isBlond(true), this.isBlond(true));
         Assert.assertEquals(woman1.setIsBlond(), this.isBlond(true));
+        System.out.print("Woman1 is blond " + woman2.isBlond(true)+"\n");
         Assert.assertEquals(woman2.isBlond(false), this.isBlond(false));
         Assert.assertEquals(woman2.setIsBlond(), this.isBlond(true));
-        System.out.println("----- END OF testing function isBlond in TestClassWoman class -------------");
+        System.out.println("...but Woman2 is blond " + woman2.isBlond(false));
+        System.out.println("----- END OF testing function testIsBlond in TestClassWoman class -------------");
     }
 
-    @Test(description = "this is check if setNumberOfChildren works")
+    @Test(description = "this is check if setNumberOfChildren and getNumberOfChildren works")
     public void setNumberOfChildren() {
-        System.out.println("----- START OF testing function setNumberOfChildren in TestClassWoman class -------------");
+        System.out.println("\n----- START OF testing function setNumberOfChildren and getNumberOfChildren in TestClassWoman class -------------");
         woman1.setAge(15);
         System.out.println("Woman1 is " + woman1.getAge() + " age old");
         woman1.setNumberOfChildren(2);
-        System.out.println("She has " + woman1.getNumberOfChildren() + " children");
+        System.out.println("Woman1 has " + woman1.getNumberOfChildren() + " children");
         Assert.assertEquals(this.getNumberOfChildren(), 0);
         woman2.setAge(22);
         System.out.println("Woman2 is " + woman2.getAge() + " age old");
         woman2.setNumberOfChildren(4);
-        System.out.println("She has already " + woman2.getNumberOfChildren() + " children");
+        System.out.println("Woman2 has already " + woman2.getNumberOfChildren() + " children");
         Assert.assertEquals(woman2.getNumberOfChildren(), 4);
-        System.out.println("----- END OF testing function setNumberOfChildren in TestClassWoman class -------------");
+        System.out.println("----- END OF testing function setNumberOfChildren and getNumberOfChildren in TestClassWoman class -------------");
     }
 
-    @Test(description = "this is check if isRetired works for class Woman")
+    @Test(description = "this is check if setIsRetired snd setAge works for class Woman")
     public void setIsRetired() {
-        System.out.println("----- START OF testing function isRetired in TestClassWoman class -------------");
+        System.out.println("\n----- START OF testing function setIsRetired and setAge in TestClassWoman class -------------");
         woman1.setAge(18);
         System.out.println("Woman1 is " + woman1.getAge() + " age old");
         woman1.isRetired();
@@ -97,16 +99,16 @@ public class TestPersonWoman extends Woman {
         woman2.setAge(59);
         System.out.println("\nWoman2 is " + woman2.getAge() + " age old");
         woman2.isRetired();
-        System.out.println("\n----- END OF testing function isRetired in TestClassWoman class -------------");
+        System.out.println("\n----- END OF testing function setIsRetired and setAge in TestClassWoman class -------------");
     }
 
-    @Test(description = "this is check if getCurrentWeight works for class Woman")
+    @Test(description = "this is check if getCurrentWeight and setCurrentWeight works for class Woman")
     public void getCurrentWeight() {
-        System.out.println("----- START OF testing function getCurrentWeight in TestClassWoman class -------------");
+        System.out.println("\n----- START OF testing function getCurrentWeight in TestClassWoman class -------------");
         woman1.setCurrentWeight(55.00);
-        System.out.println("A few months ago she has " + woman1.weight + " kg of weight");
+        System.out.println("A few months ago Woman1 has " + woman1.weight + " kg of weight");
         woman1.getCurrentWeight(55.00, 12.40);
-        System.out.println("After she lost 12.4 kg she has " + woman1.getCurrentWeight(55.00, 12.40) + " kg of weight now");
+        System.out.println("After she lost 12.4 kg Woman1 has " + woman1.getCurrentWeight(55.00, 12.40) + " kg of weight now");
         Assert.assertEquals(woman1.getCurrentWeight(55.00, 12.40), 42.6);
         System.out.println("----- END OF testing function getCurrentWeight in TestClassWoman class -------------");
     }
