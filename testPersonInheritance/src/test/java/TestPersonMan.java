@@ -90,6 +90,7 @@ public class TestPersonMan extends Man {
         System.out.println("But man1 lastname is still "+man1.getLastname());
         Assert.assertEquals(man1.lastname, "Krugovoy");
         Assert.assertTrue(man2.lastname == "Davidenko");
+        assert "Davidenko".equals(man2.lastname );
         System.out.println("----- END OF testing function setNumberOfChildren in TestClassWoman class -------------");
     }
 
