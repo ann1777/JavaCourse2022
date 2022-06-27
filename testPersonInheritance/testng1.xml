@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="TestPersonSuite2">
-    <test name="Man1TestSettersAndGetters">
-        <classes>
-            <class name="TestPersonMan">
-            </class>
-        </classes>
-    </test>
-    <test name="Man1TestSetters">
+    <test name="ManTestSettersAndGetters">
         <groups>
             <run>
                 <include name="Man1"/>
@@ -28,4 +22,20 @@
             </class>
         </classes>
     </test>
+    <test name="WomanTestSettersAndGetters">
+        <groups>
+            <run>
+                <include name="Woman1"/>
+                <include name="Woman2"/>
+            </run>
+        </groups>
+        <classes>
+            <class name = "TestPersonWoman">
+                <methods>
+
+                </methods>
+            </class>
+        </classes>
+    </test>
 </suite>
+
