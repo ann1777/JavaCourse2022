@@ -2,13 +2,7 @@ package lesson16.src.main.java.inheritance;
 
 public class Woman extends Person {
 
-    protected double currentWeight;
-    private int numberOfChildren;
-
-    public boolean isBlond(boolean b) {
-        return isBlond;
-    }
-
+    public int numberOfChildren;
     protected boolean isBlond;
     protected double weight;
     private double lostWeight;
@@ -16,10 +10,11 @@ public class Woman extends Person {
     public Woman(String name, String lastname, int age, boolean isPartnerMale, int numberOfChildren, boolean isBlond,
                  double lostWeight) {
         super(name, lastname, age, isPartnerMale);
-        this.setNumberOfChildren(numberOfChildren);
+        this.numberOfChildren = numberOfChildren;
         this.isBlond = isBlond;
-        this.setLostWeight(lostWeight);
+        this.lostWeight = lostWeight;
     }
+
     public Woman() {
         super();
     }
@@ -27,12 +22,17 @@ public class Woman extends Person {
     public int getNumberOfChildren() {
         return numberOfChildren;
     }
+
     public void setCurrentWeight(double weight) {
         this.weight = weight;
     }
 
     public double getLostWeight() {
         return lostWeight;
+    }
+
+    public boolean isBlond(boolean b) {
+        return isBlond;
     }
 
     public boolean setIsBlond() {
@@ -47,6 +47,7 @@ public class Woman extends Person {
         System.out.println("----- END OF Verify function isBlond in TestClassWoman class -------------");
         return this.isBlond(true);
     }
+
     public void setNumberOfChildren(int numberOfChildren) {
         System.out.println("----- START OF Verify function setNumberOfChildren in TestClassWoman class -------------");
         if (this.age > 18) {
@@ -62,23 +63,25 @@ public class Woman extends Person {
         System.out.println("----- END OF Verify function setNumberOfChildren in TestClassWoman class -------------");
     }
 
-    public void setWeight(double weight) {
-        this.weight = weight;
-    }
-
     public void setLostWeight(double lostWeight) {
         this.lostWeight = lostWeight;
     }
+
     public double getCurrentWeight(double weight, double lostWeight) {
         this.weight = weight;
         this.setLostWeight(lostWeight);
-        double currentWeight = weight - lostWeight;
-        return currentWeight;
+        this.weight = weight - lostWeight;
+        return this.weight;
     }
 
     @Override
-    public void isRetired() {
-        System.out.printf("This woman is %s retired ", age >= 60 ? "already" : "not");
+    public boolean isRetired() {
+        if (this.age>=60){
+            System.out.println("This woman is already retired");
+            return this.isRetired = true;
+        }
+        System.out.println("This woman is not retired yet");
+        return this.isRetired = false;
     }
 
     @Override
@@ -86,6 +89,8 @@ public class Woman extends Person {
         super.registerPartnership2(partner, isPartnerMale);
         if (isPartnerMale) {
             this.setLastname(partner.lastname);
+            this.partner = partner;
+            this.setPartner(partner);
         }
     }
 }

@@ -32,7 +32,13 @@
         <classes>
             <class name = "TestPersonWoman">
                 <methods>
-
+                    <include name="setWomanName"/>
+                    <include name="setWomanLastname"/>
+                    <include name="setAge"/>
+                    <include name="testIsBlond"/>
+                    <include name="setNumberOfChildren"/>
+                    <include name="setIsRetired"/>
+                    <include name="getCurrentWeight"/>
                 </methods>
             </class>
         </classes>

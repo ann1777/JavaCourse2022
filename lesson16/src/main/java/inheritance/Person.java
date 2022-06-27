@@ -1,4 +1,4 @@
-package inheritance;
+package lesson16.src.main.java.inheritance;
 
 //class Person has name, lastname, age and isPartnerMale fields
 public abstract class Person {
@@ -17,6 +17,9 @@ public abstract class Person {
         this.lastname = lastname;
         this.age = age;
         this.isPartnerMale = isPartnerMale;
+    }
+
+    public Person() {
     }
 
     //add setters
@@ -40,12 +43,10 @@ public abstract class Person {
         this.birthLastname = birthLastname;
     }
 
-    public void setRetired(boolean retired) {
-        isRetired = retired;
-    }
-
-    public void setRevertLastname(boolean revertLastname) {
-        this.revertLastname = revertLastname;
+    public boolean revertLastname() {
+        this.revertLastname = true;
+        this.setLastname(birthLastname);
+        return false;
     }
 
     //add Getters
@@ -60,33 +61,16 @@ public abstract class Person {
     public int getAge() {
         return age;
     }
-//
-//    public String getBirthLastname() {
-//        return birthLastname;
-//    }
-//
-//    public boolean isRevertLastname() {
-//        return revertLastname;
-//    }
-
-//    public Person getPartner() {
-//    }
-
-//    public boolean isPartnerMale() {
-//        return isPartnerMale;//return true
-//    }
 
     //create isRetired method
-    public void isRetired() {
+    public boolean isRetired() {
+        return this.isRetired = true;
     }
 
     public void setPartner(Person partner){
         this.partner = partner;
     }
 
-    //create registerPartnership method
-//    public void registerPartnership(String lastname) {
-//    }
 
     //create registerPartnership method get Person as data
     public void registerPartnership2(Person partner, boolean isPartnerMale) {
@@ -100,6 +84,9 @@ public abstract class Person {
     public void deregisterPartnership(boolean revertLastname, String birthLastname) {
         if(revertLastname) {
             this.lastname = birthLastname;
+            this.partner.setPartner(null);
+            this.partner.setLastname(this.partner.birthLastname);
+            this.partner = null;
         }
     }
 }
