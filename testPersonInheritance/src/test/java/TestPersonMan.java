@@ -75,7 +75,7 @@ public class TestPersonMan extends Person {
         man2.setName("Sergiy");
         assert "Sergiy".equals(man2.getName());
         System.out.println("Man2 has name Sergiy");
-        System.out.println("\n----- END OF testing function setManName in TestClassMan class -------------");
+        System.out.println("----- END OF testing function setManName in TestClassMan class -------------");
     }
 
     @Test(description = "This is check if setLastname and getLastname methods works")
@@ -87,7 +87,7 @@ public class TestPersonMan extends Person {
         man2.setLastname("Lopata");
         assert "Lopata".equals(man2.getLastname());
         System.out.println("Man2 has lastname Lopata");
-        System.out.println("\n----- END OF testing function setManLastname in TestClassMan class -------------");
+        System.out.println("----- END OF testing function setManLastname in TestClassMan class -------------");
     }
 
     @Test(description = "This is check if setAge and getAge methods works")
@@ -99,7 +99,7 @@ public class TestPersonMan extends Person {
         man2.setAge(58);
         Assert.assertEquals(58, man2.getAge());
         System.out.println("Man2 is "+man2.getAge()+" years old.");
-        System.out.println("\n----- END OF testing function setAge in TestClassMan class -------------");
+        System.out.println("----- END OF testing function setAge in TestClassMan class -------------");
     }
 
     @Test(description = "this is check if isRetired, setAge and getAge works for class Woman")
@@ -110,13 +110,13 @@ public class TestPersonMan extends Person {
         man1.isRetired();
         Assert.assertEquals(man1.getAge(), 18);
         man2.setAge(65);
-        System.out.println("\nMan2 is " + man2.getAge() + " age old");
+        System.out.println("Man2 is " + man2.getAge() + " age old");
         man2.isRetired();
         Assert.assertEquals(man2.getAge(), 65);
         man2.setAge(64);
-        System.out.println("\nMan2 is " + man2.getAge() + " age old");
+        System.out.println("Man2 is " + man2.getAge() + " age old");
         man2.isRetired();
-        System.out.println("\n----- END OF testing function setIsRetired in TestClassMan class -------------");
+        System.out.println("----- END OF testing function setIsRetired in TestClassMan class -------------");
     }
     @Test(description = "this is check if setGrossSalary and getGrossSalary works")
     public void setGrossSalary() {

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="TestPersonSuite2">
+    <test name="Man1TestSettersAndGetters">
+        <classes>
+            <class name="TestPersonMan">
+            </class>
+        </classes>
+    </test>
+    <test name="Man1TestSetters">
+        <groups>
+            <run>
+                <include name="Man1"/>
+                <include name="Man2"/>
+            </run>
+        </groups>
+        <classes>
+            <class name = "TestPersonMan">
+                <methods>
+                    <include name="setManName"/>
+                    <include name="setManLastname"/>
+                    <include name="setIsRetired"/>
+                    <include name="setIsRetired"/>
+                    <include name="setGrossSalary"/>
+                    <include name="setPartnerMale"/>
+                    <include name="isThisSmoking"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
