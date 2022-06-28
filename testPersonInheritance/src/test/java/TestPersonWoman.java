@@ -6,8 +6,8 @@ import org.testng.annotations.*;
 import java.util.HashMap;
 
 public class TestPersonWoman extends Woman {
-    private static final TestPersonWoman woman1 = new TestPersonWoman();
-    private static final TestPersonWoman woman2 = new TestPersonWoman();
+    private static final TestPersonWoman woman1 = new TestPersonWoman("Swetlana", "Loboda", 38, true, 0, false, 3.20);
+    private static final TestPersonWoman woman2 = new TestPersonWoman("Olga", "Sumska", 49, false, 3, true, 1.50);
     private final HashMap<TestPersonWoman, String> parseLocaleData = new HashMap<>();
 
     public TestPersonWoman(String name, String lastname, int age, boolean isPartnerMale, int numberOfChildren, boolean isBlond, double lostWeight) {

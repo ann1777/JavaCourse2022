@@ -5,8 +5,8 @@ import org.testng.annotations.*;
 import java.util.HashMap;
 
 public class TestPersonMan extends Person {
-    private static final TestPersonMan man1 = new TestPersonMan();
-    private static final TestPersonMan man2 = new TestPersonMan();
+    private static final TestPersonMan man1 = new TestPersonMan("Stepan", "Bandera", 38, false, true, 5800000.00);
+    private static final TestPersonMan man2 = new TestPersonMan("Ivan", "Mazepa", 58, true, false, 450000.00);
     private final HashMap<TestPersonMan, String> parseLocaleData = new HashMap<>();
     protected double grossSalary = 100000.00;
     private boolean isSmoking = false;
