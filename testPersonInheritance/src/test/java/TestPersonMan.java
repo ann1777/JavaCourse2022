@@ -83,10 +83,10 @@ public class TestPersonMan extends Person {
         System.out.println("\n----- START OF testing function setManLastname in TestClassMan class -------------");
         man1.setLastname("Shevchenko");
         Assert.assertEquals("Shevchenko", man1.getLastname());
-        System.out.println("Man1 has lastname Shevchenko");
+        System.out.println("Man1 has lastname "+man1.getLastname());
         man2.setLastname("Lopata");
         assert "Lopata".equals(man2.getLastname());
-        System.out.println("Man2 has lastname Lopata");
+        System.out.println("Man2 has lastname "+man2.getLastname());
         System.out.println("----- END OF testing function setManLastname in TestClassMan class -------------");
     }
 
@@ -102,7 +102,7 @@ public class TestPersonMan extends Person {
         System.out.println("----- END OF testing function setAge in TestClassMan class -------------");
     }
 
-    @Test(description = "this is check if isRetired, setAge and getAge works for class Woman")
+    @Test(description = "this is check if isRetired, setAge and getAge works for class Woman", priority = 2)
     public void setIsRetired() {
         System.out.println("\n----- START OF testing function setIsRetired in TestClassMan class -------------");
         man1.setAge(18);
@@ -118,7 +118,8 @@ public class TestPersonMan extends Person {
         man2.isRetired();
         System.out.println("----- END OF testing function setIsRetired in TestClassMan class -------------");
     }
-    @Test(description = "this is check if setGrossSalary and getGrossSalary works")
+
+    @Test(description = "this is check if setGrossSalary and getGrossSalary works", priority = 1)
     public void setGrossSalary() {
         System.out.println("\n----- START OF testing function setGrossSalary in TestClassMan class -------------");
         man1.setGrossSalary(1200000.00);
@@ -153,7 +154,6 @@ public class TestPersonMan extends Person {
         Assert.assertEquals("Krugovoy", man1.getLastname(), "Man1 has lastname Krugovoy");
         Assert.assertTrue(man1.isSmoking, String.valueOf(true));
         System.out.println(man1.getLastname()+ " is smoking " +man1.isSmoking);
-//        man2.setSmoking(false);
         man2.setLastname("Bureviy");
         Assert.assertEquals("Bureviy", man2.getLastname(), "Man1 has lastname Bureviy");
         Assert.assertFalse(man2.isSmoking);
