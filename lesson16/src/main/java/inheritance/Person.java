@@ -1,4 +1,4 @@
-package lesson16.src.main.java.inheritance;
+package main.java.inheritance;
 
 //class Person has name, lastname, age and isPartnerMale fields
 public abstract class Person {

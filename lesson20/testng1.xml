@@ -11,7 +11,7 @@
         <classes>
             <class name = "TestPersonMan">
                 <methods>
-                    <include name="setManName"/>
+<!--                    <include name="setManName"/>-->
                     <include name="setManLastname"/>
                     <include name="setIsRetired"/>
                     <include name="setIsRetired"/>

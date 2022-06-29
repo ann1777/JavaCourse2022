@@ -1,10 +1,9 @@
-package lesson16.src.main.java.inheritance;
+package main.java.inheritance;
 
 public class Woman extends Person {
-
     public int numberOfChildren;
     protected boolean isBlond;
-    protected double weight;
+    public double weight;
     private double lostWeight;
 
     public Woman(String name, String lastname, int age, boolean isPartnerMale, int numberOfChildren, boolean isBlond,
@@ -31,7 +30,7 @@ public class Woman extends Person {
         return lostWeight;
     }
 
-    public boolean isBlond(boolean b) {
+    public boolean isBlond(boolean isBlond) {
         return isBlond;
     }
 
@@ -85,12 +84,24 @@ public class Woman extends Person {
     }
 
     @Override
-    public void registerPartnership2(lesson16.src.main.java.inheritance.Person partner, boolean isPartnerMale) {
+    public void registerPartnership2(Person partner, boolean isPartnerMale) {
         super.registerPartnership2(partner, isPartnerMale);
         if (isPartnerMale) {
             this.setLastname(partner.lastname);
             this.partner = partner;
             this.setPartner(partner);
         }
+    }
+
+    public boolean isOlder(Woman woman) {
+        if(this.age > woman.getAge()) {
+            return true;
+        }else {
+            return false;
+        }
+    }
+
+    public boolean getIsBlond() {
+        return this.isBlond;
     }
 }

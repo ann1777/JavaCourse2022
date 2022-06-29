@@ -1,6 +1,6 @@
-package lesson16.src.main.java.inheritance;
+package main.java.inheritance;
 
-public abstract class Man extends Person {
+public class Man extends Person {
     public boolean isSmoking;
     protected double grossSalary;
 
