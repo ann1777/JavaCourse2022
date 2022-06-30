@@ -13,7 +13,7 @@ public class TestPersonMan{
     }
 
     @BeforeClass
-    private void Setup() {
+    private void setup() {
         parseLocaleData.put(man1, test.java.testPersonInheritance.TestPersonMan.getMan1().toString());
         parseLocaleData.put(man2, test.java.testPersonInheritance.TestPersonMan.getMan2().toString());
         System.out.println("This is executed before each Class");
@@ -26,12 +26,12 @@ public class TestPersonMan{
     }
 
     @BeforeTest
-    public void BeforeEachTest() {
+    public void beforeEachTest() {
         System.out.println("This is executed before each Test");
     }
 
     @AfterTest
-    public void AfterEachTest() {
+    public void afterEachTest() {
         System.out.println("This is executed after each Test");
     }
 
@@ -53,13 +53,16 @@ public class TestPersonMan{
         man1.setAge(18);
         System.out.println("\nMan1 is " + man1.getAge() + " age old");
         man1.isRetired();
-        man2.setAge(65);
+        Assert.assertFalse(man1.isRetired());
+        man2.setAge(66);
         System.out.println("\nMan2 is " + man2.getAge() + " age old");
         man2.isRetired();
-        Assert.assertEquals(man2.getAge(), 65);
+        Assert.assertEquals(man2.getAge(), 66);
+        Assert.assertTrue(man2.isRetired());
         man2.setAge(64);
         System.out.println("\nMan2 is " + man2.getAge() + " age old");
         man2.isRetired();
+        Assert.assertFalse(man2.isRetired());
         System.out.println("\n----- END OF testing function isRetired in TestClassWoman class -------------");
     }
     @Test(description = "this is check if setGrossSalary and getGrossSalary works")

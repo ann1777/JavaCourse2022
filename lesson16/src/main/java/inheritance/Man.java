@@ -34,7 +34,11 @@ public class Man extends Person {
 
     @Override
     public boolean isRetired () {
-        System.out.printf("This man is %s ", age < 65 ? "still works" : "not works already");
-        return false;
+        if (this.age>=65){
+            System.out.println("This man is already retired");
+            return this.isRetired = true;
+        }
+        System.out.println("This woman is still works");
+        return this.isRetired = false;
     }
 }

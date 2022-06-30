@@ -32,7 +32,7 @@ public class TestPersonWoman {
 
 
     @BeforeClass
-    private void Setup() {
+    private void setup() {
         parseLocaleData.put(woman1, TestPersonWoman.getWoman1().toString());
         parseLocaleData.put(woman2, TestPersonWoman.getWoman2().toString());
         System.out.println("This is executed before each Class");
@@ -45,12 +45,12 @@ public class TestPersonWoman {
     }
 
     @BeforeTest
-    public void BeforeEachTest() {
+    public void beforeEachTest() {
         System.out.println("This is executed before each Test");
     }
 
     @AfterTest
-    public void AfterEachTest() {
+    public void afterEachTest() {
         System.out.println("This is executed after each Test");
     }
 
