@@ -1,4 +1,4 @@
-package inheritance;
+package main.java.inheritance;
 
 //class Person has name, lastname, age and isPartnerMale fields
 public abstract class Person {
@@ -17,6 +17,9 @@ public abstract class Person {
         this.lastname = lastname;
         this.age = age;
         this.isPartnerMale = isPartnerMale;
+    }
+
+    public Person(){
     }
 
     //add setters
@@ -76,8 +79,13 @@ public abstract class Person {
 //        return isPartnerMale;//return true
 //    }
 
+    public boolean isPartnerMale() {
+        return isPartnerMale;
+    }
+
     //create isRetired method
-    public void isRetired() {
+    public boolean isRetired() {
+        return isRetired;
     }
 
     public void setPartner(Person partner){
