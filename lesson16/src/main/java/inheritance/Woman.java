@@ -30,25 +30,19 @@ public class Woman extends Person {
         return lostWeight;
     }
 
-    public boolean isBlond(boolean isBlond) {
-        return isBlond;
+    public boolean getIsBlond() {
+        if (this.isBlond) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     public boolean setIsBlond() {
-        System.out.println("----- START OF Verify function isBlond in TestClassWoman class -------------");
-        if (this.isBlond(false)){
-            try {
-                return this.isBlond(true);
-            } catch (Exception ex) {
-                ex.printStackTrace();
-            }
+            return this.isBlond=true;
         }
-        System.out.println("----- END OF Verify function isBlond in TestClassWoman class -------------");
-        return this.isBlond(true);
-    }
 
     public void setNumberOfChildren(int numberOfChildren) {
-        System.out.println("----- START OF Verify function setNumberOfChildren in TestClassWoman class -------------");
         if (this.age > 18) {
             try {
                 this.numberOfChildren = numberOfChildren;
@@ -59,7 +53,6 @@ public class Woman extends Person {
         else{
             System.out.println("She is too young woman to have children.");
         }
-        System.out.println("----- END OF Verify function setNumberOfChildren in TestClassWoman class -------------");
     }
 
     public void setLostWeight(double lostWeight) {
@@ -99,9 +92,5 @@ public class Woman extends Person {
         }else {
             return false;
         }
-    }
-
-    public boolean getIsBlond() {
-        return this.isBlond;
     }
 }
