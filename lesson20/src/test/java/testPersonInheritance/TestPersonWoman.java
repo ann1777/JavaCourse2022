@@ -1,31 +1,16 @@
 package test.java.testPersonInheritance;
+
 import main.java.inheritance.Woman;
 import org.testng.Assert;
 import org.testng.annotations.*;
 
-import java.util.HashMap;
-
 public class TestPersonWoman {
     private static final Woman woman1 = new Woman("Swetlana", "Loboda", 38, true, 0, false, 3.20);
-    private static final Woman woman2 = new Woman("Olga", "Sumska", 49, false, 3, true, 1.50);
-    private final HashMap<Woman, String> parseLocaleData = new HashMap<Woman, String>();
+    private static final Woman woman2 = new Woman("Olga", "Sumska", 49, false, 3, false, 1.50);
+//    private final HashMap<Woman, String> parseLocaleData = new HashMap<Woman, String>();
     private String name;
     private String lastname;
     private int age;
-    protected boolean isPartnerMale;
-    private int numberOfChildren;
-    private boolean isBlond;
-    private double lostWeight;
-
-//    public TestPersonWoman(String name, String lastname, int age, boolean isPartnerMale, int numberOfChildren, boolean isBlond, double lostWeight) {
-//        this.name = "Olena";
-//        this.lastname = "Zelenska";
-//        this.age = 39;
-//        this.isPartnerMale = true;
-//        this.numberOfChildren = 2;
-//        this.isBlond = true;
-//        this.lostWeight = 2.00;
-//    }
 
     public TestPersonWoman() {
     }
@@ -33,14 +18,14 @@ public class TestPersonWoman {
 
     @BeforeClass
     private void setup() {
-        parseLocaleData.put(woman1, TestPersonWoman.getWoman1().toString());
-        parseLocaleData.put(woman2, TestPersonWoman.getWoman2().toString());
+//        parseLocaleData.put(woman1, TestPersonWoman.getWoman1().toString());
+//        parseLocaleData.put(woman2, TestPersonWoman.getWoman2().toString());
         System.out.println("This is executed before each Class");
     }
 
     @AfterClass
     void tearDown() {
-        parseLocaleData.clear();
+//        parseLocaleData.clear();
         System.out.println("This is executed after each Class");
     }
 
@@ -66,9 +51,9 @@ public class TestPersonWoman {
         return isBlond;
     }
 
-    public HashMap<Woman, String> getParseLocaleData() {
-        return parseLocaleData;
-    }
+//    public HashMap<Woman, String> getParseLocaleData() {
+//        return parseLocaleData;
+//    }
 
     public boolean isOlder(TestPersonWoman woman) {
         return this.getAge() > woman.getAge();
@@ -89,14 +74,14 @@ public class TestPersonWoman {
         return age;
     }
 
-    public int getNumberOfChildren() {
-//        this.numberOfChildren = numberOfChildren;
-        return numberOfChildren;
-    }
+//    public int getNumberOfChildren() {
+////   this.numberOfChildren = numberOfChildren;
+//        return numberOfChildren;
+//    }
 
-    private boolean setIsBlond() {
-        return this.isBlond = true;
-    }
+//    private boolean setIsBlond() {
+//        return this.isBlond = true;
+//    }
 
     private boolean isRetired(TestPersonWoman woman) {
         if (this.age > 60) {
@@ -157,12 +142,12 @@ public class TestPersonWoman {
         System.out.println("\n----- START OF testing function testIsBlond in TestClassWoman class -------------");
         System.out.println("By default Woman1 isBlond "+woman1.getIsBlond());
         woman1.setIsBlond();
-        Assert.assertEquals(woman1.isBlond(true), this.isBlond(true));
-        Assert.assertEquals(woman1.setIsBlond(), this.isBlond(true));
-        System.out.print("But after setIsBlond method Woman1 is blond " + woman2.isBlond(true)+"\n");
-        Assert.assertEquals(woman2.isBlond(false), this.isBlond(false));
+        Assert.assertEquals(woman1.getIsBlond(), this.isBlond(true));
+        Assert.assertTrue(woman1.getIsBlond());
+        System.out.print("But after setIsBlond method Woman1 is blond " + woman1.getIsBlond()+"\n");
+//        Assert.assertEquals(woman2.getIsBlond(), false);
         Assert.assertEquals(woman2.setIsBlond(), this.isBlond(true));
-        System.out.println("Woman2 is still blond " + woman2.isBlond(false));
+        System.out.println("Woman2 is still blond " + woman2.getIsBlond());
         System.out.println("----- END OF testing function testIsBlond in TestClassWoman class -------------");
     }
 
@@ -173,7 +158,7 @@ public class TestPersonWoman {
         System.out.println("Woman1 is " + woman1.getAge() + " age old");
         woman1.setNumberOfChildren(2);
         System.out.println("Woman1 has " + woman1.getNumberOfChildren() + " children");
-        Assert.assertEquals(this.getNumberOfChildren(), 0);
+        Assert.assertEquals(woman1.getNumberOfChildren(), 0);
         woman2.setAge(22);
         System.out.println("Woman2 is " + woman2.getAge() + " age old");
         woman2.setNumberOfChildren(4);
@@ -210,12 +195,9 @@ public class TestPersonWoman {
     @Test(description = "this is check if getCurrentWeight, getLostWeight and setCurrentWeight works for class Woman")
     public void getCurrentWeight() {
         System.out.println("\n----- START OF testing function getCurrentWeight in TestClassWoman class -------------");
-        System.out.println("By default Woman1 has " + woman1.weight + " kg of weight");
-        woman1.setCurrentWeight(55.00);
-        Assert.assertEquals(woman1.weight, 55.00);
-        System.out.println("After setCurrentWeight method Woman1 has " + woman1.weight + " kg of weight");
-        woman1.getCurrentWeight(55.00, 12.40);
-        System.out.println("Then Woman1 has lost "+woman1.getLostWeight()+" kg now she has " + woman1.getCurrentWeight(55.00, 12.40) + " kg of weight");
+        System.out.println("By default Woman1 has " + woman1.getCurrentWeight(49.50, 4.50) + " kg of weight");
+        Assert.assertEquals(woman1.getCurrentWeight(45.00, 1), 44.00);
+        System.out.println("Then Woman1 has lost "+woman1.getLostWeight()+" kg now she has " + woman1.getCurrentWeight(45.00, 1.00) + " kg of weight");
         Assert.assertEquals(woman1.getCurrentWeight(55.00, 12.40), 42.6);
         System.out.println("----- END OF testing function getCurrentWeight in TestClassWoman class -------------");
     }
