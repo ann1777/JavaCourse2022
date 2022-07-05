@@ -13,6 +13,9 @@ public class Woman extends Person {
         this.lostWeight = lostWeight;
     }
 
+    public Woman(){
+    }
+
     public int getNumberOfChildren() {
         return numberOfChildren;
     }

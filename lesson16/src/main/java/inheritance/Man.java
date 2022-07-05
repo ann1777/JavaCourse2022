@@ -10,6 +10,9 @@ public class Man extends Person {
         this.grosSalary = salary;
     }
 
+    public Man(){
+    }
+
     public void setSmoking(boolean smoking) {
         isSmoking = smoking;
     }
