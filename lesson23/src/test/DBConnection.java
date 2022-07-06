@@ -23,7 +23,7 @@ public class DBConnection {
         return dbConnection;
     }
 
-    public static DBConnection getInstance(String dbAddress, String dbUser, String dbPassword) throws SQLException {
+    public DBConnection getInstance(String dbAddress, String dbUser, String dbPassword) throws SQLException {
         DBConnection instance = null;
         if (instance == null) {
             instance = new DBConnection(dbUrl, dbUser, dbPassword);

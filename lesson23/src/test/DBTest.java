@@ -24,9 +24,9 @@ public class DBTest extends BaseTest {
         preparedStatement = getConnectionServer().prepareStatement(sqlPattern);
         try {
             preparedStatement.executeUpdate();
-            log.info("DataBase 'students' has been created successfully");
+            log.info("DataBase 'users' has been created successfully");
         } catch (SQLException e) {
-            log.warning("DataBase 'students' already exist");
+            log.warning("DataBase 'users' already exist");
             System.out.println(e.getMessage());
         }
     }
@@ -41,22 +41,22 @@ public class DBTest extends BaseTest {
         preparedStatement = getConnectionDB().prepareStatement(sqlPattern);
         try {
             preparedStatement.executeUpdate();
-            log.info("Table 'students' has been created successfully...");
+            log.info("Table 'users' has been created successfully");
         } catch (SQLException e) {
-            System.err.println("Table 'students' has not been created...");
+            System.err.println("Table 'users' has not been created");
             e.printStackTrace();
         }
     }
 
-    @Test
+    @Test(dataProviderClass = DataProviders.class, dataProvider = "Users test data")
     public void testInsertDataIntoTable(String data, int countRec) throws SQLException {
         sqlPattern = "INSERT INTO students(id,firstname,lastname,email) VALUES (" + data + ")";
         preparedStatement = getConnectionDB().prepareStatement(sqlPattern);
         try {
             preparedStatement.executeUpdate();
-            log.info("Student " + data + "has been added successfully");
+            log.info("User " + data + "has been added successfully");
         } catch (SQLException e) {
-            System.err.println("Student " + data + "has not been added");
+            System.err.println("User " + data + "has not been added");
             e.printStackTrace();
         }
 
@@ -67,29 +67,29 @@ public class DBTest extends BaseTest {
         Assert.assertEquals(rs.getInt(1), countRec);
     }
     
-    @Test
+    @Test(dataProviderClass = DataProviders.class, dataProvider = "Users test data")
     public void testSelectDataFromTable() throws SQLException {
         sqlPattern = "SELECT * FROM students";
         preparedStatement = getConnectionDB().prepareStatement(sqlPattern);
         rs = preparedStatement.executeQuery();
 
         while (rs.next()) {
-            System.out.printf("Student is : %d %s %s  \n", rs.getInt("user_id"),
+            System.out.printf("User is : %d %s %s  \n", rs.getInt("user_id"),
                     rs.getString("user_firstname"),
                     rs.getString("user_lastname"));
         }
     }
     
-    @Test
+    @Test(dataProviderClass = DataProviders.class, dataProvider = "Users test data")
     public void testUpdateDataTable() throws SQLException {
         sqlPattern = "UPDATE students SET firstname = 'ChangedName' WHERE id > 2";
         preparedStatement = getConnectionDB().prepareStatement(sqlPattern);
 
         try {
             preparedStatement.executeUpdate();
-            log.info("Firstname of the first student with ID greater than 2 has been changed successfully");
+            log.info("Firstname of the first user with ID greater than 2 has been changed successfully");
         } catch (SQLException e) {
-            System.err.println("Firstname of the first student with ID greater than 2 has not been changed");
+            System.err.println("Firstname of the first user with ID greater than 2 has not been changed");
             e.printStackTrace();
         }
 
@@ -97,13 +97,13 @@ public class DBTest extends BaseTest {
         preparedStatement = getConnectionDB().prepareStatement(sqlPattern);
         rs = preparedStatement.executeQuery();
         while (rs.next()) {
-            System.out.printf("Student is : %d %s %s  \n", rs.getInt("user_id"),
+            System.out.printf("User is : %d %s %s  \n", rs.getInt("user_id"),
                     rs.getString("firstname"),
                     rs.getString("lastname"));
         }
     }
     
-    @Test
+    @Test(dataProviderClass = DataProviders.class, dataProvider = "Users test data")
     public void testDeleteRecordIntoTable() throws SQLException {
         sqlPattern = "DELETE FROM students WHERE id >?;";
         preparedStatement = getConnectionDB().prepareStatement(sqlPattern);
@@ -117,7 +117,7 @@ public class DBTest extends BaseTest {
         Assert.assertEquals(rs.getInt(1), 2);
     }
     
-    @Test
+    @Test(dataProviderClass = DataProviders.class, dataProvider = "Users test data")
     public void testDropTable() throws SQLException {
         sqlPattern = "DROP TABLE IF EXISTS students";
         preparedStatement = getConnectionDB().prepareStatement(sqlPattern);
