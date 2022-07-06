@@ -50,7 +50,7 @@ public class DBTest extends BaseTest {
 
     @Test(dataProviderClass = DataProviders.class, dataProvider = "Users test data")
     public void testInsertDataIntoTable(String data, int countRec) throws SQLException {
-        sqlPattern = "INSERT INTO students(id,firstname,lastname,email) VALUES (" + data + ")";
+        sqlPattern = "INSERT INTO users(id,firstname,lastname,email) VALUES (" + data + ")";
         preparedStatement = getConnectionDB().prepareStatement(sqlPattern);
         try {
             preparedStatement.executeUpdate();
@@ -60,7 +60,7 @@ public class DBTest extends BaseTest {
             e.printStackTrace();
         }
 
-        sqlPattern = "SELECT count(*) FROM students";
+        sqlPattern = "SELECT count(*) FROM users";
         preparedStatement = getConnectionDB().prepareStatement(sqlPattern);
         rs = preparedStatement.executeQuery();
         rs.next();
@@ -69,7 +69,7 @@ public class DBTest extends BaseTest {
     
     @Test(dataProviderClass = DataProviders.class, dataProvider = "Users test data")
     public void testSelectDataFromTable() throws SQLException {
-        sqlPattern = "SELECT * FROM students";
+        sqlPattern = "SELECT * FROM users";
         preparedStatement = getConnectionDB().prepareStatement(sqlPattern);
         rs = preparedStatement.executeQuery();
 
@@ -82,7 +82,7 @@ public class DBTest extends BaseTest {
     
     @Test(dataProviderClass = DataProviders.class, dataProvider = "Users test data")
     public void testUpdateDataTable() throws SQLException {
-        sqlPattern = "UPDATE students SET firstname = 'ChangedName' WHERE id > 2";
+        sqlPattern = "UPDATE users SET firstname = 'ChangedName' WHERE id > 2";
         preparedStatement = getConnectionDB().prepareStatement(sqlPattern);
 
         try {
@@ -93,7 +93,7 @@ public class DBTest extends BaseTest {
             e.printStackTrace();
         }
 
-        sqlPattern = "SELECT * FROM students";
+        sqlPattern = "SELECT * FROM users";
         preparedStatement = getConnectionDB().prepareStatement(sqlPattern);
         rs = preparedStatement.executeQuery();
         while (rs.next()) {
@@ -105,12 +105,12 @@ public class DBTest extends BaseTest {
     
     @Test(dataProviderClass = DataProviders.class, dataProvider = "Users test data")
     public void testDeleteRecordIntoTable() throws SQLException {
-        sqlPattern = "DELETE FROM students WHERE id >?;";
+        sqlPattern = "DELETE FROM users WHERE id >?;";
         preparedStatement = getConnectionDB().prepareStatement(sqlPattern);
         preparedStatement.setInt(1, 2);
         preparedStatement.executeUpdate();
 
-        sqlPattern = "SELECT count(*) FROM students";
+        sqlPattern = "SELECT count(*) FROM users";
         preparedStatement = getConnectionDB().prepareStatement(sqlPattern);
         rs = preparedStatement.executeQuery();
         rs.next();
@@ -119,7 +119,7 @@ public class DBTest extends BaseTest {
     
     @Test(dataProviderClass = DataProviders.class, dataProvider = "Users test data")
     public void testDropTable() throws SQLException {
-        sqlPattern = "DROP TABLE IF EXISTS students";
+        sqlPattern = "DROP TABLE IF EXISTS users";
         preparedStatement = getConnectionDB().prepareStatement(sqlPattern);
 
         try {
