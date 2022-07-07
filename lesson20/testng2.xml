@@ -3,7 +3,7 @@
 <suite thread-count="3" parallel="tests"  name="DataDrivenTests">
     <test name="setIsRetired1">
         <classes>
-            <class name="test.TestPersonMan">
+            <class name="com.company.lesson20.src.test.java.TestPersonMan">
                 <methods>
                 </methods>
             </class>
@@ -11,7 +11,7 @@
     </test>
     <test name="setIsRetired">
         <classes>
-            <class name="test.TestPersonWoman">
+            <class name="com.company.lesson20.src.test.java.TestPersonWoman">
                 <methods>
                 </methods>
             </class>

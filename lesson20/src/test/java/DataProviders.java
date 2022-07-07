@@ -1,7 +1,7 @@
 package test;
 
-import main.java.inheritance.Man;
-import main.java.inheritance.Woman;
+import com.company.lesson20.src.main.inheritance.Man;
+import com.company.lesson20.src.main.inheritance.Woman;
 import org.testng.annotations.DataProvider;
 
 public class DataProviders {

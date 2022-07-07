@@ -1,23 +1,27 @@
-package test;
-
-import main.java.inheritance.Woman;
+package com.company.lesson20.src.test.java;
+import com.company.lesson20.src.main.inheritance.Woman;
 import org.testng.Assert;
 import org.testng.annotations.*;
+import java.util.HashMap;
 
 public class TestPersonWoman {
     private static final Woman woman1 = new Woman("Swetlana", "Loboda", 38, true, 0, false, 3.20);
-    private static final Woman woman2 = new Woman("Olga", "Sumska", 49, false, 3, false, 1.50);
-    //    private final HashMap<Woman, String> parseLocaleData = new HashMap<Woman, String>();
+    private static final Woman woman2 = new Woman("Olga", "Sumska", 49, false, 3, true, 1.50);
+    private final HashMap<Woman, String> parseLocaleData = new HashMap<Woman, String>();
     private String name;
     private String lastname;
     private int age;
+    protected boolean isPartnerMale;
+    private int numberOfChildren;
+    private boolean isBlond;
+    private double lostWeight;
 
     public TestPersonWoman() {
     }
 
 
     @BeforeClass
-    private void setup() {
+    private void Setup() {
 //        parseLocaleData.put(woman1, TestPersonWoman.getWoman1().toString());
 //        parseLocaleData.put(woman2, TestPersonWoman.getWoman2().toString());
         System.out.println("This is executed before each Class");
@@ -30,12 +34,12 @@ public class TestPersonWoman {
     }
 
     @BeforeTest
-    public void beforeEachTest() {
+    public void BeforeEachTest() {
         System.out.println("This is executed before each Test");
     }
 
     @AfterTest
-    public void afterEachTest() {
+    public void AfterEachTest() {
         System.out.println("This is executed after each Test");
     }
 
@@ -51,17 +55,16 @@ public class TestPersonWoman {
         return isBlond;
     }
 
-//    public HashMap<Woman, String> getParseLocaleData() {
-//        return parseLocaleData;
-//    }
+    public HashMap<Woman, String> getParseLocaleData() {
+        return parseLocaleData;
+    }
 
-    public boolean isOlder(test.java.testPersonInheritance.TestPersonWoman woman) {
+    public boolean isOlder(TestPersonWoman woman) {
         return this.getAge() > woman.getAge();
     }
 
     private String getName() {
-        this.name = name;
-        return name;
+        return this.name;
     }
 
     private String getLastname() {
@@ -70,100 +73,61 @@ public class TestPersonWoman {
     }
 
     private int getAge() {
-        this.age = age;
-        return age;
+        return this.age;
     }
 
-//    public int getNumberOfChildren() {
-////   this.numberOfChildren = numberOfChildren;
-//        return numberOfChildren;
-//    }
+    public int getNumberOfChildren() {
+        return this.numberOfChildren;
+    }
 
-//    private boolean setIsBlond() {
-//        return this.isBlond = true;
-//    }
-
-    private boolean isRetired(test.java.testPersonInheritance.TestPersonWoman woman) {
-        if (this.age > 60) {
-            return true;
-        } else {
-            return false;
-        }
+    private boolean setIsBlond() {
+        return isBlond;
     }
 
 
-    @Test(description = "This is check if setName and getName methods works")
-    public void setName() {
-        System.out.println("\n----- START OF testing function setWomanName in TestClassWoman class -------------");
-        System.out.println("Before setWomanName method Woman1 has name " + woman1.getName());
-        woman1.setName("Maria");
-        Assert.assertEquals("Maria", woman1.getName());
-        System.out.println("After setWomanName method Woman1 has name " + woman1.getName());
-        System.out.println("Before setWomanName method Woman2 has name " + woman2.getName());
-        woman2.setName("Olesya");
-        assert "Olesya".equals(woman2.getName());
-        System.out.println("After setWomanName method Woman2 has name " + woman2.getName());
-        woman2.setName("Tetiana");
-        System.out.println("And now setWomanName method renamed Woman2 name to " + woman2.getName());
-        System.out.println("----- END OF testing function setWomanName in TestClassWoman class -------------");
+    @Test(description = "This is check if setName and getName methods works for TestClassWoman class", dataProviderClass = test.DataProviders.class, dataProvider = "setName test data")
+    @Parameters({"womanName", "name"})
+    public void setName(Woman woman1, String name) {
+        System.out.println("\n----- START OF testing function setName in TestClassWoman class -------------");
+        System.out.println(woman1.getName()+" "+woman1.getLastname()+ " is set name "+woman1.getName());
+        Assert.assertEquals(woman1.getName(), name);
+        System.out.println("----- END OF testing function setName in TestClassWoman class -------------");
     }
 
 
-    @Test(description = "This is check if setLastname and getLastname methods works for TestClassWoman class")
-    public void setLastname(){
+    @Test(description = "This is check if setLastname and getLastname methods works for TestClassWoman class",  dataProviderClass = test.DataProviders.class, dataProvider = "setLastname test data")
+    @Parameters({"womanLastname", "lastname"})
+    public void setLastname(Woman woman1, String lastname){
         System.out.println("\n----- START OF testing function setWomanLastname in TestClassWoman class -------------");
-        woman1.setLastname("Nechitailo");
-        Assert.assertEquals("Nechitailo", woman1.getLastname());
-        System.out.println("Woman1 has lastname "+woman1.getLastname());
-        woman2.setLastname("Zhurba");
-        assert "Zhurba".equals(woman2.getLastname());
-        System.out.println("Woman2 has lastname "+woman2.getLastname());
+        System.out.println(woman1.getName()+" "+woman1.getLastname()+ " is set name "+woman1.getLastname());
+        Assert.assertEquals(woman1.getLastname(), lastname);
         System.out.println("----- END OF testing function setWomanLastname in TestClassWoman class -------------");
     }
 
-    @Test(description = "This is check if setAge and getAge methods works for TestClassWoman class")
-    public void setAge(){
+    @Test(description = "This is check if setAge and getAge methods works for TestClassWoman class",  dataProviderClass = test.DataProviders.class, dataProvider = "setAge test data")
+    @Parameters({"womanLastname", "lastname"})
+    public void setAge(Woman woman1, int age){
         System.out.println("\n----- START OF testing function setAge in TestClassWoman class -------------");
-        System.out.println("By default Woman1 is "+woman1.getAge()+" years old.");
-        woman1.setAge(18);
-        Assert.assertEquals(18, woman1.getAge());
-        System.out.println("After setAge method Woman1 age is "+woman1.getAge()+" years old.");
-        System.out.println("By default Woman2 is "+woman2.getAge()+" years old.");
-        woman2.setAge(55);
-        Assert.assertEquals(55, woman2.getAge());
-        Assert.assertTrue(woman1.getAge()<woman2.getAge());
-        Assert.assertFalse(woman1.isOlder(woman2));
-        System.out.println("After setAge method Woman2 is "+woman2.getAge()+" years old.");
+        System.out.println(woman1.getName()+" "+woman1.getLastname()+ " is set name "+woman1.getAge());
+        Assert.assertEquals(woman1.getAge(), age);
         System.out.println("----- END OF testing function setAge in TestClassWoman class -------------");
     }
 
-    @Test(description = "this is check if setIsBlond return isBlond", invocationCount = 5)
-    public void testIsBlond() {
+    @Test(description = "this is check if setIsBlond return isBlond", invocationCount = 5, dataProviderClass = test.DataProviders.class, dataProvider = "testIsBlond test data")
+    @Parameters({"womanNatural", "isBlond"})
+    public void testIsBlond(Woman woman1, boolean isBlond) {
         System.out.println("\n----- START OF testing function testIsBlond in TestClassWoman class -------------");
-        System.out.println("By default Woman1 isBlond "+woman1.getIsBlond());
-        woman1.setIsBlond();
-        Assert.assertEquals(woman1.getIsBlond(), this.isBlond(true));
-        Assert.assertTrue(woman1.getIsBlond());
-        System.out.print("But after setIsBlond method Woman1 is blond " + woman1.getIsBlond()+"\n");
-//        Assert.assertEquals(woman2.getIsBlond(), false);
-        Assert.assertEquals(woman2.setIsBlond(), this.isBlond(true));
-        System.out.println("Woman2 is still blond " + woman2.getIsBlond());
+        System.out.println(woman1.getName()+" "+woman1.getLastname()+ " is blond "+woman1.isBlond());
+        Assert.assertEquals(woman1.isBlond(), isBlond);
         System.out.println("----- END OF testing function testIsBlond in TestClassWoman class -------------");
     }
 
-    @Test(description = "this is check if setNumberOfChildren and getNumberOfChildren works", timeOut = 6000)
-    public void setNumberOfChildren(){
+    @Test(description = "this is check if setNumberOfChildren and getNumberOfChildren works", timeOut = 6000, dataProviderClass = test.DataProviders.class, dataProvider = "setNumberOfChildren test data")
+    @Parameters({"numberChildren", "children"})
+    public void setNumberOfChildren(Woman woman1, int numberOfChildren){
         System.out.println("\n----- START OF testing function setNumberOfChildren and getNumberOfChildren in TestClassWoman class -------------");
-        woman1.setAge(15);
-        System.out.println("Woman1 is " + woman1.getAge() + " age old");
-        woman1.setNumberOfChildren(2);
-        System.out.println("Woman1 has " + woman1.getNumberOfChildren() + " children");
-        Assert.assertEquals(woman1.getNumberOfChildren(), 0);
-        woman2.setAge(22);
-        System.out.println("Woman2 is " + woman2.getAge() + " age old");
-        woman2.setNumberOfChildren(4);
-        System.out.println("Woman2 has already " + woman2.getNumberOfChildren() + " children");
-        Assert.assertEquals(woman2.getNumberOfChildren(), 4);
+        System.out.println(woman1.getName()+" "+woman1.getLastname()+ " has "+woman1.getNumberOfChildren()+ " children.");
+        Assert.assertEquals(woman1.getNumberOfChildren(), numberOfChildren);
         try {
             Thread.sleep(5500);
         } catch (InterruptedException e) {
@@ -172,32 +136,21 @@ public class TestPersonWoman {
         System.out.println("----- END OF testing function setNumberOfChildren and getNumberOfChildren in TestClassWoman class -------------");
     }
 
-    @Test(description = "this is check if setIsRetired snd setAge works for class Woman")
-    public void setIsRetired() {
+    @Test(description = "this is check if setIsRetired snd setAge works for class Woman", dataProviderClass = test.DataProviders.class, dataProvider = "setIsRetired test data")
+    @Parameters({"isRetires", "age"})
+    public void setIsRetired(Woman woman1, boolean getIsRetired) {
         System.out.println("\n----- START OF testing function setIsRetired and setAge in TestClassWoman class -------------");
-        woman1.setAge(18);
-        System.out.println("Woman1 is " + woman1.getAge() + " age old");
-        woman1.isRetired();
-        Assert.assertFalse(woman1.isRetired());
-        woman2.setAge(61);
-        System.out.println("\nWoman2 is " + woman2.getAge() + " age old");
-        woman2.isRetired();
-        Assert.assertTrue(woman2.isRetired());
-        Assert.assertEquals(woman2.getAge(), 61);
-        woman2.setAge(59);
-        System.out.println("\nWoman2 is " + woman2.getAge() + " age old");
-        woman2.isRetired();
-        Assert.assertFalse(woman2.isRetired());
+        System.out.println(woman1.getName()+" "+woman1.getLastname()+ " is retired "+woman1.isRetired()+ ". She is "+woman1.getAge()+" years old.");
+        Assert.assertEquals(woman1.isRetired(), getIsRetired);
         System.out.println("\n----- END OF testing function setIsRetired and setAge in TestClassWoman class -------------");
     }
 
-    @Test(description = "this is check if getCurrentWeight, getLostWeight and setCurrentWeight works for class Woman")
-    public void getCurrentWeight() {
+    @Test(description = "this is check if getCurrentWeight, getLostWeight and setCurrentWeight works for class Woman", dataProviderClass = test.DataProviders.class, dataProvider = "getLostweight test data")
+    @Parameters({"currentWeight", "lostweight"})
+    public void getLostWeight(Woman woman1, double lostWeight) {
         System.out.println("\n----- START OF testing function getCurrentWeight in TestClassWoman class -------------");
-        System.out.println("By default Woman1 has " + woman1.getCurrentWeight(49.50, 4.50) + " kg of weight");
-        Assert.assertEquals(woman1.getCurrentWeight(45.00, 1), 44.00);
-        System.out.println("Then Woman1 has lost "+woman1.getLostWeight()+" kg now she has " + woman1.getCurrentWeight(45.00, 1.00) + " kg of weight");
-        Assert.assertEquals(woman1.getCurrentWeight(55.00, 12.40), 42.6);
+        System.out.println(woman1.getName()+" "+woman1.getLastname()+ " has current weight "+woman1.getLostWeight()+ ".");
+        Assert.assertEquals(woman1.getLostWeight(), lostWeight);
         System.out.println("----- END OF testing function getCurrentWeight in TestClassWoman class -------------");
     }
 }
