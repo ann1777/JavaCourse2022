@@ -15,6 +15,6 @@ public class DemoqaButtonsPage extends DemoqaElementsPage {
     @FindBy(xpath = "//*[@id=\"rightClickBtn\"]")
     WebElement rightClickMeBtn;
 
-    @FindBy(css = "[class='mt-4']:nth-of-type(3)")
+    @FindBy(xpath = "//*[text() = 'Click Me']")
     WebElement clickMeBtn;
 }
