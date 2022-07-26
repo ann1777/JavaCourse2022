@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="IsinOlsun-Android-Test-Suite" parallel="tests" thread-count="2">
+    <test name="emulator-pixel_3">
+        <parameter name="udid" value="emulator-5554"/>
+        <parameter name="platformVersion" value="11"/>
+        <classes>
+            <class name="cucumber.utilities.TestRunner"/>
+        </classes>
+    </test>
+    <test name="simulator_iPhone_13">
+        <parameter name="udid" value="18FB4726-3A15-498D-8F7E-84965AB706EF"/>
+        <parameter name="platformVersion" value="11"/>
+        <classes>
+            <class name="cucumber.utilities.TestRunner"/>
+        </classes>
+    </test>
+    <test name="Scenario" verbose="1">
+        <classes>
+            <class name="cucumber.utilities.TestRunner"/>
+        </classes>
+    </test>
+</suite>
