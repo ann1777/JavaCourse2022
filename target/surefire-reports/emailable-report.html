@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "https://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+<title>TestNG Report</title>
+<style type="text/css">table {margin-bottom:10px;border-collapse:collapse;empty-cells:show}th,td {border:1px solid #009;padding:.25em .5em}th {vertical-align:bottom}td {vertical-align:top}table a {font-weight:bold}.stripe td {background-color: #E6EBF9}.num {text-align:right}.passedodd td {background-color: #3F3}.passedeven td {background-color: #0A0}.skippedodd td {background-color: #DDD}.skippedeven td {background-color: #CCC}.failedodd td,.attn {background-color: #F33}.failedeven td,.stripe .attn {background-color: #D00}.stacktrace {white-space:pre;font-family:monospace}.totop {font-size:85%;text-align:center;border-bottom:2px solid #000}.invisible {display:none}</style>
+</head>
+<body>
+<table>
+<tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
+<tr><th colspan="8">Test_Suite_Parallel_Android_iOS</th></tr>
+<tr><td><a href="#t0">Tests_on_Simulator_iPhone_13</a></td><td class="num">0</td><td class="num attn">1</td><td class="num">0</td><td class="num">0</td><td class="num">57</td><td></td><td></td></tr>
+<tr class="stripe"><td><a href="#t1">Tests_on_Emulator_Pixel_3</a></td><td class="num">0</td><td class="num attn">1</td><td class="num">0</td><td class="num">0</td><td class="num">56</td><td></td><td></td></tr>
+<tr><th>Total</th><th class="num">0</th><th class="num attn">2</th><th class="num">0</th><th class="num">0</th><th class="num">113</th><th colspan="2"></th></tr>
+</table>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Test_Suite_Parallel_Android_iOS</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Tests_on_Simulator_iPhone_13 &#8212; failed (configuration methods)</th></tr><tr class="failedeven"><td rowspan="2">Cucumber.utilities.TestNGRunner_iPhone13</td><td><a href="#m0">setUpClass</a></td><td rowspan="1">1658838475612</td><td rowspan="1">14</td></tr><tr class="failedeven"><td><a href="#m1">tearDownClass</a></td><td rowspan="1">1658838475648</td><td rowspan="1">0</td></tr><tr><th colspan="4">Tests_on_Simulator_iPhone_13 &#8212; skipped</th></tr><tr class="skippedeven"><td rowspan="1">Cucumber.utilities.TestNGRunner_iPhone13</td><td><a href="#m2">runParallelScenario</a></td><td rowspan="1">1658838475646</td><td rowspan="1">0</td></tr></tbody>
+<tbody id="t1"><tr><th colspan="4">Tests_on_Emulator_Pixel_3 &#8212; failed (configuration methods)</th></tr><tr class="failedeven"><td rowspan="2">Cucumber.utilities.TestNGRunner_Pixel3</td><td><a href="#m3">setUpClass</a></td><td rowspan="1">1658838475612</td><td rowspan="1">15</td></tr><tr class="failedeven"><td><a href="#m4">tearDownClass</a></td><td rowspan="1">1658838475648</td><td rowspan="1">0</td></tr><tr><th colspan="4">Tests_on_Emulator_Pixel_3 &#8212; skipped</th></tr><tr class="skippedeven"><td rowspan="1">Cucumber.utilities.TestNGRunner_Pixel3</td><td><a href="#m5">runParallelScenario</a></td><td rowspan="1">1658838475646</td><td rowspan="1">0</td></tr></tbody>
+</table>
+<h2>Tests_on_Simulator_iPhone_13</h2><h3 id="m0">Cucumber.utilities.TestNGRunner_iPhone13#setUpClass</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.NoClassDefFoundError: io/cucumber/core/eventbus/EventBus
+	at Cucumber.utilities.TestRunner.setUpClass(TestRunner.java:24)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Caused by: java.lang.ClassNotFoundException: io.cucumber.core.eventbus.EventBus
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:581)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:178)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:522)
+	... 22 more
+... Removed 16 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m1">Cucumber.utilities.TestNGRunner_iPhone13#tearDownClass</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.NullPointerException
+	at Cucumber.utilities.TestRunner.tearDownClass(TestRunner.java:41)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+... Removed 16 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m2">Cucumber.utilities.TestNGRunner_iPhone13#runParallelScenario</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.RuntimeException: java.lang.NoClassDefFoundError: io/cucumber/core/eventbus/EventBus
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Caused by: java.lang.NoClassDefFoundError: io/cucumber/core/eventbus/EventBus
+	at Cucumber.utilities.TestRunner.parallelScenarios(TestRunner.java:34)
+	... 20 more
+Caused by: java.lang.ClassNotFoundException: io.cucumber.core.eventbus.EventBus
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:581)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:178)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:522)
+	... 28 more
+... Removed 23 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>Tests_on_Emulator_Pixel_3</h2><h3 id="m3">Cucumber.utilities.TestNGRunner_Pixel3#setUpClass</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.NoClassDefFoundError: io/cucumber/core/eventbus/EventBus
+	at Cucumber.utilities.TestRunner.setUpClass(TestRunner.java:24)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Caused by: java.lang.ClassNotFoundException: io.cucumber.core.eventbus.EventBus
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:581)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:178)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:522)
+	... 22 more
+... Removed 16 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m4">Cucumber.utilities.TestNGRunner_Pixel3#tearDownClass</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.NullPointerException
+	at Cucumber.utilities.TestRunner.tearDownClass(TestRunner.java:41)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+... Removed 16 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m5">Cucumber.utilities.TestNGRunner_Pixel3#runParallelScenario</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.RuntimeException: java.lang.NoClassDefFoundError: io/cucumber/core/eventbus/EventBus
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Caused by: java.lang.NoClassDefFoundError: io/cucumber/core/eventbus/EventBus
+	at Cucumber.utilities.TestRunner.parallelScenarios(TestRunner.java:34)
+	... 20 more
+Caused by: java.lang.ClassNotFoundException: io.cucumber.core.eventbus.EventBus
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:581)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:178)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:522)
+	... 28 more
+... Removed 23 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+</body>
+</html>

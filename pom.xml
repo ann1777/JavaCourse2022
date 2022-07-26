@@ -8,6 +8,7 @@
 	<version>0.0.1-SNAPSHOT</version>
 
 	<name>MasterAppiumFramework_BDD_TestNG</name>
+	<packaging>pom</packaging>
 
 	<properties>
 		<cucumber-version>7.0.0</cucumber-version>

@@ -21,7 +21,7 @@ public class TestRunner extends BaseTestClass {
 
     @BeforeClass(alwaysRun = true)
     public void setUpClass() {
-        testNGCucumberRunner = new TestNGCucumberRunner(this.getClass());
+        testNGCucumberRunner = new TestNGCucumberRunner(BaseTestClass.class);
     }
 
     @Test(groups = "cucumber", description = "Run Cucumber Features", dataProvider = "parallelScenarios")
