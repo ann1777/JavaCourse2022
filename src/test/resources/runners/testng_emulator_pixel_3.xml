@@ -8,7 +8,7 @@
 		<parameter name="systemPort" value="10000" />
 		<parameter name="chromeDriverPort" value="11000" />
 		<classes>
-			<class name="com.appium.runners.TestNGRunner_Pixel3" />
+			<class name="Cucumber.utilities.TestNGRunner_Pixel3" />
 		</classes>
 	</test>
 </suite> 

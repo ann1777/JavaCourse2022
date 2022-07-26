@@ -22,5 +22,5 @@ import io.cucumber.testng.CucumberOptions;
 						"com.appium.stepDefinitions" }, dryRun = false, monochrome = true
 // ,strict=true
 		, tags = "@login-feature")
-public class TestNGRunner_iPhone13 extends RunnerBase {
+public class TestNGRunner_iPhone13 extends TestRunner {
 }

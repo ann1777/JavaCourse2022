@@ -8,7 +8,7 @@
 		<parameter name="systemPort" value="10000" />
 		<parameter name="chromeDriverPort" value="11000" />
 		<classes>
-			<class name="com.appium.runners.TestNGRunner_Pixel3" />
+			<class name="Cucumber.utilities.TestNGRunner_Pixel3" />
 		</classes>
 	</test>
 	<test name="Tests_on_Simulator_iPhone_13">
@@ -18,7 +18,7 @@
 		<parameter name="wdaLocalPort" value="10051" />
 		<parameter name="webkitDebugProxyPort" value="11052" />
 		<classes>
-			<class name="com.appium.runners.TestNGRunner_iPhone13" />
+			<class name="Cucumber.utilities.TestNGRunner_iPhone13" />
 		</classes>
 	</test>
 

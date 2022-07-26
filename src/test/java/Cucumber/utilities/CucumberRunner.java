@@ -19,7 +19,7 @@ import org.testng.annotations.Test;
         "json:target/report.json"}
 )
 
-public class CucumberRunner extends RunnerBase {
+public class CucumberRunner extends TestRunner {
     private static TestNGCucumberRunner testNGCucumberRunner;
 
     @BeforeClass(alwaysRun = true)
