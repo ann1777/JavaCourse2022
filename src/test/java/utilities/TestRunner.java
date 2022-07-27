@@ -1,6 +1,6 @@
-package Cucumber.utilities;
+package utilities;
 
-import Cucumber.tests.BaseTestClass;
+import tests.BaseTestClass;
 import io.cucumber.testng.CucumberOptions;
 import io.cucumber.testng.FeatureWrapper;
 import io.cucumber.testng.PickleWrapper;

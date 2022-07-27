@@ -1,4 +1,4 @@
-package Cucumber.utilities;
+package utilities;
 
 import io.cucumber.testng.CucumberOptions;
 import io.cucumber.testng.FeatureWrapper;

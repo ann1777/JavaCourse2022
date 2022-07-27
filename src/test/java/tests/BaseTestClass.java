@@ -1,6 +1,6 @@
-package Cucumber.tests;
+package tests;
 import AppiumSupport.AppiumBaseClass;
-import Cucumber.screens.*;
+import screens.*;
 import Cucumber.utilities.DesireCapabilitiesUtil;
 import Cucumber.utilities.ThreadLocalDriver;
 import io.appium.java_client.android.AndroidDriver;

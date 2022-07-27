@@ -1,4 +1,4 @@
-package Cucumber.screens;
+package screens;
 
 public interface ContactDetailPage {
 

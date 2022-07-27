@@ -1,4 +1,4 @@
-package Cucumber.utilities;
+package utilities;
 
 import org.openqa.selenium.remote.DesiredCapabilities;
 

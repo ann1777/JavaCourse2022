@@ -1,6 +1,4 @@
-package Cucumber.steps;
-
-import Cucumber.screens.*;
+package steps;
 
 import io.appium.java_client.android.AndroidDriver;
 

@@ -1,6 +1,4 @@
-package Cucumber.screens;
-
-import org.openqa.selenium.WebElement;
+package screens;
 
 public interface ContactSearchPage {
 
