@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="a2d449cc-d8f9-4688-9a7e-2ec1e34e7260" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/iOS_iPhone_13/2022-01-24/application-2022-01-24-1.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/iOS_iPhone_13/Server.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/iOS_iPhone_13/Videos/Login with invalid password.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/iOS_iPhone_13/Videos/Login with invalid user name.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/iOS_iPhone_13/Videos/Login with valid user name and password.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/iOS_iPhone_13/application.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/iOS_iPhone_XR/Server.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/iOS_iPhone_XR/Videos/Login with invalid password.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/iOS_iPhone_XR/Videos/Login with invalid user name.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/iOS_iPhone_XR/Videos/Login with valid user name and password.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/iOS_iPhone_XR/application.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/appium/manager/CapabilitiesManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/appium/manager/DriverManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/appium/manager/GlobalParams.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/appium/manager/PropertyManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/appium/manager/ServerManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/appium/manager/VideoManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/appium/pages/BasePage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/appium/pages/LoginPage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/appium/pages/MenuPage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/appium/pages/ProductDetailsPage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/appium/pages/ProductsPage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/appium/pages/SettingsPage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/appium/utils/TestUtils.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/appium/utils/UsernameUtils.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/config.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/log4j2.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Cucumber/utilities/TestRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Cucumber/utilities/TestRunner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/appium/runners/RunnerBase.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/appium/runners/TestNGRunner_Pixel3.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/appium/runners/TestNGRunner_iPhone13.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/appium/runners/TestNGRunner_iPhoneXR.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/appium/stepDefinitions/Hooks.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/appium/stepDefinitions/LoginStepDef.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/appium/stepDefinitions/ProductStepDef.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/features/Login.feature" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/features/Products.feature" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+        <option value="Kotlin Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="2CIJb05uXFMT7qOcJCQg0dsUtyA" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/home/angel/ideaProjects/MasterAppiumFramework_BDD/src/test/java/Cucumber/utilities",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable",
+    "spring.configuration.checksum": "95647cf9a6524037db5e6bcf5277e635"
+  },
+  "keyToStringList": {
+    "GitStage.ChangesTree.GroupingKeys": [
+      "directory",
+      "module",
+      "repository"
+    ]
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.appium.runners" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/test/java/Cucumber/utilities" />
+      <recent name="$PROJECT_DIR$/.idea" />
+      <recent name="$PROJECT_DIR$/src/test/java/Cucumber" />
+      <recent name="$PROJECT_DIR$/app/iOS_iPhone_XR" />
+      <recent name="$PROJECT_DIR$/app/iOS_iPhone_13/ContactsSimulator.app" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/.idea" />
+      <recent name="$PROJECT_DIR$/src/test/resources/runners" />
+      <recent name="$PROJECT_DIR$/src/test/java/cucumber" />
+      <recent name="$PROJECT_DIR$/app/iOS_iPhone_13" />
+      <recent name="$PROJECT_DIR$/app" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Cucumber Java.Scenario: search contacts present">
+    <configuration name="Scenario: search contacts present (1)" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+      <option name="CUCUMBER_CORE_VERSION" value="5" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/java/cucumber/features/test_contact_search.feature" />
+      <option name="GLUE" value="com.appium.stepDefinitions" />
+      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
+      <module name="MasterAppiumFramework_BDD_TestNG" />
+      <option name="NAME_FILTER" value="^search contacts present$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^search contacts present$&quot;" />
+      <shortenClasspath name="NONE" />
+      <option name="SUGGESTED_NAME" value="Scenario: search contacts present" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.cucumber.core.cli.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Scenario: search contacts present" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+      <option name="CUCUMBER_CORE_VERSION" value="5" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/java/Cucumber/features/test_contact_search.feature" />
+      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
+      <module name="MasterAppiumFramework_BDD_TestNG" />
+      <option name="NAME_FILTER" value="^search contacts present$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^search contacts present$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: search contacts present" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.cucumber.core.cli.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="/home/angel/ideaProjects/MasterAppiumFramework_BDD" type="GradleRunConfiguration" factoryName="Gradle" nameIsGenerated="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list />
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="Test_ContactSearch (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="MasterAppiumFramework_BDD_TestNG" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.Test_ContactSearch" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MasterAppiumFramework_BDD_parallel-tests" type="MavenRunConfiguration" factoryName="Maven" nameIsGenerated="true">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list />
+            </option>
+            <option name="pomFileName" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
+    </configuration>
+    <configuration name="TestNGRunner_iPhone13" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="MasterAppiumFramework_BDD_TestNG" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="utilities.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="utilities" />
+      <option name="MAIN_CLASS_NAME" value="utilities.TestNGRunner_iPhone13" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestRunner" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="MasterAppiumFramework_BDD_TestNG" />
+      <shortenClasspath name="NONE" />
+      <useClassPathOnly />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="utilities.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SUITE_NAME" value="" />
+      <option name="PACKAGE_NAME" value="utilities" />
+      <option name="MAIN_CLASS_NAME" value="utilities.TestRunner" />
+      <option name="METHOD_NAME" value="" />
+      <option name="GROUP_NAME" value="" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="PARAMETERS" value="" />
+      <option name="OUTPUT_DIRECTORY" value="$PROJECT_DIR$/src/test/java/Cucumber/tests" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <option name="PROPERTIES_FILE" value="" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="/home/angel/ideaProjects/MasterAppiumFramework_BDD/testng.xml" type="TestNG" nameIsGenerated="true">
+      <module name="MasterAppiumFramework_BDD_TestNG" />
+      <shortenClasspath name="NONE" />
+      <useClassPathOnly />
+      <option name="SUITE_NAME" value="$PROJECT_DIR$/testng.xml" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="GROUP_NAME" value="" />
+      <option name="TEST_OBJECT" value="SUITE" />
+      <option name="PARAMETERS" value="" />
+      <option name="OUTPUT_DIRECTORY" value="" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <option name="PROPERTIES_FILE" value="" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Cucumber Java.Scenario: search contacts present" />
+      <item itemvalue="Cucumber Java.Scenario: search contacts present (1)" />
+      <item itemvalue="Gradle./home/angel/ideaProjects/MasterAppiumFramework_BDD" />
+      <item itemvalue="JUnit.Test_ContactSearch (1)" />
+      <item itemvalue="Maven.MasterAppiumFramework_BDD_parallel-tests" />
+      <item itemvalue="TestNG./home/angel/ideaProjects/MasterAppiumFramework_BDD/testng.xml" />
+      <item itemvalue="TestNG.TestNGRunner_iPhone13" />
+      <item itemvalue="TestNG.TestRunner" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Cucumber Java.Scenario: search contacts present" />
+        <item itemvalue="TestNG.TestRunner" />
+        <item itemvalue="TestNG.TestNGRunner_iPhone13" />
+        <item itemvalue="JUnit.Test_ContactSearch (1)" />
+        <item itemvalue="Cucumber Java.Scenario: search contacts present (1)" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a2d449cc-d8f9-4688-9a7e-2ec1e34e7260" name="Changes" comment="" />
+      <created>1658484233465</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1658484233465</updated>
+      <workItem from="1658484235036" duration="586000" />
+      <workItem from="1658484837397" duration="11311000" />
+      <workItem from="1658562109235" duration="55000" />
+      <workItem from="1658652460618" duration="2554000" />
+      <workItem from="1658655046398" duration="2873000" />
+      <workItem from="1658658166884" duration="161000" />
+      <workItem from="1658658934141" duration="16867000" />
+      <workItem from="1658737230455" duration="693000" />
+      <workItem from="1658745628331" duration="6639000" />
+      <workItem from="1658754692443" duration="5611000" />
+      <workItem from="1658763132374" duration="1038000" />
+      <workItem from="1658764575638" duration="846000" />
+      <workItem from="1658829283758" duration="2991000" />
+      <workItem from="1658833365340" duration="6134000" />
+      <workItem from="1658845068737" duration="6620000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>

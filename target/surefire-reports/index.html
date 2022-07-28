@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+  <meta charset='utf-8'>
+  <title>TestNG reports</title>
+
+    <link type="text/css" href="testng-reports1.css" rel="stylesheet" id="ultra" />
+    <link type="text/css" href="testng-reports.css" rel="stylesheet" id="retro" disabled="false"/>
+    <script type="text/javascript" src="jquery.min.js"></script>
+    <script type="text/javascript" src="testng-reports.js"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type='text/javascript'>
+      google.load('visualization', '1', {packages:['table']});
+      google.setOnLoadCallback(drawTable);
+      var suiteTableInitFunctions = new Array();
+      var suiteTableData = new Array();
+    </script>
+    <!--
+      <script type="text/javascript" src="jquery-ui/js/jquery-ui-1.8.16.custom.min.js"></script>
+     -->
+  </head>
+
+  <body>
+    <div class="top-banner-root">
+      <span class="top-banner-title-font">Test results</span>
+      <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
+      <br/>
+      <span class="top-banner-font-1">1 suite</span>
+    </div> <!-- top-banner-root -->
+    <div class="navigator-root">
+      <div class="navigator-suite-header">
+        <span>All suites</span>
+        <a href="#" title="Collapse/expand all the suites" class="collapse-all-link">
+          <img src="collapseall.gif" class="collapse-all-icon">
+          </img> <!-- collapse-all-icon -->
+        </a> <!-- collapse-all-link -->
+      </div> <!-- navigator-suite-header -->
+      <div class="suite">
+        <div class="rounded-window">
+          <div class="suite-header light-rounded-window-top">
+            <a href="#" panel-name="suite-Test_Suite_Parallel_Android_iOS" class="navigator-link">
+              <span class="suite-name border-skipped">Test_Suite_Parallel_Android_iOS</span>
+            </a> <!-- navigator-link -->
+          </div> <!-- suite-header light-rounded-window-top -->
+          <div class="navigator-suite-content">
+            <div class="suite-section-title">
+              <span>Info</span>
+            </div> <!-- suite-section-title -->
+            <div class="suite-section-content">
+              <ul>
+                <li>
+                  <a href="#" panel-name="test-xml-Test_Suite_Parallel_Android_iOS" class="navigator-link ">
+                    <span>testng_pixel_3_iPhone13.xml</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="testlist-Test_Suite_Parallel_Android_iOS" class="navigator-link ">
+                    <span class="test-stats">2 tests</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="group-Test_Suite_Parallel_Android_iOS" class="navigator-link ">
+                    <span>1 group</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="times-Test_Suite_Parallel_Android_iOS" class="navigator-link ">
+                    <span>Times</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="reporter-Test_Suite_Parallel_Android_iOS" class="navigator-link ">
+                    <span>Reporter output</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="ignored-methods-Test_Suite_Parallel_Android_iOS" class="navigator-link ">
+                    <span>Ignored methods</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="chronological-Test_Suite_Parallel_Android_iOS" class="navigator-link ">
+                    <span>Chronological view</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+              </ul>
+            </div> <!-- suite-section-content -->
+            <div class="result-section">
+              <div class="suite-section-title">
+                <span>Results</span>
+              </div> <!-- suite-section-title -->
+              <div class="suite-section-content">
+                <ul>
+                  <li>
+                    <span class="method-stats">2 methods,  2 skipped,  </span>
+                  </li>
+                  <li>
+                    <span class="method-list-title skipped">Skipped methods</span>
+                    <span class="show-or-hide-methods skipped">
+                      <a href="#" panel-name="suite-Test_Suite_Parallel_Android_iOS" class="hide-methods skipped suite-Test_Suite_Parallel_Android_iOS"> (hide)</a> <!-- hide-methods skipped suite-Test_Suite_Parallel_Android_iOS -->
+                      <a href="#" panel-name="suite-Test_Suite_Parallel_Android_iOS" class="show-methods skipped suite-Test_Suite_Parallel_Android_iOS"> (show)</a> <!-- show-methods skipped suite-Test_Suite_Parallel_Android_iOS -->
+                    </span>
+                    <div class="method-list-content skipped suite-Test_Suite_Parallel_Android_iOS">
+                      <span>
+                        <img src="skipped.png" width="3%"/>
+                        <a href="#" panel-name="suite-Test_Suite_Parallel_Android_iOS" title="Cucumber.utilities.TestNGRunner_iPhone13" class="method navigator-link" hash-for-method="runParallelScenario">runParallelScenario</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="skipped.png" width="3%"/>
+                        <a href="#" panel-name="suite-Test_Suite_Parallel_Android_iOS" title="Cucumber.utilities.TestNGRunner_Pixel3" class="method navigator-link" hash-for-method="runParallelScenario">runParallelScenario</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content skipped suite-Test_Suite_Parallel_Android_iOS -->
+                  </li>
+                </ul>
+              </div> <!-- suite-section-content -->
+            </div> <!-- result-section -->
+          </div> <!-- navigator-suite-content -->
+        </div> <!-- rounded-window -->
+      </div> <!-- suite -->
+    </div> <!-- navigator-root -->
+    <div class="wrapper">
+      <div class="main-panel-root">
+        <div panel-name="suite-Test_Suite_Parallel_Android_iOS" class="panel Test_Suite_Parallel_Android_iOS">
+          <div class="suite-Test_Suite_Parallel_Android_iOS-class-skipped">
+            <div class="main-panel-header rounded-window-top">
+              <img src="skipped.png"/>
+              <span class="class-name">Cucumber.utilities.TestNGRunner_Pixel3</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="runParallelScenario">
+                  </a> <!-- runParallelScenario -->
+                  <span class="method-name">runParallelScenario</span>
+                  <div class="stack-trace">java.lang.RuntimeException: java.lang.NoClassDefFoundError: io/cucumber/core/eventbus/EventBus
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Caused by: java.lang.NoClassDefFoundError: io/cucumber/core/eventbus/EventBus
+	at Cucumber.utilities.TestRunner.parallelScenarios(TestRunner.java:34)
+	... 20 more
+Caused by: java.lang.ClassNotFoundException: io.cucumber.core.eventbus.EventBus
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:581)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:178)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:522)
+	... 28 more
+... Removed 23 stack frames
+</div> <!-- stack-trace -->
+                  <em>
+(Run Cucumber Features)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Test_Suite_Parallel_Android_iOS-class-skipped -->
+          <div class="suite-Test_Suite_Parallel_Android_iOS-class-skipped">
+            <div class="main-panel-header rounded-window-top">
+              <img src="skipped.png"/>
+              <span class="class-name">Cucumber.utilities.TestNGRunner_iPhone13</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="runParallelScenario">
+                  </a> <!-- runParallelScenario -->
+                  <span class="method-name">runParallelScenario</span>
+                  <div class="stack-trace">java.lang.RuntimeException: java.lang.NoClassDefFoundError: io/cucumber/core/eventbus/EventBus
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Caused by: java.lang.NoClassDefFoundError: io/cucumber/core/eventbus/EventBus
+	at Cucumber.utilities.TestRunner.parallelScenarios(TestRunner.java:34)
+	... 20 more
+Caused by: java.lang.ClassNotFoundException: io.cucumber.core.eventbus.EventBus
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:581)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:178)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:522)
+	... 28 more
+... Removed 23 stack frames
+</div> <!-- stack-trace -->
+                  <em>
+(Run Cucumber Features)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Test_Suite_Parallel_Android_iOS-class-skipped -->
+        </div> <!-- panel Test_Suite_Parallel_Android_iOS -->
+        <div panel-name="test-xml-Test_Suite_Parallel_Android_iOS" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">/home/angel/ideaProjects/MasterAppiumFramework_BDD/src/test/resources/runners/testng_pixel_3_iPhone13.xml</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <pre>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
+&lt;suite parallel=&quot;tests&quot; name=&quot;Test_Suite_Parallel_Android_iOS&quot; guice-stage=&quot;DEVELOPMENT&quot; verbose=&quot;0&quot;&gt;
+  &lt;test thread-count=&quot;5&quot; parallel=&quot;tests&quot; name=&quot;Tests_on_Emulator_Pixel_3&quot; verbose=&quot;0&quot;&gt;
+    &lt;parameter name=&quot;chromeDriverPort&quot; value=&quot;11000&quot;/&gt;
+    &lt;parameter name=&quot;platformName&quot; value=&quot;Android&quot;/&gt;
+    &lt;parameter name=&quot;udid&quot; value=&quot;emulator-5554&quot;/&gt;
+    &lt;parameter name=&quot;deviceName&quot; value=&quot;Pixel_3&quot;/&gt;
+    &lt;parameter name=&quot;systemPort&quot; value=&quot;10000&quot;/&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;Cucumber.utilities.TestNGRunner_Pixel3&quot;/&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- Tests_on_Emulator_Pixel_3 --&gt;
+  &lt;test thread-count=&quot;5&quot; parallel=&quot;tests&quot; name=&quot;Tests_on_Simulator_iPhone_13&quot; verbose=&quot;0&quot;&gt;
+    &lt;parameter name=&quot;webkitDebugProxyPort&quot; value=&quot;11052&quot;/&gt;
+    &lt;parameter name=&quot;platformName&quot; value=&quot;iOS&quot;/&gt;
+    &lt;parameter name=&quot;udid&quot; value=&quot;18FB4726-3A15-498D-8F7E-84965AB706EF&quot;/&gt;
+    &lt;parameter name=&quot;deviceName&quot; value=&quot;iPhone_13&quot;/&gt;
+    &lt;parameter name=&quot;wdaLocalPort&quot; value=&quot;10051&quot;/&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;Cucumber.utilities.TestNGRunner_iPhone13&quot;/&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- Tests_on_Simulator_iPhone_13 --&gt;
+&lt;/suite&gt; &lt;!-- Test_Suite_Parallel_Android_iOS --&gt;
+            </pre>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="testlist-Test_Suite_Parallel_Android_iOS" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Tests for Test_Suite_Parallel_Android_iOS</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <ul>
+              <li>
+                <span class="test-name">Tests_on_Emulator_Pixel_3 (1 class)</span>
+              </li>
+              <li>
+                <span class="test-name">Tests_on_Simulator_iPhone_13 (1 class)</span>
+              </li>
+            </ul>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="group-Test_Suite_Parallel_Android_iOS" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Groups for Test_Suite_Parallel_Android_iOS</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="test-group">
+              <span class="test-group-name">cucumber</span>
+              <br/>
+              <div class="method-in-group">
+                <span class="method-in-group-name">runParallelScenario</span>
+                <br/>
+              </div> <!-- method-in-group -->
+            </div> <!-- test-group -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="times-Test_Suite_Parallel_Android_iOS" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Times for Test_Suite_Parallel_Android_iOS</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="times-div">
+              <script type="text/javascript">
+suiteTableInitFunctions.push('tableData_Test_Suite_Parallel_Android_iOS');
+function tableData_Test_Suite_Parallel_Android_iOS() {
+var data = new google.visualization.DataTable();
+data.addColumn('number', 'Number');
+data.addColumn('string', 'Method');
+data.addColumn('string', 'Class');
+data.addColumn('number', 'Time (ms)');
+data.addRows(2);
+data.setCell(0, 0, 0)
+data.setCell(0, 1, 'runParallelScenario')
+data.setCell(0, 2, 'Cucumber.utilities.TestNGRunner_iPhone13')
+data.setCell(0, 3, 0);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'runParallelScenario')
+data.setCell(1, 2, 'Cucumber.utilities.TestNGRunner_Pixel3')
+data.setCell(1, 3, 0);
+window.suiteTableData['Test_Suite_Parallel_Android_iOS']= { tableData: data, tableDiv: 'times-div-Test_Suite_Parallel_Android_iOS'}
+return data;
+}
+              </script>
+              <span class="suite-total-time">Total running time: 57 ms</span>
+              <div id="times-div-Test_Suite_Parallel_Android_iOS">
+              </div> <!-- times-div-Test_Suite_Parallel_Android_iOS -->
+            </div> <!-- times-div -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="reporter-Test_Suite_Parallel_Android_iOS" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Reporter output for Test_Suite_Parallel_Android_iOS</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="ignored-methods-Test_Suite_Parallel_Android_iOS" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">0 ignored methods</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="chronological-Test_Suite_Parallel_Android_iOS" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Methods in chronological order</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="chronological-class">
+              <div class="chronological-class-name">Cucumber.utilities.TestNGRunner_Pixel3</div> <!-- chronological-class-name -->
+              <div class="configuration-class before">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">setUpClass</span>
+                <span class="method-start">0 ms</span>
+              </div> <!-- configuration-class before -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">Cucumber.utilities.TestNGRunner_iPhone13</div> <!-- chronological-class-name -->
+              <div class="configuration-class before">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">setUpClass</span>
+                <span class="method-start">0 ms</span>
+              </div> <!-- configuration-class before -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">Cucumber.utilities.TestNGRunner_Pixel3</div> <!-- chronological-class-name -->
+              <div class="configuration-class after">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">tearDownClass</span>
+                <span class="method-start">36 ms</span>
+              </div> <!-- configuration-class after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">Cucumber.utilities.TestNGRunner_iPhone13</div> <!-- chronological-class-name -->
+              <div class="configuration-class after">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">tearDownClass</span>
+                <span class="method-start">36 ms</span>
+              </div> <!-- configuration-class after -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+      </div> <!-- main-panel-root -->
+    </div> <!-- wrapper -->
+  </body>
+<script type="text/javascript" src="testng-reports2.js"></script>
+</html>

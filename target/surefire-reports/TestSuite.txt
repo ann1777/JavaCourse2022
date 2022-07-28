@@ -1,0 +1,18 @@
+-------------------------------------------------------------------------------
+Test set: TestSuite
+-------------------------------------------------------------------------------
+Tests run: 6, Failures: 4, Errors: 0, Skipped: 2, Time elapsed: 0.56 s <<< FAILURE! - in TestSuite
+Cucumber.utilities.TestNGRunner_Pixel3.setUpClass  Time elapsed: 0.331 s  <<< FAILURE!
+java.lang.NoClassDefFoundError: io/cucumber/core/eventbus/EventBus
+Caused by: java.lang.ClassNotFoundException: io.cucumber.core.eventbus.EventBus
+
+Cucumber.utilities.TestNGRunner_iPhone13.setUpClass  Time elapsed: 0.333 s  <<< FAILURE!
+java.lang.NoClassDefFoundError: io/cucumber/core/eventbus/EventBus
+Caused by: java.lang.ClassNotFoundException: io.cucumber.core.eventbus.EventBus
+
+Cucumber.utilities.TestNGRunner_Pixel3.tearDownClass  Time elapsed: 0.368 s  <<< FAILURE!
+java.lang.NullPointerException
+
+Cucumber.utilities.TestNGRunner_iPhone13.tearDownClass  Time elapsed: 0.368 s  <<< FAILURE!
+java.lang.NullPointerException
+
