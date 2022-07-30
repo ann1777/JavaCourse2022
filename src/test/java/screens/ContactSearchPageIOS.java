@@ -31,4 +31,24 @@ public class ContactSearchPageIOS implements ContactSearchPage {
     public void navigateToSearchResultDetails() {
         firstSearchResultName.click();
     }
+
+    @Override
+    public void searchBtnClick() {
+
+    }
+
+    @Override
+    public void firstNameClick() {
+
+    }
+
+    @Override
+    public void assertSearchResultNotification(String resultNotification) {
+
+    }
+
+    @Override
+    public boolean waitDisplayed() {
+        return false;
+    }
 }

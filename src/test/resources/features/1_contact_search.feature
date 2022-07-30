@@ -1,40 +1,37 @@
 Feature: Contact search
 
-  Scenario: search contacts present
-    When I opened searchContact page
-    And type into search field <firstName>
-    And click on the search button
+  Scenario Outline: Search for contacts present by firsName
+    Given Search page is displayed
+    When I search for <firstName>
+    And I click on the search button
     Then the search result should be completed as this user <fullName>
-
-    Example:
+    Examples:
       | firstName   | fullName      |
       | "Sara"      | "Sara Alston" |
 
-  Scenario: search result cuntact opens in searchResultDetails
-    When I have 'Sara Alston' as a search result on the searchContact page
-    And navigate to the searchResultDetails page
-    Then I see "Sara Alston" in the field 'Contact Name'
+  Scenario Outline: Search result cuntact opens in searchResultDetails
+    Given Search page is displayed
+    When I search for <firstName>
+    And I navigate to the searchResultDetails page
+    Then I see user <fullName> in the ContactName field
+    Examples:
+      | firstName | fullName      |
+      | "Sara"    | "Sara Alston" |
 
-    Example:
-      | searchResult         | ContactName        |
-      | "Sara Alston"        | "Sara Alston"      |
-
-  Scenario: search contact is possible by LastName
-    Given I opened searchContact page
-    When I type into search field <lastname>
-    And click on the search button
+  Scenario Outline: search contact is possible by LastName
+    Given Search page is displayed
+    When I search for <lastName>
+    And I click on the search button
     Then the search result should be completed as this user <fullName>
+    Examples:
+      | lastName | fullName      |
+      | "Alston" | "Sara Alston" |
 
-    Example:
-      | lastName        | fullName        |
-      | "Alston"        | "Sara Alston"   |
-
-  Scenario: search contact that is absent in contacts list
-    Given I opened searchContact page
-    When I type into search field <someText>
-    And click on the search button
+  Scenario Outline: search contact that is absent in contacts list
+    Given Search page is displayed
+    When I search for <someText>
+    And I click on the search button
     Then the search result should be completed with an <expectedResultNotification> under screen
-
-  Example:
+  Examples:
     | someText            | expectedResultNotification                            |
     | "AbsentUser"        | "No contacts found with \"AbsentUser\" in the name"   |

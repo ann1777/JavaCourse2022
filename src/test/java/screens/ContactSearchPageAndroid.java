@@ -18,13 +18,38 @@ public class ContactSearchPageAndroid implements ContactSearchPage {
     @FindBy(id = "name")
     private WebElement firstSearchResultName;
 
+    @FindBy(xpath = "//android.widget.TextView [@resource-id=\"com.jayway.contacts:id/main_text\"]")
+    private WebElement resultNotification;
+
     public void search(String name) {
         searchField.sendKeys(name);
     }
+
     public void assertSearchResult(String expectedResult) {
         Assert.assertEquals(expectedResult, firstSearchResultName.getText());
     }
+
     public void navigateToSearchResultDetails() {
         firstSearchResultName.click();
+    }
+
+    @Override
+    public void searchBtnClick() {
+
+    }
+
+    @Override
+    public void firstNameClick() {
+
+    }
+
+    @Override
+    public void assertSearchResultNotification(String resultNotification) {
+        Assert.assertEquals(resultNotification, firstSearchResultName.getText());
+    }
+
+    @Override
+    public boolean waitDisplayed() {
+        return false;
     }
 }
