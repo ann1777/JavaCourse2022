@@ -16,7 +16,20 @@ public class ContactDetailPageAndroid implements ContactDetailPage {
     @FindBy(id = "detail_name")
     private WebElement contactName;
 
+    @FindBy(id = "com.jayway.contacts:id/phonenumber")
+    private WebElement contactPhone;
+
     public void assertContactName(String expectedName) {
         Assert.assertEquals(expectedName, contactName.getText());
+    }
+
+    @Override
+    public void assertContactPhone(String expectedPhoneNumber) {
+        Assert.assertEquals(expectedPhoneNumber, contactPhone.getText());
+    }
+
+    @Override
+    public boolean waitDisplayed() {
+        return false;
     }
 }

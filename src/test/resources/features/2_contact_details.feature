@@ -4,7 +4,7 @@ Feature: Contact details
     Given Search page is displayed
     When I search for <firstName>
     And  I click on contact in search result
-    Then I see full name <fullName> is correct
+    Then I see user <fullName> in the ContactName field
     Examples:
       | firstName | fullName      |
       | "Sara"    | "Sara Alston" |

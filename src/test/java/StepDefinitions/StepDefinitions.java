@@ -2,24 +2,36 @@ package StepDefinitions;
 
 import AppiumSupport.AppiumBaseClass;
 import AppiumSupport.AppiumController;
+import io.appium.java_client.android.AndroidDriver;
 import org.junit.After;
 import org.junit.Before;
-import screens.ContactDetailPage;
-import screens.ContactDetailPageAndroid;
-import screens.ContactSearchPage;
-import screens.ContactSearchPageAndroid;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Parameters;
+import screens.*;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+import utilities.DesireCapabilitiesUtil;
+import utilities.ThreadLocalDriver;
+
+import java.io.IOException;
+import java.net.URL;
 
 public class StepDefinitions extends AppiumBaseClass {
     public ContactSearchPage searchPage;
     public ContactDetailPage detailPage;
 
-    @Before
-    public void setUp() throws Exception {
+    private final DesireCapabilitiesUtil desiredCapabilitiesUtil = new DesireCapabilitiesUtil();
+
+    @BeforeMethod
+    @Parameters({ "udid", "platformVersion" })
+    public void setUp(String udid, String platformVersion) throws IOException {
+        DesiredCapabilities caps = desiredCapabilitiesUtil.getDesiredCapabilities(udid, platformVersion);
+        ThreadLocalDriver.setTLDriver(new AndroidDriver(new URL("http://127.0.0.1:4444/wd/hub"), caps));
         AppiumController.instance.start();
         switch (AppiumController.executionOS) {
             case ANDROID:
@@ -29,23 +41,22 @@ public class StepDefinitions extends AppiumBaseClass {
                 break;
             case IOS:
             case IOS_BROWSERSTACK:
+                searchPage = new ContactSearchPageIOS(driver());
+                detailPage = new ContactDetailPageIOS(driver());
+                break;
         }
     }
 
-    @After
-    public void tearDown() {
+    @AfterMethod
+    public synchronized void teardown() {
         AppiumController.instance.stop();
     }
 
     @Given("Search page is displayed")
-    public void searchPageIsDisplayed() {
-        Assert.assertTrue(searchPage.waitDisplayed());
-    }
+    public void searchPageIsDisplayed() { Assert.assertTrue(searchPage.waitDisplayed()); }
 
     @When("I search for {string}")
-    public void iSearchFor(String firstName) {
-        searchPage.search(firstName);
-    }
+    public void iSearchFor(String firstName) { searchPage.search(firstName); }
 
     @Then("the search result should be completed as this user {string}")
     public void iSeeInSearchResult(String fullName) {

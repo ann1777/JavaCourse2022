@@ -6,8 +6,11 @@ Feature: Contact search
     And I click on the search button
     Then the search result should be completed as this user <fullName>
     Examples:
-      | firstName   | fullName      |
-      | "Sara"      | "Sara Alston" |
+      | firstName  | fullName          |
+      | "Sara"     | "Sara Alston"     |
+      | "Jennifer" | "Jennifer Krantz" |
+      | "Lynn"     | "Lynn Chandler"   |
+
 
   Scenario Outline: Search result cuntact opens in searchResultDetails
     Given Search page is displayed
@@ -15,8 +18,11 @@ Feature: Contact search
     And I navigate to the searchResultDetails page
     Then I see user <fullName> in the ContactName field
     Examples:
-      | firstName | fullName      |
-      | "Sara"    | "Sara Alston" |
+      | firstName  | fullName          |
+      | "Sara"     | "Sara Alston"     |
+      | "Jennifer" | "Jennifer Krantz" |
+      | "Lynn"     | "Lynn Chandler"   |
+
 
   Scenario Outline: search contact is possible by LastName
     Given Search page is displayed
@@ -24,8 +30,11 @@ Feature: Contact search
     And I click on the search button
     Then the search result should be completed as this user <fullName>
     Examples:
-      | lastName | fullName      |
-      | "Alston" | "Sara Alston" |
+      | lastName   | fullName          |
+      | "Alston"   | "Sara Alston"     |
+      | "Krantz"   | "Jennifer Krantz" |
+      | "Chandler" | "Lynn Chandler"   |
+
 
   Scenario Outline: search contact that is absent in contacts list
     Given Search page is displayed
