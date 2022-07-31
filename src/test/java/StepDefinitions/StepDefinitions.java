@@ -58,6 +58,9 @@ public class StepDefinitions extends AppiumBaseClass {
     @When("I search for {string}")
     public void iSearchFor(String firstName) { searchPage.search(firstName); }
 
+    @Then("contact page is opened")
+    public void ISeeContactPageIsDisplayed() { Assert.assertTrue(detailPage.waitDisplayed()); }
+
     @Then("the search result should be completed as this user {string}")
     public void iSeeInSearchResult(String fullName) {
         searchPage.assertSearchResult(fullName);
@@ -70,19 +73,13 @@ public class StepDefinitions extends AppiumBaseClass {
 
     @And("I click on contact in search result")
     public void iClickOnFirstName() {
-        searchPage.firstNameClick();
-    }
-
-    @And("I click on the search button")
-    public void iClickOnSearchBtn() {
-        searchPage.searchBtnClick();
+        searchPage.navigateToSearchResultDetails();
     }
 
     @And("I navigate to the searchResultDetails page")
     public void detailPageIsDisplayed() {
         Assert.assertTrue(detailPage.waitDisplayed());
     }
-
 
     @Then("I see user {string} in the ContactName field")
     public void iSeeFullNameIsCorrect(String fullName) {
@@ -92,5 +89,10 @@ public class StepDefinitions extends AppiumBaseClass {
     @Then("I see contact phone {string} is correct")
     public void iSeeContactPhoneIsCorrect(String contactPhone) {
         detailPage.assertContactPhone(contactPhone);
+    }
+
+    @Then("I clear searchField")
+    public void IClearSearchField()  {
+        searchPage.searchFldClear();
     }
 }

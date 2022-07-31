@@ -18,7 +18,7 @@ public class ContactDetailPageIOS implements ContactDetailPage {
     @FindBy(xpath = "//XCUIElementTypeApplication[@name=\"Contacts\"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeStaticText[1]")
     private WebElement contactName;
 
-//    @FindBy(xpath = "//XCUIElementTypeApplication[@name=\"Contacts\"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeStaticText[1]")
+    @FindBy(xpath = "//XCUIElementTypeApplication[@name=\"Contacts\"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeStaticText[1]")
     private WebElement contactPhone;
 
     public void assertContactName(String expectedName) {
@@ -32,6 +32,6 @@ public class ContactDetailPageIOS implements ContactDetailPage {
 
     @Override
     public boolean waitDisplayed() {
-        return false;
+        return contactPhone.isDisplayed();
     }
 }

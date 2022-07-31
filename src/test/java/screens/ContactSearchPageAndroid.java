@@ -50,6 +50,6 @@ public class ContactSearchPageAndroid implements ContactSearchPage {
 
     @Override
     public boolean waitDisplayed() {
-        return false;
+        return searchField.isDisplayed();
     }
 }
