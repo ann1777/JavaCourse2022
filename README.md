@@ -1,3 +1,4 @@
+
 # MasterAppiumFramework_BDD
 **Prerequisites**
 [Appium setup on Linux mint](https://techsouljours.blogspot.com/2018/03/install-appium-in-linux-mint.html)
@@ -27,7 +28,4 @@
 ------------------------------------------------------------
 **NOTE**
 1. Make sure devices (Either Emulator/Simulator) are ready 
-------------------------------------------------------------
-
-
-
+-----------------------------------------------------------
