@@ -1,37 +1,31 @@
 package StepDefinitions;
 
+//import org.openqa.selenium.remote.DesiredCapabilities;
+//import org.testng.annotations.Parameters;
 import AppiumSupport.AppiumBaseClass;
 import AppiumSupport.AppiumController;
-import io.appium.java_client.android.AndroidDriver;
-import org.junit.After;
-import org.junit.Before;
-import org.openqa.selenium.remote.DesiredCapabilities;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Parameters;
 import screens.*;
+import io.cucumber.java.Before;
+import io.cucumber.java.After;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
-import utilities.DesireCapabilitiesUtil;
-import utilities.ThreadLocalDriver;
 
-import java.io.IOException;
-import java.net.URL;
 
 public class StepDefinitions extends AppiumBaseClass {
     public ContactSearchPage searchPage;
     public ContactDetailPage detailPage;
 
-    private final DesireCapabilitiesUtil desiredCapabilitiesUtil = new DesireCapabilitiesUtil();
+//    private final DesiredCapabilities capabilities = new DesiredCapabilities();
 
-    @BeforeMethod
-    @Parameters({ "udid", "platformVersion" })
-    public void setUp(String udid, String platformVersion) throws IOException {
-        DesiredCapabilities caps = desiredCapabilitiesUtil.getDesiredCapabilities(udid, platformVersion);
-        ThreadLocalDriver.setTLDriver(new AndroidDriver(new URL("http://127.0.0.1:4444/wd/hub"), caps));
+    @Before
+//    @Parameters({ "udid", "platformVersion" })
+//    public void setUp(String udid, String platformVersion) throws IOException {
+//        DesiredCapabilities caps = capabilities.getDesiredCapabilities(udid, platformVersion);
+//        ThreadLocalDriver.setTLDriver(new AndroidDriver(new URL("http://127.0.0.1:4444/wd/hub"), caps));
+    public void setUp() throws Exception {
         AppiumController.instance.start();
         switch (AppiumController.executionOS) {
             case ANDROID:
@@ -47,7 +41,7 @@ public class StepDefinitions extends AppiumBaseClass {
         }
     }
 
-    @AfterMethod
+    @After
     public synchronized void teardown() {
         AppiumController.instance.stop();
     }
@@ -58,41 +52,46 @@ public class StepDefinitions extends AppiumBaseClass {
     @When("I search for {string}")
     public void iSearchFor(String firstName) { searchPage.search(firstName); }
 
-    @Then("contact page is opened")
+    @Then("Contact page is opened")
     public void ISeeContactPageIsDisplayed() { Assert.assertTrue(detailPage.waitDisplayed()); }
 
     @Then("the search result should be completed as this user {string}")
-    public void iSeeInSearchResult(String fullName) {
+    public void iSeeSearchResultFullName(String fullName) {
         searchPage.assertSearchResult(fullName);
     }
 
-    @Then("the search result should be completed with an {string} under screen")
+    @Then("the search result should be completed with an {string} in the screen")
     public void iSeeResultNotificationUnderScreen(String resultNotification) {
         searchPage.assertSearchResultNotification(resultNotification);
     }
 
     @And("I click on contact in search result")
-    public void iClickOnFirstName() {
+    public void iClickOnFullName() {
         searchPage.navigateToSearchResultDetails();
     }
 
-    @And("I navigate to the searchResultDetails page")
+    @Then("Contact details page is opened")
     public void detailPageIsDisplayed() {
         Assert.assertTrue(detailPage.waitDisplayed());
     }
 
-    @Then("I see user {string} in the ContactName field")
+    @Then("I see contact {string} on the Contact Detail page")
     public void iSeeFullNameIsCorrect(String fullName) {
         detailPage.assertContactName(fullName);
     }
 
-    @Then("I see contact phone {string} is correct")
+    @Then("I see {string} is correct")
     public void iSeeContactPhoneIsCorrect(String contactPhone) {
         detailPage.assertContactPhone(contactPhone);
     }
 
-    @Then("I clear searchField")
+    @When("I clear searchField")
     public void IClearSearchField()  {
         searchPage.searchFldClear();
+    }
+
+    @Then("the {string} is displayed under search field")
+    public void theFirstSearchResultNameIsDisplayedUnderSearchField(String fullName) {
+        searchPage.assertSearchResult(fullName);
     }
 }
