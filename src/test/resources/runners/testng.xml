@@ -7,7 +7,7 @@
         <parameter name="platformName" value="Android" />
         <parameter name="deviceName" value="Pixel_3" />
         <classes>
-            <class name="utilities.TestRunner"/>
+            <class name="RunContactsTest"/>
         </classes>
     </test>
     <test name="simulator_iOS_iPhone_13">
@@ -16,7 +16,7 @@
         <parameter name="platformVersion" value="11"/>
         <parameter name="deviceName" value="iPhone_13"/>
         <classes>
-            <class name="utilities.TestRunner"/>
+            <class name="RunContactsTest"/>
         </classes>
     </test>
     <test name="simulator_iOS_iPhone_XR">
@@ -25,7 +25,7 @@
         <parameter name="udid" value="87BFA7A3-111F-4822-9632-5A4AA74EDC01"/>
         <parameter name="deviceName" value="iPhone_XR"/>
         <classes>
-            <class name="utilities.TestRunner"/>
+            <class name="RunContactsTest"/>
         </classes>
     </test>
 </suite>
