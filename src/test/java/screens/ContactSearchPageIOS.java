@@ -13,6 +13,9 @@ public class ContactSearchPageIOS implements ContactSearchPage {
         PageFactory.initElements(new AppiumFieldDecorator(driver), this);
     }
 
+    @FindBy(xpath = "(//XCUIElementTypeButton[@name=\"Cancel\"])[2]")
+    private WebElement canselBtn;
+
     @FindBy(xpath = "//XCUIElementTypeSearchField[@name=\"Search for contact\"]")
     private WebElement searchField;
 
@@ -51,4 +54,11 @@ public class ContactSearchPageIOS implements ContactSearchPage {
     public boolean waitDisplayed() {
         return false;
     }
+
+    @Override
+    public void searchFldClear() {
+
+    }
+
+    public void canselBtnClick() { canselBtn.click(); }
 }

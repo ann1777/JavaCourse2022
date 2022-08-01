@@ -32,6 +32,7 @@ public class ContactDetailPageIOS implements ContactDetailPage {
 
     @Override
     public boolean waitDisplayed() {
-        return contactPhone.isDisplayed();
+        Assert.assertTrue(contactName.isDisplayed());
+        return true;
     }
 }

@@ -25,6 +25,11 @@ public class ContactSearchPageAndroid implements ContactSearchPage {
         searchField.sendKeys(name);
     }
 
+    @Override
+    public void assertSearchResultNotification(String expectedResultNotification ) {
+        Assert.assertEquals(expectedResultNotification, resultNotification.getText());
+    }
+
     public void assertSearchResult(String expectedResult) {
         Assert.assertEquals(expectedResult, firstSearchResultName.getText());
     }
@@ -44,12 +49,11 @@ public class ContactSearchPageAndroid implements ContactSearchPage {
     }
 
     @Override
-    public void assertSearchResultNotification(String resultNotification) {
-        Assert.assertEquals(resultNotification, firstSearchResultName.getText());
-    }
-
-    @Override
     public boolean waitDisplayed() {
         return searchField.isDisplayed();
     }
+
+    @Override
+    public void searchFldClear() { searchField.clear(); }
+
 }

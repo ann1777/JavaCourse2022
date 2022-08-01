@@ -12,7 +12,9 @@ public interface ContactSearchPage {
 
     void firstNameClick();
 
-    void assertSearchResultNotification(String resultNotification);
+    void assertSearchResultNotification(String expectedResultNotification);
 
     boolean waitDisplayed();
+
+    void searchFldClear();
 }
