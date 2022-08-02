@@ -1,0 +1,52 @@
+Index: pom.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><project xmlns=\"http://maven.apache.org/POM/4.0.0\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:schemaLocation=\"http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd\">\r\n\t<modelVersion>4.0.0</modelVersion>\r\n\t<groupId>com.learning</groupId>\r\n\t<artifactId>MasterAppiumFramework_BDD_TestNG</artifactId>\r\n\t<version>0.0.1-SNAPSHOT</version>\r\n\r\n\t<properties>\r\n\t\t<cucumber-version>7.0.0</cucumber-version>\r\n\t\t<!-- DEFAULT - If you do not pass any value with mvn test, then, this value (testng_simulator_iPhone13.xml)\r\n\t\t\twill be used -->\r\n\t\t<!--<suiteFile>testng.xml</suiteFile>-->\r\n\t\t<suiteFile>testng_simulator_iPhone13</suiteFile>\r\n\r\n\t</properties>\r\n\t<build>\r\n\t\t<plugins>\r\n\t\t\t<plugin>\r\n\t\t\t\t<groupId>org.apache.maven.plugins</groupId>\r\n\t\t\t\t<artifactId>maven-compiler-plugin</artifactId>\r\n\t\t\t\t<version>3.8.1</version>\r\n\t\t\t\t<configuration>\r\n\t\t\t\t\t<source>8</source>\r\n\t\t\t\t\t<target>8</target>\r\n\t\t\t\t</configuration>\r\n\t\t\t</plugin>\r\n\t\t\t<plugin>\r\n\t\t\t\t<groupId>org.apache.maven.plugins</groupId>\r\n\t\t\t\t<artifactId>maven-surefire-plugin</artifactId>\r\n\t\t\t\t<version>3.0.0-M5</version>\r\n\t\t\t\t<configuration>\r\n\t\t\t\t\t<!-- Suite testng xml file to consider for test execution -->\r\n\t\t\t\t\t<suiteXmlFiles>\r\n\t\t\t\t\t\t<!-- <suiteXmlFile>src/test/resources/testng.xml</suiteXmlFile> -->\r\n\t\t\t\t\t\t<!-- <suiteXmlFile>testng.xml</suiteXmlFile> -->\r\n\t\t\t\t\t\t<!--<suiteXmlFile>${suiteFile}</suiteXmlFile>-->\r\n\t\t\t\t\t\t<suiteXmlFile>src/test/resources/runners/${suiteFile}.xml</suiteXmlFile>\r\n\t\t\t\t\t</suiteXmlFiles>\r\n\t\t\t\t</configuration>\r\n\t\t\t</plugin>\r\n\r\n\r\n\t\t</plugins>\r\n\t</build>\r\n\r\n\r\n\t<dependencies>\r\n\t\t<!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-java -->\r\n\t\t<dependency>\r\n\t\t\t<groupId>io.cucumber</groupId>\r\n\t\t\t<artifactId>cucumber-java</artifactId>\r\n\t\t\t<!-- <version>7.0.0</version> -->\r\n\t\t\t<version>${cucumber-version}</version>\r\n\t\t</dependency>\r\n\t\t<!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-junit -->\r\n\t\t<!-- <dependency>\r\n\t\t\t<groupId>io.cucumber</groupId>\r\n\t\t\t<artifactId>cucumber-junit</artifactId>\r\n\t\t\t<version>${cucumber-version}</version>\r\n\t\t\t<scope>test</scope>\r\n\t\t</dependency>-->\r\n\r\n\t\t<!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-testng -->\r\n\t\t<dependency>\r\n\t\t\t<groupId>io.cucumber</groupId>\r\n\t\t\t<artifactId>cucumber-testng</artifactId>\r\n\t\t\t<version>${cucumber-version}</version>\r\n\t\t</dependency>\r\n\r\n\r\n\t\t<!-- https://mvnrepository.com/artifact/io.appium/java-client -->\r\n\t\t<dependency>\r\n\t\t\t<groupId>io.appium</groupId>\r\n\t\t\t<artifactId>java-client</artifactId>\r\n\t\t\t<version>7.5.1</version>\r\n\t\t</dependency>\r\n\r\n\t\t<!-- https://mvnrepository.com/artifact/org.json/json -->\r\n\t\t<dependency>\r\n\t\t\t<groupId>org.json</groupId>\r\n\t\t\t<artifactId>json</artifactId>\r\n\t\t\t<!-- <version>20190722</version> -->\r\n\t\t\t<!--<version>20210307</version>-->\r\n\t\t\t<version>20211205</version>\r\n\r\n\t\t</dependency>\r\n\r\n\t\t<!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core -->\r\n\t\t<dependency>\r\n\t\t\t<groupId>org.apache.logging.log4j</groupId>\r\n\t\t\t<artifactId>log4j-core</artifactId>\r\n\t\t\t<version>2.14.0</version>\r\n\t\t</dependency>\r\n\r\n\t\t<!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-api -->\r\n\t\t<dependency>\r\n\t\t\t<groupId>org.apache.logging.log4j</groupId>\r\n\t\t\t<artifactId>log4j-api</artifactId>\r\n\t\t\t<version>2.14.0</version>\r\n\t\t</dependency>\r\n\r\n\t\t<!-- https://mvnrepository.com/artifact/commons-codec/commons-codec -->\r\n\t\t<dependency>\r\n\t\t\t<groupId>commons-codec</groupId>\r\n\t\t\t<artifactId>commons-codec</artifactId>\r\n\t\t\t<version>1.15</version>\r\n\t\t</dependency>\r\n\r\n\t\t<!-- https://mvnrepository.com/artifact/de.monochromata.cucumber/reporting-plugin -->\r\n\t\t<!-- <dependency> <groupId>de.monochromata.cucumber</groupId> <artifactId>reporting-plugin</artifactId> \r\n\t\t\t<version>4.0.101</version> <version>5.0.0</version> </dependency> -->\r\n\r\n\t\t<!-- https://mvnrepository.com/artifact/me.jvt.cucumber/reporting-plugin -->\r\n\t\t<dependency>\r\n\t\t\t<groupId>me.jvt.cucumber</groupId>\r\n\t\t\t<artifactId>reporting-plugin</artifactId>\r\n\t\t\t<version>${cucumber-version}</version>\r\n\t\t</dependency>\r\n\r\n\t\t<!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-testng -->\r\n\t\t<!-- <dependency> <groupId>io.cucumber</groupId> <artifactId>cucumber-testng</artifactId> \r\n\t\t\t<version>${cucumber-version}</version> </dependency> -->\r\n\r\n\r\n\t</dependencies>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/pom.xml b/pom.xml
+--- a/pom.xml	
++++ b/pom.xml	
+@@ -9,7 +9,8 @@
+ 		<!-- DEFAULT - If you do not pass any value with mvn test, then, this value (testng_simulator_iPhone13.xml)
+ 			will be used -->
+ 		<!--<suiteFile>testng.xml</suiteFile>-->
+-		<suiteFile>testng_simulator_iPhone13</suiteFile>
++<!--		<suiteFile>testng_simulator_iPhone13</suiteFile>-->
++		<suiteFile>testng_pixel_3_iPhone13</suiteFile>
+ 
+ 	</properties>
+ 	<build>
+@@ -37,8 +38,6 @@
+ 					</suiteXmlFiles>
+ 				</configuration>
+ 			</plugin>
+-
+-
+ 		</plugins>
+ 	</build>
+ 
+@@ -119,7 +118,5 @@
+ 		<!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-testng -->
+ 		<!-- <dependency> <groupId>io.cucumber</groupId> <artifactId>cucumber-testng</artifactId> 
+ 			<version>${cucumber-version}</version> </dependency> -->
+-
+-
+ 	</dependencies>
+ </project>
+\ No newline at end of file
+Index: README.md
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/README.md b/README.md
+new file mode 100644
+--- /dev/null	
++++ b/README.md	
+@@ -0,0 +1,4 @@
++# Java code examples for test automation
++
++## Overview
++The following repo contains examples for Java code test automation.
