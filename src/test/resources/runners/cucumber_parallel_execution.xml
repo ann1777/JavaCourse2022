@@ -1,0 +1,21 @@
+<plugin>
+    <groupId>com.github.temyers</groupId>
+    <artifactId>cucumber-jvm-parallel-plugin</artifactId>
+    <version>1.0.1</version>
+    <executions>
+        <execution>
+            <id>generateRunners</id>
+            <phase>validate</phase>
+            <goals>
+                <goal>generateRunners</goal>
+            </goals>
+            <configuration>
+                <glue>com.automationrhapsody.cucumber.parallel.tests</glue>
+                <featuresDirectory>src/test/resources/parallel</featuresDirectory>
+                <cucumberOutputDir>target/cucumber-parallel</cucumberOutputDir>
+                <format>json,html</format>
+                <tags>"~@ignored"</tags>
+            </configuration>
+        </execution>
+    </executions>
+</plugin>

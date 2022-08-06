@@ -10,12 +10,11 @@
 *.iml
 .idea
 *.html
-*.xml
 *.properties
 *.lst
 *.dumpstream
 *.txt
-target
+/target/
 # Compiled class file
 *.class
 # Log file

@@ -1,31 +1,32 @@
-package StepDefinitions;
+package parallel;
 
-//import org.openqa.selenium.remote.DesiredCapabilities;
-//import org.testng.annotations.Parameters;
 import AppiumSupport.AppiumBaseClass;
 import AppiumSupport.AppiumController;
-import screens.*;
-import io.cucumber.java.Before;
+import io.appium.java_client.android.AndroidDriver;
 import io.cucumber.java.After;
+import io.cucumber.java.Before;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.testng.annotations.Parameters;
+import screens.*;
+
+import java.io.IOException;
+import java.net.URL;
 
 
 public class StepDefinitions extends AppiumBaseClass {
     public ContactSearchPage searchPage;
     public ContactDetailPage detailPage;
-
-//    private final DesiredCapabilities capabilities = new DesiredCapabilities();
+    private final DesiredCapabilities capabilities = new DesiredCapabilities();
 
     @Before
-//    @Parameters({ "udid", "platformVersion" })
-//    public void setUp(String udid, String platformVersion) throws IOException {
-//        DesiredCapabilities caps = capabilities.getDesiredCapabilities(udid, platformVersion);
-//        ThreadLocalDriver.setTLDriver(new AndroidDriver(new URL("http://127.0.0.1:4444/wd/hub"), caps));
-    public void setUp() throws Exception {
+    @Parameters({ "udid", "platformVersion" })
+    public void setUp(String udid, String platformVersion) throws IOException {
+        ThreadLocalDriver.setTLDriver(new AndroidDriver(new URL("http://127.0.0.1:4444/wd/hub"), capabilities));
         AppiumController.instance.start();
         switch (AppiumController.executionOS) {
             case ANDROID:
@@ -93,5 +94,10 @@ public class StepDefinitions extends AppiumBaseClass {
     @Then("the {string} is displayed under search field")
     public void theFirstSearchResultNameIsDisplayedUnderSearchField(String fullName) {
         searchPage.assertSearchResult(fullName);
+    }
+
+    private static class ThreadLocalDriver {
+        public static void setTLDriver(AndroidDriver androidDriver) {
+        }
     }
 }
