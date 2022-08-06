@@ -1,6 +1,7 @@
 # Default ignored files
 /shelf/
-/.idea/workspace.xml
+.idea/workspace.xml
+.gitignore
 # Editor-based HTTP Client requests
 /httpRequests/
 # Datasource local storage ignored files
@@ -8,7 +9,7 @@
 /dataSources.local.xml
 /out
 *.iml
-.idea
+**.idea/**
 *.html
 *.properties
 *.lst
@@ -32,4 +33,4 @@
 *.tar.gz
 *.rar
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
-hs_err_pid*
+hs_err_pid*.idea
