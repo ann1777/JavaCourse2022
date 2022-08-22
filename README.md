@@ -1,8 +1,8 @@
 
-# Java code examples for test automation
+# Restassured API testing framework
 
 ### Overview
-The following repo contains examples for Java code test automation.
+The following repo contains examples for Java code API testing.
 
 ### Technologies 
 openjdk v.17 git v.2.25.1
