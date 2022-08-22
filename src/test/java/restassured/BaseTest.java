@@ -3,7 +3,9 @@ import io.restassured.RestAssured;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
+import org.json.JSONException;
 import org.json.JSONObject;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 
 import static org.apache.commons.lang3.RandomStringUtils.randomAlphanumeric;
@@ -15,8 +17,9 @@ public class BaseTest {
     private String sessionToken;
 
 
-    @BeforeTest
-    public void setUp() {
+    @BeforeMethod
+    public void setUp() throws JSONException {
+        RestAssured.reset();
         RestAssured.baseURI = "http://www.robotdreams.karpenko.cc/";
         RestAssured.requestSpecification = new RequestSpecBuilder()
                 .setContentType(ContentType.JSON)

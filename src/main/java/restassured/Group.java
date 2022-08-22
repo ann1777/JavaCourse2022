@@ -10,6 +10,7 @@ public class Group {
     Integer id;
 
     @JsonProperty
+    public
     String name;
 
     @JsonProperty

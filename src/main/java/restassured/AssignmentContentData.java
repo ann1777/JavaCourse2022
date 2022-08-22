@@ -10,7 +10,8 @@ public class AssignmentContentData {
     @JsonInclude(JsonInclude.Include.NON_DEFAULT)
     public Integer id;
 
-    public AssignmentContentData(String student1, String id, String create_api_test_framework) {}
+    public AssignmentContentData() {
+    }
 
     public AssignmentContentData(String content) {
         this.content = content;

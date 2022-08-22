@@ -1,6 +1,5 @@
 package restassured;
 
-
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import org.testng.Assert;
@@ -12,6 +11,7 @@ import java.util.Set;
 import java.util.stream.Collectors;
 
 public class ApiTest extends BaseTest {
+
     @Test
     public void createAndGetStudents() {
         //create new student1 post query
@@ -52,6 +52,7 @@ public class ApiTest extends BaseTest {
         Assert.assertEquals(allStudents.length, 3);
         System.out.println(Arrays.asList(allStudents));
     }
+
     @Test
     public void testStudentSearch() {
         RestAssured.given()
@@ -100,6 +101,7 @@ public class ApiTest extends BaseTest {
         Assert.assertNotNull(studentIds.size());
         System.out.println(studentIds.size());
     }
+
     @Test
     public void createNewGroup() {
         //create new group post query test
@@ -129,6 +131,7 @@ public class ApiTest extends BaseTest {
         AssignmentContentData group1Task = contentTaskResponce.as(AssignmentContentData.class);
         Assert.assertEquals(group1Task.content, "Create API test framework");
     }
+
     @Test
     public void assigningGroupTask() {
         //assign the group task for students

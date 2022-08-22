@@ -10,20 +10,12 @@ public class GroupData {
     public String name;
 
     @JsonProperty
-    List<Integer> students;
+    List<Integer> studentsID;
 
-    public GroupData(String name, List<Integer> students) {
+    public GroupData(String name, List<Integer> studentsID) {
         this.name = name;
-        this.students = students;
+        this.studentsID = studentsID;
     }
-
-    public GroupData(String groupTask) {
-    }
-
-    public String post(String groups) {
-        return Arrays.deepToString(new Student[2][]);
-    }
-
 
     public GroupData() {
     }
