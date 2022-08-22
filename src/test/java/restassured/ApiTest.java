@@ -100,6 +100,35 @@ public class ApiTest extends BaseTest {
         Assert.assertNotNull(studentIds.size());
         System.out.println(studentIds.size());
     }
+    @Test
+    public void createNewGroup() {
+        //create new group post query test
+        List<Student> allStudents = Arrays.asList(
+                RestAssured.get("/students")
+                        .then().statusCode(200)
+                        .extract().as(Student[].class)
+        );
+        List<Integer> studentIds = allStudents.stream().map(student -> student.id).collect(Collectors.toList());
+        Response group1CreateResponse = RestAssured.given()
+                .body(new GroupData("aqaGroup", studentIds))
+                .post("/groups");
+        group1CreateResponse.then().statusCode(200);
+        Group group1 = group1CreateResponse.as(Group.class);
+        Assert.assertEquals(group1.name, "aqaGroup");
+    }
+
+    @Test
+    public void createGroupTask() {
+        //create assignment content
+        Group[] group1 = RestAssured.get("/groups").as(Group[].class);
+        String group1TaskContent = "Create API test framework";
+        Response contentTaskResponce = RestAssured.given()
+                .body(new AssignmentContentData("Create API test framework"))
+                .post("/content");
+        contentTaskResponce.then().statusCode(200);
+        AssignmentContentData group1Task = contentTaskResponce.as(AssignmentContentData.class);
+        Assert.assertEquals(group1Task.content, "Create API test framework");
+    }
 
 
 }
