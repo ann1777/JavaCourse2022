@@ -11,7 +11,6 @@ import java.util.Set;
 import java.util.stream.Collectors;
 
 public class ApiTest extends BaseTest {
-
     @Test
     public void createAndGetStudents() {
         //create new student1 post query
@@ -52,7 +51,6 @@ public class ApiTest extends BaseTest {
         Assert.assertEquals(allStudents.length, 3);
         System.out.println(Arrays.asList(allStudents));
     }
-
     @Test
     public void testStudentSearch() {
         RestAssured.given()
@@ -117,6 +115,8 @@ public class ApiTest extends BaseTest {
         group1CreateResponse.then().statusCode(200);
         Group group1 = group1CreateResponse.as(Group.class);
         Assert.assertEquals(group1.name, "aqaGroup");
+        Group[] groups = RestAssured.get("/groups").as(Group[].class);
+        Assert.assertEquals(groups.length, 1);
     }
 
     @Test
@@ -129,9 +129,8 @@ public class ApiTest extends BaseTest {
                 .post("/content");
         contentTaskResponce.then().statusCode(200);
         AssignmentContentData group1Task = contentTaskResponce.as(AssignmentContentData.class);
-        Assert.assertEquals(group1Task.content, "Create API test framework");
+        Assert.assertEquals(group1Task.content, group1TaskContent);
     }
-
     @Test
     public void assigningGroupTask() {
         //assign the group task for students
