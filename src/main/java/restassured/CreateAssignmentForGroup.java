@@ -3,19 +3,19 @@ package restassured;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class CreateAssignmentForGroup {
-    @JsonProperty
-    public String target_type;
+    @JsonProperty ("target_type")
+    public String targetType;
 
-    @JsonProperty
-    public Integer student_id;
+    @JsonProperty ("student_id")
+    public Integer studentId;
 
-    @JsonProperty
-    public Integer content_id;
+    @JsonProperty ("content_id")
+    public Integer contentId;
 
-    public CreateAssignmentForGroup(String target_type, Integer student_id, Integer content_id) {
-        this.target_type = target_type;
-        this.student_id = student_id;
-        this.content_id = content_id;
+    public CreateAssignmentForGroup(String targetType, Integer studentId, Integer contentId) {
+        this.targetType = targetType;
+        this.studentId = studentId;
+        this.contentId = contentId;
     }
 
     public CreateAssignmentForGroup() {

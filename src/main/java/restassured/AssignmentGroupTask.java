@@ -6,11 +6,11 @@ public class AssignmentGroupTask {
     @JsonProperty
     public Integer id;
 
-    @JsonProperty
-    public Integer student_id;
+    @JsonProperty("student_id")
+    public Integer studentId;
 
-    @JsonProperty
-    public Integer content_id;
+    @JsonProperty("content_id")
+    public Integer contentId;
 
     @JsonProperty
     public String solution;
@@ -19,10 +19,10 @@ public class AssignmentGroupTask {
     public Integer mark;
 
 
-    public AssignmentGroupTask(Integer id, Integer student_id, Integer content_id, String solution, Integer mark) {
+    public AssignmentGroupTask(Integer id, Integer studentId, Integer contentId, String solution, Integer mark) {
         this.id = id;
-        this.student_id = student_id;
-        this.content_id = content_id;
+        this.studentId = studentId;
+        this.contentId = contentId;
         this.solution = solution;
         this.mark = mark;
     }
