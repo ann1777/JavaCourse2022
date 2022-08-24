@@ -9,6 +9,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
+import static org.hamcrest.Matchers.*;
 
 public class ApiTest extends BaseTest {
     @Test
@@ -96,7 +97,7 @@ public class ApiTest extends BaseTest {
                         .extract().as(Student[].class)
         );
         List<Integer> studentIds = allStudents.stream().map(student -> student.id).collect(Collectors.toList());
-        Assert.assertNotNull(studentIds.size());
+        Assert.assertFalse(studentIds.size() == 0);
         System.out.println(studentIds.size());
     }
 
@@ -163,7 +164,7 @@ public class ApiTest extends BaseTest {
                 .post("/assignments")
                 .then().statusCode(200)
                 .extract().as(AssignmentGroupTask.class);
-        Assert.assertEquals(assignmentGroupTask.student_id, student_id);
-        Assert.assertEquals(assignmentGroupTask.content_id, content_id);
+        Assert.assertEquals(assignmentGroupTask.studentId, student_id);
+        Assert.assertEquals(assignmentGroupTask.contentId, content_id);
     }
 }
