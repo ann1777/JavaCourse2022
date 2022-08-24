@@ -12,47 +12,40 @@ import java.util.stream.Collectors;
 import static org.hamcrest.Matchers.*;
 
 public class ApiTest extends BaseTest {
-    @Test
+    @Test(description = "new students post and get query tests")
     public void createAndGetStudents() {
-        //create new student1 post query
         Response student1CreateResponse = RestAssured.given()
                 .body(new StudentData("Oleksandr", "Svidersky"))
                 .post("/students");
         student1CreateResponse.then().statusCode(200);
         Student student1 = student1CreateResponse.as(Student.class);
-        //create new student2 post query test
         Response student2CreateResponse = RestAssured.given()
                 .body(new StudentData("Angela", "Potapchuk"))
                 .post("/students");
         student2CreateResponse.then().statusCode(200);
         Student student2 = student2CreateResponse.as(Student.class);
-        //create new student3 post query test
         Response student3CreateResponse = RestAssured.given()
                 .body(new StudentData("Andrii", "Parail"))
                 .post("/students");
         student3CreateResponse.then().statusCode(200);
         Student student3 = student3CreateResponse.as(Student.class);
-        //student1 get by ID query test
         Response student1GetResponse = RestAssured.get("/students/{id}", student1.id);
         Student receivedStudent1 = student1GetResponse.as(Student.class);
         Assert.assertEquals(receivedStudent1.firstName, "Oleksandr");
         Assert.assertEquals(receivedStudent1.lastName, "Svidersky");
-        //student2 get by ID query test
         Response student2GetResponse = RestAssured.get("/students/{id}", student2.id);
         Student receivedStudent2 = student2GetResponse.as(Student.class);
         Assert.assertEquals(receivedStudent2.firstName, "Angela");
         Assert.assertEquals(receivedStudent2.lastName, "Potapchuk");
-        //student3 get by ID query test
         Response student3GetResponse = RestAssured.get("/students/{id}", student3.id);
         Student receivedStudent3 = student3GetResponse.as(Student.class);
         Assert.assertEquals(receivedStudent3.firstName, "Andrii");
         Assert.assertEquals(receivedStudent3.lastName, "Parail");
-
         Student[] allStudents = RestAssured.get("/students").as(Student[].class);
         Assert.assertEquals(allStudents.length, 3);
         System.out.println(Arrays.asList(allStudents));
     }
-    @Test
+    @Test(description = "search students by part of name query test")
     public void testStudentSearch() {
         RestAssured.given()
                 .body(new StudentData("Oleksandr", "Svidersky"))
@@ -76,8 +69,8 @@ public class ApiTest extends BaseTest {
         Assert.assertEquals(names, Set.of("Angela", "Volodymyr"));
     }
 
-    @Test
-    public void testStudentDashboard() {
+    @Test(description = "get students ID query test")
+    public void testGetStudentsIDList() {
         RestAssured.given()
                 .body(new StudentData("Ivan", "Litvinau"))
                 .post("/students")
@@ -90,7 +83,6 @@ public class ApiTest extends BaseTest {
                 .body(new StudentData("Valentyna", "Mykhaiova"))
                 .post("/students")
                 .then().statusCode(200);
-
         List<Student> allStudents = Arrays.asList(
                 RestAssured.get("/students")
                         .then().statusCode(200)
@@ -99,11 +91,11 @@ public class ApiTest extends BaseTest {
         List<Integer> studentIds = allStudents.stream().map(student -> student.id).collect(Collectors.toList());
         Assert.assertFalse(studentIds.size() == 0);
         System.out.println(studentIds.size());
+        System.out.println(studentIds.stream().toList());
     }
 
-    @Test
+    @Test(description = "create new group post query test")
     public void createNewGroup() {
-        //create new group post query test
         List<Student> allStudents = Arrays.asList(
                 RestAssured.get("/students")
                         .then().statusCode(200)
@@ -120,9 +112,8 @@ public class ApiTest extends BaseTest {
         Assert.assertEquals(groups.length, 1);
     }
 
-    @Test
+    @Test(description = "create assignment content query test")
     public void createGroupTask() {
-        //create assignment content
         Group[] group1 = RestAssured.get("/groups").as(Group[].class);
         String group1TaskContent = "Create API test framework";
         Response contentTaskResponce = RestAssured.given()
@@ -132,9 +123,8 @@ public class ApiTest extends BaseTest {
         AssignmentContentData group1Task = contentTaskResponce.as(AssignmentContentData.class);
         Assert.assertEquals(group1Task.content, group1TaskContent);
     }
-    @Test
+    @Test(description = "assign the group task for students query test")
     public void assigningGroupTask() {
-        //assign the group task for students
         RestAssured.given()
                 .body(new StudentData("Ivan", "Litvinau"))
                 .post("/students")
