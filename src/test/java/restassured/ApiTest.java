@@ -2,14 +2,15 @@ package restassured;
 
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
+import org.hamcrest.Matcher;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import java.lang.reflect.Type;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
-import static org.hamcrest.Matchers.*;
 
 public class ApiTest extends BaseTest {
     @Test(description = "new students post and get query tests")
@@ -123,38 +124,45 @@ public class ApiTest extends BaseTest {
         AssignmentContentData group1Task = contentTaskResponce.as(AssignmentContentData.class);
         Assert.assertEquals(group1Task.content, group1TaskContent);
     }
-    @Test(description = "assign the group task for students query test")
+
+    @Test(description = "assign the group task query test")
     public void assigningGroupTask() {
         RestAssured.given()
                 .body(new StudentData("Ivan", "Litvinau"))
                 .post("/students")
                 .then().statusCode(200);
         Student[] students = RestAssured.get("/students").as(Student[].class);
+
         List<Student> allStudents = Arrays.asList(
                 RestAssured.get("/students")
                         .then().statusCode(200)
                         .extract().as(Student[].class)
         );
         List<Integer> studentIds = allStudents.stream().map(student -> student.id).collect(Collectors.toList());
+        Integer studentId = studentIds.get(0);
         Response group1CreateResponse = RestAssured.given()
                 .body(new GroupData("aqaGroup", studentIds))
                 .post("/groups");
         group1CreateResponse.then().statusCode(200);
-        Group[] group1 = RestAssured.get("/groups").as(Group[].class);
-        String group1TaskContent = "Create API test framework";
-        Response contentTaskResponce = RestAssured.given()
+        Group group1 = group1CreateResponse.as(Group.class);
+        Assert.assertEquals(group1.name, "aqaGroup");
+        Group[] groups = RestAssured.get("/groups").as(Group[].class);
+        Assert.assertEquals(groups.length, 1);
+        Integer groupId = group1CreateResponse.as(Group.class).id;
+
+        Response contentTaskResponse = RestAssured.given()
                 .body(new AssignmentContentData("Create API test framework"))
                 .post("/content");
-        contentTaskResponce.then().statusCode(200);
+        contentTaskResponse.then().statusCode(200);
         AssignmentContentData[] assignmentContentData = RestAssured.get("/content").as(AssignmentContentData[].class);
-        Integer student_id = students[0].id;
-        Integer content_id = assignmentContentData[0].id;
-        AssignmentGroupTask assignmentGroupTask = RestAssured.given()
-                .body(new CreateAssignmentForGroup("student", student_id, content_id))
-                .post("/assignments")
-                .then().statusCode(200)
-                .extract().as(AssignmentGroupTask.class);
-        Assert.assertEquals(assignmentGroupTask.studentId, student_id);
-        Assert.assertEquals(assignmentGroupTask.contentId, content_id);
+        Integer contentId = assignmentContentData[0].id;
+
+        Response response = RestAssured.given()
+                .body(new AssignmentGroupTask("group", groupId, contentId))
+                .post("/assignments");
+        response.then().statusCode(200);
+        AssignmentGroupResponse[] assignmentGroupResponse = response.as(AssignmentGroupResponse[].class);
+        Assert.assertEquals(assignmentGroupResponse[0].studentId, studentId);
+        Assert.assertEquals(assignmentGroupResponse[0].contentId, contentId);
     }
 }

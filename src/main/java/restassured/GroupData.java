@@ -10,11 +10,11 @@ public class GroupData {
     public String name;
 
     @JsonProperty
-    List<Integer> studentsID;
+    List<Integer> students;
 
-    public GroupData(String name, List<Integer> studentsID) {
+    public GroupData(String name, List<Integer> students) {
         this.name = name;
-        this.studentsID = studentsID;
+        this.students = students;
     }
 
     public GroupData() {
