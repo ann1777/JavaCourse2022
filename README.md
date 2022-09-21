@@ -11,24 +11,24 @@ openjdk v.17 git v.2.25.1
 1. Clone this repository
 2. Run code examples in the local IDE
 
-## Project Structure
-| Branch    | Class                  | Topic                               | 
-| ——        | ——                     | ——                                  | 
-| branch1   | GitHometask            | [SimpleGitTask]                     |
-| branch2   | DataStorageFormat      | [DataStorageAndTransmissionFormat]  |
-| branch5   | HometaskHelloWorld     | [StringFormatter]                   |
-| branch6   | Operators              | [Operators]                         |
-| branch7   | PrintCharToSet         | [Collections]                       |
-| branch8   | PlanetsEnum            | [Enum]                              | 
-| branch10  | StudentIncapsulation   | [Incapsulation]                     |
-| branch11  | PersonInheritance      | [Inheritance, Polymorphism]         |
-| branch12  | PaymentsException      | [ErrorHandling]                     |
-| branch13  | TestNGFramework        | [TestFramework]                     |
-| branch14  | DatatDrivenTests       | [DataDrivenTest]                    |
-| branch15  | DataBaseTesting        | [JDBCConnection]                    | 
-| branch17  | SeleniumLocators       | [Selenium]                          |
-| branch20  | MavenAppiumBDDFramework| [AndroidAppium]                     |
-| branch21  | RestAssuredAPITesting  | [RESTAssured]                       | 
+## Project Structure:
+* | Branch    | Class                  | Topic                               | 
+* | ——        | ——                     | ——                                  | 
+* | branch1   | GitHometask            | [SimpleGitTask]                     |
+* | branch2   | DataStorageFormat      | [DataStorageAndTransmissionFormat]  |
+* | branch5   | HometaskHelloWorld     | [StringFormatter]                   |
+* | branch6   | Operators              | [Operators]                         |
+* | branch7   | PrintCharToSet         | [Collections]                       |
+* | branch8   | PlanetsEnum            | [Enum]                              | 
+* | branch10  | StudentIncapsulation   | [Incapsulation]                     |
+* | branch11  | PersonInheritance      | [Inheritance, Polymorphism]         |
+* | branch12  | PaymentsException      | [ErrorHandling]                     |
+* | branch13  | TestNGFramework        | [TestFramework]                     |
+* | branch14  | DatatDrivenTests       | [DataDrivenTest]                    |
+* | branch15  | DataBaseTesting        | [JDBCConnection]                    | 
+* | branch17  | SeleniumLocators       | [Selenium]                          |
+* | branch20  | MavenAppiumBDDFramework| [AndroidAppium]                     |
+* | branch21  | RestAssuredAPITesting  | [RESTAssured]                       | 
 
 ---
 ### Contribute
